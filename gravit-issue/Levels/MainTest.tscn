@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvtvtjx7154fh"]
+
+[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="1_bum52"]
+[ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_p0vmq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wjexi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bum52"]
+size = Vector2(1000, 10)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bum52"]
+normal = Vector2(0, 1)
+
+[node name="MainTest" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(10.35, 10)
+texture = ExtResource("2_p0vmq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 500)
+shape = SubResource("WorldBoundaryShape2D_wjexi")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Floor"]
+texture = SubResource("PlaceholderTexture2D_bum52")
+offset = Vector2(0, 5)
+
+[node name="Ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -497)
+shape = SubResource("WorldBoundaryShape2D_bum52")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/Ceiling"]
+texture = SubResource("PlaceholderTexture2D_bum52")
+offset = Vector2(0, -5)
+flip_v = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_bum52")]

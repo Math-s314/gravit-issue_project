@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://74wocrxi6qah"]
+
+[ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sipw2"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ech6m"]
+size = Vector2(100, 100)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ech6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sipw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_ech6m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GravityTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]
