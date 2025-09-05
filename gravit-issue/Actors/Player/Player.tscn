@@ -15,9 +15,26 @@ script = ExtResource("1_ech6m")
 shape = SubResource("RectangleShape2D_sipw2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
 texture = SubResource("PlaceholderTexture2D_ech6m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 20)
+amount = 15
+lifetime = 0.5
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(30, 1)
+direction = Vector2(0, 0.5)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+scale_amount_min = 6.0
+scale_amount_max = 12.0
+color = Color(0, 1, 1, 1)
 
 [node name="GravityTimer" type="Timer" parent="."]
 one_shot = true
