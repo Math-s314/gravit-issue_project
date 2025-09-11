@@ -1,29 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://74wocrxi6qah"]
+[gd_scene load_steps=6 format=3 uid="uid://74wocrxi6qah"]
 
 [ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sipw2"]
-size = Vector2(100, 100)
+size = Vector2(100, 130)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ech6m"]
 size = Vector2(100, 100)
 
+[sub_resource type="Curve" id="Curve_ech6m"]
+_data = [Vector2(0, 0.827561), 0.0, 1.11864, 0, 0, Vector2(0.523715, 0.894621), -1.8178, -1.8178, 0, 0, Vector2(0.998024, 0.396463), -0.18644, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ech6m"]
+offsets = PackedFloat32Array(0, 0.825, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.262745, 0.768627, 1, 1, 0.105882, 0.717647, 0.435294)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ech6m")
+gravity_strength = 800.0
+transition_duration = 0.5
+still_duration = 10.0
+move_speed = 500.0
+jump_force = 400.0
+air_control = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sipw2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -15)
 texture = SubResource("PlaceholderTexture2D_ech6m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(0, 35)
 amount = 15
-lifetime = 0.5
+lifetime = 0.65
 local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(30, 1)
@@ -34,7 +48,9 @@ initial_velocity_min = 50.0
 initial_velocity_max = 70.0
 scale_amount_min = 6.0
 scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_ech6m")
 color = Color(0, 1, 1, 1)
+color_ramp = SubResource("Gradient_ech6m")
 
 [node name="GravityTimer" type="Timer" parent="."]
 one_shot = true

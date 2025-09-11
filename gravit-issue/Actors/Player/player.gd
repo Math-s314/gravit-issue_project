@@ -2,14 +2,15 @@ extends CharacterBody2D
 class_name Player
 
 @export_group("Gravity")
-@export var gravity_strength := 500.0;
-@export var transition_duration := 0.5
-@export var still_duration := 10.0
+@export var gravity_strength := 0.0;
+@export var transition_duration := 0.0
+@export var still_duration := 0.0
 #@export_exp_easing var transition_speed := 1.0
 
 @export_group("Controls")
-@export var move_speed := 250.0
-@export var jump_force := 250.0
+@export var move_speed := 0.0
+@export var jump_force := 0.0
+@export var air_control := 0.0
 
 @export_group("Display")
 @export var min_particle_speed : float = 30.0
@@ -33,10 +34,10 @@ func _process(delta: float) -> void:
 	else: velocity.y = 0.0
 	
 	# Player input
-	var inputAxis :=  Input.get_axis("Left", "Right")
+	var inputAxis :=  Input.get_axis("Left", "Right") * (1.0 if is_on_floor() else air_control)
 	particles.direction.x = -inputAxis
-	#particles.initial_velocity_min = lerp(min_particle_speed, 1.5 * min_particle_speed, abs(inputAxis))
-	#particles.initial_velocity_max = lerp(max_particle_speed, 1.5 * max_particle_speed, abs(inputAxis))
+	particles.initial_velocity_min = lerp(min_particle_speed, 1.5 * min_particle_speed, abs(inputAxis))
+	particles.initial_velocity_max = lerp(max_particle_speed, 1.5 * max_particle_speed, abs(inputAxis))
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
