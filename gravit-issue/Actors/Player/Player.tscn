@@ -18,9 +18,9 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
 transition_duration = 0.5
-still_duration = 10.0
-move_speed = 500.0
-jump_force = 400.0
+still_duration = 3.0
+move_speed = 200.0
+jump_force = 300.0
 air_control = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
