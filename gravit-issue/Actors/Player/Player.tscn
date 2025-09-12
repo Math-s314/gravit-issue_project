@@ -14,12 +14,13 @@ _data = [Vector2(0, 0.827561), 0.0, 1.11864, 0, 0, Vector2(0.523715, 0.894621), 
 point_count = 3
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
-transition_duration = 0.01
-still_duration = 10.0
-move_speed = 500.0
-jump_force = 400.0
+transition_duration = 0.5
+still_duration = 3.0
+move_speed = 200.0
+jump_force = 300.0
 air_control = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
