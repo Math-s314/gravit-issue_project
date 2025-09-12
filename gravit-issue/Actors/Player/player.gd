@@ -2,30 +2,35 @@ extends CharacterBody2D
 class_name Player
 
 @export_group("Gravity")
-@export var gravity_strength := 0.0;
-@export var transition_duration := 0.0
-@export var still_duration := 0.0
+@export var gravity_strength : float
+@export var transition_duration : float
+@export var still_duration : float
 #@export_exp_easing var transition_speed := 1.0
 
 @export_group("Controls")
-@export var move_speed := 0.0
-@export var jump_force := 0.0
-@export var air_control := 0.0
-
-@export_group("Display")
-@export var min_particle_speed : float = 30.0
-@export var max_particle_speed : float = 50.0
-
+@export var move_speed : float
+@export var jump_force : float
+@export var air_control : float
 
 ## Gravity switching
 var gravity_switch := 1.0;
 var gravity_transition := false
 @onready var gravity_timer := $GravityTimer
-@onready var sprite := $Sprite2D
+@onready var sprite := $AnimatedSprite2D
 @onready var particles := $CPUParticles2D
+
+## Display informations
+const EPSILON := 1e-2
+const BASE_EMITTER := Transform2D(0.0, Vector2(0.0, 19.0))
+const WALKING_EMITTER := Transform2D(deg_to_rad(47.0), Vector2(-10.0, 16.3))
+
+var min_particle_speed : float
+var max_particle_speed : float
 
 func _ready() -> void:
 	gravity_timer.wait_time = still_duration
+	min_particle_speed = particles.initial_velocity_min
+	max_particle_speed = particles.initial_velocity_max
 
 func _process(delta: float) -> void:
 	# Gravity
@@ -35,10 +40,16 @@ func _process(delta: float) -> void:
 	
 	# Player input
 	var inputAxis :=  Input.get_axis("Left", "Right") * (1.0 if is_on_floor() else air_control)
-	particles.direction.x = -inputAxis
 	particles.initial_velocity_min = lerp(min_particle_speed, 1.5 * min_particle_speed, abs(inputAxis))
 	particles.initial_velocity_max = lerp(max_particle_speed, 1.5 * max_particle_speed, abs(inputAxis))
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
+	
+	sprite.frame = floor(abs(inputAxis * 6.99))
+	if inputAxis > EPSILON : sprite.flip_h = false
+	elif inputAxis < -EPSILON : sprite.flip_h = true
+	particles.transform = BASE_EMITTER if sprite.frame == 0 else WALKING_EMITTER
+	particles.position.x *= -1.0 if sprite.flip_h else 1.0
+	particles.rotation *= -1.0 if sprite.flip_h else 1.0
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -gravity_switch * jump_force
