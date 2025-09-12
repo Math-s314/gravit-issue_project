@@ -15,6 +15,7 @@ tile_map_data = PackedByteArray("AADu//7/AAABAAIAAADu/wEAAAABAAAAAADv//7/AAABAAI
 
 [node name="Player" parent="." instance=ExtResource("2_m135w")]
 position = Vector2(-0.999992, 1)
+scale = Vector2(0.6, 0.6)
 
 [node name="Laser" parent="." instance=ExtResource("3_m135w")]
 tile_map_data = PackedByteArray("AAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAA=")

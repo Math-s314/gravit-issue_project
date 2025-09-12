@@ -37,7 +37,8 @@ zoom = Vector2(3, 3)
 position_smoothing_speed = 20.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, 27)
+position = Vector2(0, -21.5)
+rotation = 3.14159
 amount = 20
 texture = ExtResource("3_yqfyh")
 lifetime = 0.15
@@ -57,9 +58,7 @@ color = Color(0, 1, 1, 1)
 color_ramp = ExtResource("3_urha2")
 
 [node name="GravityTimer" type="Timer" parent="."]
-wait_time = 4096.0
 one_shot = true
-autostart = true
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
 [connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]
