@@ -21,8 +21,8 @@ var gravity_transition := false
 
 ## Display informations
 const EPSILON := 1e-2
-const BASE_EMITTER := Transform2D(0.0, Vector2(0.0, 19.0))
-const WALKING_EMITTER := Transform2D(deg_to_rad(47.0), Vector2(-10.0, 16.3))
+const BASE_EMITTER := Transform2D(0.0, Vector2(0.0, 27.0))
+const WALKING_EMITTER := Transform2D(deg_to_rad(47.0), Vector2(-10.0, 24.3))
 
 var min_particle_speed : float
 var max_particle_speed : float
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	particles.initial_velocity_max = lerp(max_particle_speed, 1.5 * max_particle_speed, abs(inputAxis))
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 	
-	if abs(inputAxis) > EPSILON and sprite.animation != &"Demi-tour":
+	if abs(inputAxis) > EPSILON and sprite.animation != &"Demi-tour" and sprite.animation != &"Renversement":
 		if inputAxis > 0.0 and sprite.flip_h == true :
 			sprite.play(&"Demi-tour")
 			particles.transform = BASE_EMITTER
@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 			particles.transform = WALKING_EMITTER
 			particles.position.x *= -1.0 if sprite.flip_h else 1.0
 			particles.rotation *= -1.0 if sprite.flip_h else 1.0
-	elif abs(inputAxis) < EPSILON :
+	elif abs(inputAxis) < EPSILON and sprite.animation != &"Renversement" :
 		sprite.play("Idle")
 		particles.transform = BASE_EMITTER
 	
@@ -67,7 +67,8 @@ func _process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("Gravité") :
+	if Input.is_action_just_released("Gravité") :
+		sprite.play("Renversement")
 		_on_gravity_switch()
 	
 
@@ -80,19 +81,22 @@ func get_gravity_coef() -> float:
 	
 func _on_gravity_switch():
 	if(gravity_transition): # Starting still period
-		scale.y = gravity_switch
 		gravity_transition = false
 		gravity_timer.wait_time = still_duration
 	else: # Starting transition period
 		gravity_transition = true
 		gravity_timer.wait_time = transition_duration
 		gravity_switch = -gravity_switch
-		up_direction.y = -up_direction.y
 	gravity_timer.start();
 
 func _on_animation_looped() -> void:
 	if sprite.animation == "Demi-tour" :
 		sprite.flip_h = not sprite.flip_h
 		sprite.stop()
-		print("fkseiopf")
 		sprite.play("Walking") # Replace with function body.
+	if sprite.animation == "Renversement" :
+		sprite.stop()
+		print("fkseiopf")
+		scale.y = gravity_switch
+		up_direction.y = -up_direction.y
+		sprite.play("Idle")

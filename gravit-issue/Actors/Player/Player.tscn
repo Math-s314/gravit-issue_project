@@ -16,28 +16,27 @@ point_count = 3
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
-transition_duration = 0.5
-still_duration = 1000.0
+transition_duration = 0.01
+still_duration = 10.0
 move_speed = 500.0
 jump_force = 400.0
 air_control = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_4x03u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 scale = Vector2(0.028, 0.031)
 sprite_frames = ExtResource("2_4x03u")
-animation = &"Saut"
+animation = &"Renversement"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 1)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 20.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, 19)
+position = Vector2(0, 27)
 amount = 20
 texture = ExtResource("3_yqfyh")
 lifetime = 0.15
