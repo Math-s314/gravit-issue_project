@@ -17,7 +17,7 @@ point_count = 3
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
 transition_duration = 0.5
-still_duration = 10.0
+still_duration = 1000.0
 move_speed = 500.0
 jump_force = 400.0
 air_control = 0.5
@@ -57,6 +57,7 @@ color = Color(0, 1, 1, 1)
 color_ramp = ExtResource("3_urha2")
 
 [node name="GravityTimer" type="Timer" parent="."]
+wait_time = 4096.0
 one_shot = true
 autostart = true
 

@@ -44,21 +44,32 @@ func _process(delta: float) -> void:
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 	
 	if abs(inputAxis) > EPSILON and sprite.animation != &"Demi-tour":
-		if inputAxis > 0.0 and sprite.flip_h == true : sprite.play(&"Demi-tour")
-		elif inputAxis  < 0.0 and sprite.flip_h == false : sprite.play(&"Demi-tour")
-		else : sprite.play("Walking")
+		if inputAxis > 0.0 and sprite.flip_h == true :
+			sprite.play(&"Demi-tour")
+			particles.transform = BASE_EMITTER
+		elif inputAxis  < 0.0 and sprite.flip_h == false : 
+			sprite.play(&"Demi-tour")
+			particles.transform = BASE_EMITTER
+		else : 
+			sprite.play("Walking")
+			particles.transform = WALKING_EMITTER
+			particles.position.x *= -1.0 if sprite.flip_h else 1.0
+			particles.rotation *= -1.0 if sprite.flip_h else 1.0
 	elif abs(inputAxis) < EPSILON :
 		sprite.play("Idle")
+		particles.transform = BASE_EMITTER
 	
 	
-	particles.transform = BASE_EMITTER if abs(inputAxis) < EPSILON else WALKING_EMITTER
-	particles.position.x *= -1.0 if sprite.flip_h else 1.0
-	particles.rotation *= -1.0 if sprite.flip_h else 1.0
+	
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -gravity_switch * jump_force
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("Gravité") :
+		_on_gravity_switch()
+	
 
 func get_gravity_coef() -> float:
 		if(!gravity_transition):
