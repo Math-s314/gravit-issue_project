@@ -18,7 +18,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
 transition_duration = 0.5
-still_duration = 3.0
+still_duration = 1.5e+06
 move_speed = 200.0
 jump_force = 300.0
 air_control = 0.5
@@ -30,15 +30,14 @@ shape = SubResource("CapsuleShape2D_4x03u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.028, 0.031)
 sprite_frames = ExtResource("2_4x03u")
-animation = &"Renversement"
+animation = &"Saut"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 position_smoothing_speed = 20.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, -21.5)
-rotation = 3.14159
+position = Vector2(0, 27)
 amount = 20
 texture = ExtResource("3_yqfyh")
 lifetime = 0.15
@@ -60,5 +59,10 @@ color_ramp = ExtResource("3_urha2")
 [node name="GravityTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
 [connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_end"]

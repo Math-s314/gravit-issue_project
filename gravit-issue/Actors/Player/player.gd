@@ -16,6 +16,7 @@ class_name Player
 var gravity_dir := 1.0; # UP is 1, DOWN is -1
 var gravity_transition := false
 @onready var gravity_timer := $GravityTimer
+@onready var jump_timer := $JumpTimer
 @onready var sprite := $AnimatedSprite2D
 @onready var particles := $CPUParticles2D
 
@@ -65,6 +66,9 @@ func handle_input() -> float:
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -gravity_dir * jump_force
+		explose_particles(true)
+		jump_timer.start()
+		
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
@@ -102,6 +106,21 @@ func handle_particle() -> void:
 		_: particles.transform = BASE_EMITTER
 	
 	particles.visible = !kill
+	
+func explose_particles(expl : bool) :
+	if expl :
+		particles.emission_rect_extents.x = 7.0
+		particles.spread = 70.0
+		particles.scale_amount_min = 0.03
+		particles.scale_amount_max = 0.06
+		particles.color = Color(1.0, 1.0, 0.196)
+	else:
+		particles.emission_rect_extents.x = 4.0
+		particles.spread = 20.0
+		particles.scale_amount_min = 0.01
+		particles.scale_amount_max = 0.02
+		particles.color = Color(0.0, 1.0, 1.0)
+		
 		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
@@ -129,3 +148,6 @@ func _on_animation_looped() -> void:
 
 		handle_animation(&"Renversement")
 		handle_particle()
+		
+func _on_jump_end() -> void:
+	explose_particles(false)
