@@ -65,7 +65,7 @@ func get_gravity_coef() -> float:
 	
 func _on_gravity_switch():
 	if(gravity_transition): # Starting still period
-		scale.y = gravity_switch
+		scale.y = abs(scale.y)*gravity_switch
 		gravity_transition = false
 		gravity_timer.wait_time = still_duration
 	else: # Starting transition period
