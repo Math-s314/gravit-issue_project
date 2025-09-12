@@ -38,3 +38,4 @@ offset = Vector2(0, -5)
 flip_v = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bum52")]
+position = Vector2(24, 131)

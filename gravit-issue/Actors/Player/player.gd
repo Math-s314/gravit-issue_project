@@ -34,7 +34,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Gravity
-	print(is_on_floor())
 	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
 	else: velocity.y = 0.0
 	
@@ -44,10 +43,15 @@ func _process(delta: float) -> void:
 	particles.initial_velocity_max = lerp(max_particle_speed, 1.5 * max_particle_speed, abs(inputAxis))
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 	
-	sprite.frame = floor(abs(inputAxis * 6.99))
-	if inputAxis > EPSILON : sprite.flip_h = false
-	elif inputAxis < -EPSILON : sprite.flip_h = true
-	particles.transform = BASE_EMITTER if sprite.frame == 0 else WALKING_EMITTER
+	if abs(inputAxis) > EPSILON and sprite.animation != &"Demi-tour":
+		if inputAxis > 0.0 and sprite.flip_h == true : sprite.play(&"Demi-tour")
+		elif inputAxis  < 0.0 and sprite.flip_h == false : sprite.play(&"Demi-tour")
+		else : sprite.play("Walking")
+	elif abs(inputAxis) < EPSILON :
+		sprite.play("Idle")
+	
+	
+	particles.transform = BASE_EMITTER if abs(inputAxis) < EPSILON else WALKING_EMITTER
 	particles.position.x *= -1.0 if sprite.flip_h else 1.0
 	particles.rotation *= -1.0 if sprite.flip_h else 1.0
 
@@ -74,3 +78,10 @@ func _on_gravity_switch():
 		gravity_switch = -gravity_switch
 		up_direction.y = -up_direction.y
 	gravity_timer.start();
+
+func _on_animation_looped() -> void:
+	if sprite.animation == "Demi-tour" :
+		sprite.flip_h = not sprite.flip_h
+		sprite.stop()
+		print("fkseiopf")
+		sprite.play("Walking") # Replace with function body.

@@ -1,38 +1,172 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://lfhvyob3ommm"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://lfhvyob3ommm"]
 
-[ext_resource type="Texture2D" uid="uid://g4lmyfij2lc" path="res://Actors/Player/Animations/Walking/sprite_0.png" id="1_irb7b"]
-[ext_resource type="Texture2D" uid="uid://bub5jh0h6n7dx" path="res://Actors/Player/Animations/Walking/sprite_1.png" id="2_cdq81"]
-[ext_resource type="Texture2D" uid="uid://dhhxf1c8qit3u" path="res://Actors/Player/Animations/Walking/sprite_2.png" id="3_o5i54"]
-[ext_resource type="Texture2D" uid="uid://cgif07lrvclw3" path="res://Actors/Player/Animations/Walking/sprite_3.png" id="4_15aw2"]
-[ext_resource type="Texture2D" uid="uid://bqs7cc1nw0qre" path="res://Actors/Player/Animations/Walking/sprite_4.png" id="5_ubjdv"]
-[ext_resource type="Texture2D" uid="uid://drwv2615v1utj" path="res://Actors/Player/Animations/Walking/sprite_5.png" id="6_lilqm"]
-[ext_resource type="Texture2D" uid="uid://f4w5svqkkrkg" path="res://Actors/Player/Animations/Walking/sprite_6.png" id="7_errci"]
+[ext_resource type="Texture2D" uid="uid://eugripxttp7c" path="res://Actors/Player/Animations/Spritesheets/Animation demi-tour.png" id="1_3tkp8"]
+[ext_resource type="Texture2D" uid="uid://chom56gi6ssod" path="res://Actors/Player/Animations/Spritesheets/Animation explosion.png" id="2_4xxux"]
+[ext_resource type="Texture2D" uid="uid://cvjpkgrwljay0" path="res://Actors/Player/Animations/Spritesheets/Animation double-saut.png" id="3_sqn5j"]
+[ext_resource type="Texture2D" uid="uid://bkbw6xce1hvrf" path="res://Actors/Player/Animations/Spritesheets/Animation course.png" id="4_irb7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5i54"]
+atlas = ExtResource("1_3tkp8")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15aw2"]
+atlas = ExtResource("1_3tkp8")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubjdv"]
+atlas = ExtResource("1_3tkp8")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tkp8"]
+atlas = ExtResource("1_3tkp8")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_errci"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttp11"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny4o8"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(4096, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wexrr"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kco1o"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbtsp"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(4096, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6jmm"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(0, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5hio"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(2048, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpkis"]
+atlas = ExtResource("2_4xxux")
+region = Rect2(4096, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y20ct"]
+atlas = ExtResource("3_sqn5j")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62hns"]
+atlas = ExtResource("3_sqn5j")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxtao"]
+atlas = ExtResource("3_sqn5j")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60qw3"]
+atlas = ExtResource("3_sqn5j")
+region = Rect2(0, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsys1"]
+atlas = ExtResource("4_irb7b")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3unky"]
+atlas = ExtResource("4_irb7b")
+region = Rect2(0, 2048, 2048, 2048)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_irb7b")
+"texture": SubResource("AtlasTexture_o5i54")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_cdq81")
+"texture": SubResource("AtlasTexture_15aw2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_o5i54")
+"texture": SubResource("AtlasTexture_ubjdv")
+}],
+"loop": true,
+"name": &"Demi-tour",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tkp8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_errci")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_15aw2")
+"texture": SubResource("AtlasTexture_ttp11")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ubjdv")
+"texture": SubResource("AtlasTexture_ny4o8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_lilqm")
+"texture": SubResource("AtlasTexture_wexrr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_errci")
+"texture": SubResource("AtlasTexture_kco1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbtsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6jmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5hio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpkis")
+}],
+"loop": true,
+"name": &"Mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y20ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62hns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxtao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60qw3")
+}],
+"loop": true,
+"name": &"Saut",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsys1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3unky")
 }],
 "loop": true,
 "name": &"Walking",
 "speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
