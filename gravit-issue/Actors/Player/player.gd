@@ -28,10 +28,11 @@ var min_particle_speed : float
 var max_particle_speed : float
 
 func _ready() -> void:
-	gravity_timer.wait_time = still_duration
+	gravity_timer.start(still_duration)
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
-	$"../AnimationPlayer".play("platforms")
+	$"../AnimationPlayer".play("move")
+	$"../AnimationPlayer".play("move2")
 
 func _process(delta: float) -> void:
 	# Gravity

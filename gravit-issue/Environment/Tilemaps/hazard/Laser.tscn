@@ -47,5 +47,5 @@ tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_7ughy")
 
 [node name="laser" type="TileMapLayer"]
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.25, 0.25)
 tile_set = SubResource("TileSet_3tjeb")
