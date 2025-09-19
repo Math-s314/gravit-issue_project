@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Gravit'Issue"
-run/main_scene="uid://cvtvtjx7154fh"
+run/main_scene="uid://7ltbw35bwoft"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameInstance="*res://Environment/GameInstance.gd"
 
 [input]
 

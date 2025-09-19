@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvtvtjx7154fh"]
+[gd_scene load_steps=9 format=3 uid="uid://7ltbw35bwoft"]
 
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="1_bum52"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_fxk6y"]
 [ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_p0vmq"]
+[ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="4_fxk6y"]
+[ext_resource type="PackedScene" uid="uid://dxqv5xp6bc1sp" path="res://Levels/Level1.tscn" id="5_4g7gh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wjexi"]
 
@@ -12,6 +15,7 @@ size = Vector2(1000, 10)
 normal = Vector2(0, 1)
 
 [node name="MainTest" type="Node2D"]
+script = ExtResource("1_fxk6y")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -1
@@ -38,4 +42,9 @@ offset = Vector2(0, -5)
 flip_v = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bum52")]
-position = Vector2(24, 131)
+position = Vector2(-100, 468)
+
+[node name="Door" parent="." instance=ExtResource("4_fxk6y")]
+position = Vector2(-487, 467)
+scale = Vector2(-1, 1)
+connected_level = ExtResource("5_4g7gh")

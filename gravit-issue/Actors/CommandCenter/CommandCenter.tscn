@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://co77yloob4v0x"]
+
+[ext_resource type="Script" uid="uid://df1qqk66h4j77" path="res://Actors/CommandCenter/CommandCenter.gd" id="1_s3bqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ove4"]
+
+[node name="CommandCenter" type="Area2D"]
+script = ExtResource("1_s3bqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0ove4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

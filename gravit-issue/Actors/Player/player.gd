@@ -32,9 +32,10 @@ var max_particle_speed : float
 
 ## Input information
 var inputAxis := 0.0
-var start_jump := false
-var start_reverse := false
+var freeze := false
 
+func _enter_tree() -> void:
+	GameInstance.getLevelManager().player = self
 
 func _ready() -> void:
 	gravity_timer.start(still_duration)
@@ -45,14 +46,17 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Gravity
-	print(is_on_floor())
 	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
 	else: velocity.y = 0.0
-	
-	handle_input()
-	handle_animation()
-	handle_particle()
-	move_and_slide()
+
+	if !freeze :
+		handle_input()
+		handle_animation()
+		handle_particle()
+		move_and_slide()
+	else :
+		sprite.play(&"Idle")
+		handle_particle()
 
 func get_gravity_coef() -> float:
 		if(!gravity_transition):
