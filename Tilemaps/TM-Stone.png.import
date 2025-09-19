@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkc3dd7f0yxed"
-path="res://.godot/imported/Laser.png-602931d8168cf8204ea5091232d22853.ctex"
+uid="uid://cpfib7tdsbo2s"
+path="res://.godot/imported/TM-Stone.png-c06f08fb447bd70f7571ed5ad4c20bdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/hazard/Laser.png"
-dest_files=["res://.godot/imported/Laser.png-602931d8168cf8204ea5091232d22853.ctex"]
+source_file="res://Environment/Tilemaps/TM-Stone.png"
+dest_files=["res://.godot/imported/TM-Stone.png-c06f08fb447bd70f7571ed5ad4c20bdf.ctex"]
 
 [params]
 

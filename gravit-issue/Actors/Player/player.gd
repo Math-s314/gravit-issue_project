@@ -31,6 +31,7 @@ func _ready() -> void:
 	gravity_timer.wait_time = still_duration
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
+	$"../AnimationPlayer".play("platforms")
 
 func _process(delta: float) -> void:
 	# Gravity
