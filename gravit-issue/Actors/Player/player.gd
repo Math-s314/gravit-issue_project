@@ -15,6 +15,7 @@ class_name Player
 ## Gravity switching
 var gravity_dir := 1.0; # UP is 1, DOWN is -1
 var gravity_transition := false
+var Animation_playing := false
 @onready var gravity_timer := $GravityTimer
 @onready var jump_timer := $JumpTimer
 @onready var sprite := $AnimatedSprite2D
@@ -54,7 +55,7 @@ func _process(delta: float) -> void:
 		handle_animation()
 		handle_particle()
 		move_and_slide()
-	else :
+	elif Animation_playing == false :
 		sprite.play(&"Idle")
 		handle_particle()
 
@@ -83,12 +84,14 @@ func handle_animation(ended := &"") -> void:
 	# Blocking animations
 	if sprite.animation == &"Demi-tour" and ended != &"Demi-tour" : return
 	if sprite.animation == &"Renversement" and ended != &"Renversement" : return
+	if Animation_playing == true : return;
 	
 	# Looping animations
 	if abs(inputAxis) > EPSILON :
 		if inputAxis > 0.0 and sprite.flip_h == true : sprite.play(&"Demi-tour")
 		elif inputAxis  < 0.0 and sprite.flip_h == false : sprite.play(&"Demi-tour")
 		else : sprite.play(&"Walking")
+		
 	elif abs(inputAxis) < EPSILON :
 		sprite.play(&"Idle")
 		particles.transform = BASE_EMITTER
@@ -125,6 +128,12 @@ func explose_particles(expl : bool) :
 		particles.scale_amount_max = 0.02
 		particles.color = Color(0.0, 1.0, 1.0)
 		
+func _on_PlayerArea_body_entered(body : Node2D):
+	print("fonction lancée")
+	if body.name == "Laser": 
+		print("eljkfbezjfezykf")
+		Animation_playing = true
+		sprite.play(&"Mort")  
 		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
@@ -145,13 +154,17 @@ func _on_animation_looped() -> void:
 		handle_animation(&"Demi-tour")
 		handle_particle()
 		
-	if sprite.animation == &"Renversement" :
+	if sprite.animation == &"Renversement"  :
 		scale.y = gravity_dir * abs(scale.y)
 		up_direction.y = -gravity_dir
 		sprite.stop()
 
 		handle_animation(&"Renversement")
 		handle_particle()
+	
+	if sprite.animation == &"Mort":
+		Animation_playing = false
 		
 func _on_jump_end() -> void:
 	explose_particles(false)
+	

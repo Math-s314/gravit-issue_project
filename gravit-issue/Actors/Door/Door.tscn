@@ -13,6 +13,7 @@ script = ExtResource("1_41oc4")
 metadata/_custom_type_script = "uid://dc8fqmfvw5qlv"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_41oc4")

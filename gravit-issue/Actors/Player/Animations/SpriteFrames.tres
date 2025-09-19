@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=28 format=3 uid="uid://lfhvyob3ommm"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://lfhvyob3ommm"]
 
 [ext_resource type="Texture2D" uid="uid://eugripxttp7c" path="res://Actors/Player/Animations/Spritesheets/Animation demi-tour.png" id="1_3tkp8"]
 [ext_resource type="Texture2D" uid="uid://chom56gi6ssod" path="res://Actors/Player/Animations/Spritesheets/Animation explosion.png" id="2_4xxux"]
@@ -21,22 +21,6 @@ region = Rect2(2048, 2048, 2048, 2048)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tkp8"]
 atlas = ExtResource("1_3tkp8")
 region = Rect2(0, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_errci"]
-atlas = ExtResource("2_4xxux")
-region = Rect2(0, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ttp11"]
-atlas = ExtResource("2_4xxux")
-region = Rect2(2048, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ny4o8"]
-atlas = ExtResource("2_4xxux")
-region = Rect2(4096, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wexrr"]
-atlas = ExtResource("2_4xxux")
-region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kco1o"]
 atlas = ExtResource("2_4xxux")
@@ -119,18 +103,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_errci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ttp11")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ny4o8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wexrr")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kco1o")
 }, {
