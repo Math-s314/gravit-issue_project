@@ -29,7 +29,7 @@ shape = ExtResource("2_vywg6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.028, 0.031)
 sprite_frames = ExtResource("2_4x03u")
-animation = &"Saut"
+animation = &"Mort"
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(2, 2)

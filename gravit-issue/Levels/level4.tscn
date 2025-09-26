@@ -932,3 +932,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ukveq")
 }
 autoplay = "move4"
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-629, 35)
