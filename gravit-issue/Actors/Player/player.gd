@@ -9,6 +9,7 @@ class_name Player
 
 @export_group("Controls")
 @export var move_speed : float
+@export var move_strength : float
 @export var jump_force : float
 @export var air_control : float
 
@@ -32,8 +33,11 @@ var min_particle_speed : float
 var max_particle_speed : float
 
 ## Input information
-var inputAxis := 0.0
 var freeze := false
+var kill_input :=false
+
+var input_axis     := 0.0
+var input_velocity := Vector2(0.0, 0.0)
 
 func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
@@ -44,22 +48,50 @@ func _ready() -> void:
 	max_particle_speed = particles.initial_velocity_max
 	
 	sprite.play(&"Idle") # To avoid blocking animations...
-	$"../AnimationPlayer".play("move")
-	$"../AnimationPlayer".play("move2")
+#	$"../AnimationPlayer".play("move")
+#	$"../AnimationPlayer".play("move2")
 
 func _process(delta: float) -> void:
 	# Gravity
 	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
-	else: velocity.y = 0.0
 
 	if !freeze :
 		handle_input()
 		handle_animation()
 		handle_particle()
-		move_and_slide()
+		launch_move(delta)
 	elif Animation_playing == false :
 		sprite.play(&"Idle")
 		handle_particle()
+		
+func mix_axis(vel : float, external : float, input : float, delta : float, keep := false) -> float:
+	if(abs(input) > EPSILON && abs(external) > EPSILON):
+		var coef_move : float = max(0.0, move_strength - abs(external)) / move_strength
+		var coef_exte : float = max(0.0, abs(external) - move_strength) / abs(external)
+		
+		if coef_move > EPSILON : vel = coef_move * input
+		else: vel += coef_exte * external * delta
+	elif abs(external) > EPSILON :
+		vel += external * delta
+	elif abs(input) > EPSILON :
+		vel = input
+		print(input)
+	elif !keep :
+		vel = input
+	
+	return vel
+		
+func launch_move(delta : float):
+	
+	# Gravity
+	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
+	else : velocity.y = 0.0
+	
+	if !kill_input:
+		velocity.x = input_velocity.x
+		velocity.y += input_velocity.y
+	
+	move_and_slide()
 
 func get_gravity_coef() -> float:
 		if(!gravity_transition):
@@ -68,19 +100,18 @@ func get_gravity_coef() -> float:
 			var progress : float = gravity_timer.time_left/transition_duration;
 			return gravity_dir * cos(PI * progress)
 
-func handle_input() -> float:
-	inputAxis =  Input.get_axis("Left", "Right") * (1.0 if is_on_floor() else air_control)
+func handle_input():
+	input_velocity = Vector2.ZERO
+	input_axis =  Input.get_axis("Left", "Right") * (1.0 if is_on_floor() else air_control)
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
-		velocity.y = -gravity_dir * jump_force
+		input_velocity.y = -gravity_dir * jump_force
 		explose_particles(true)
 		jump_timer.start()
 		
-	velocity = Vector2(inputAxis * move_speed, velocity.y)
+	input_velocity = Vector2(input_axis * move_speed, input_velocity.y)
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
-	
-	return inputAxis
 	
 func handle_animation(ended := &"") -> void:
 	# Blocking animations
@@ -89,12 +120,12 @@ func handle_animation(ended := &"") -> void:
 	if Animation_playing == true : return;
 	
 	# Looping animations
-	if abs(inputAxis) > EPSILON :
-		if inputAxis > 0.0 and sprite.flip_h == true : sprite.play(&"Demi-tour")
-		elif inputAxis  < 0.0 and sprite.flip_h == false : sprite.play(&"Demi-tour")
+	if abs(input_axis) > EPSILON :
+		if input_axis > 0.0 and sprite.flip_h == true : sprite.play(&"Demi-tour")
+		elif input_axis  < 0.0 and sprite.flip_h == false : sprite.play(&"Demi-tour")
 		else : sprite.play(&"Walking")
 		
-	elif abs(inputAxis) < EPSILON :
+	elif abs(input_axis) < EPSILON :
 		sprite.play(&"Idle")
 		particles.transform = BASE_EMITTER
 

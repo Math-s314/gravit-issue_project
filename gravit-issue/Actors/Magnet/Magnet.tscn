@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi5ctooh5yi32"]
+
+[ext_resource type="Script" uid="uid://nf5e1g6p07ds" path="res://Actors/Magnet/Magnet.gd" id="1_3abb8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3abb8"]
+
+[node name="Magnet" type="Sprite2D"]
+position = Vector2(0, -3.57628e-07)
+scale = Vector2(6, 5)
+texture = SubResource("PlaceholderTexture2D_3abb8")
+script = ExtResource("1_3abb8")
+strength = 50.0
+detection_length = 500.0
