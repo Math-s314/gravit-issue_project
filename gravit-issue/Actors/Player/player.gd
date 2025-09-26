@@ -48,13 +48,8 @@ func _ready() -> void:
 	max_particle_speed = particles.initial_velocity_max
 	
 	sprite.play(&"Idle") # To avoid blocking animations...
-#	$"../AnimationPlayer".play("move")
-#	$"../AnimationPlayer".play("move2")
 
 func _process(delta: float) -> void:
-	# Gravity
-	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
-
 	if !freeze :
 		handle_input()
 		handle_animation()
@@ -63,23 +58,6 @@ func _process(delta: float) -> void:
 	elif Animation_playing == false :
 		sprite.play(&"Idle")
 		handle_particle()
-		
-func mix_axis(vel : float, external : float, input : float, delta : float, keep := false) -> float:
-	if(abs(input) > EPSILON && abs(external) > EPSILON):
-		var coef_move : float = max(0.0, move_strength - abs(external)) / move_strength
-		var coef_exte : float = max(0.0, abs(external) - move_strength) / abs(external)
-		
-		if coef_move > EPSILON : vel = coef_move * input
-		else: vel += coef_exte * external * delta
-	elif abs(external) > EPSILON :
-		vel += external * delta
-	elif abs(input) > EPSILON :
-		vel = input
-		print(input)
-	elif !keep :
-		vel = input
-	
-	return vel
 		
 func launch_move(delta : float):
 	
