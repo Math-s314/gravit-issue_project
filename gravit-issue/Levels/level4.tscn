@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bq5jsyr36p27b"]
+[gd_scene load_steps=22 format=4 uid="uid://bq5jsyr36p27b"]
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls-Stone.tscn" id="1_n1e7r"]
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_nanxr"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/object/moving platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls-White.tscn" id="5_lfit2"]
+[ext_resource type="Script" uid="uid://20l8ywpfx7fd" path="res://Actors/Respawn/respawn.gd" id="9_g4w76"]
+[ext_resource type="PackedScene" uid="uid://dlx831iev2fce" path="res://Actors/Respawn/Respawn.tscn" id="9_ukveq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukveq"]
 texture = ExtResource("2_qep4h")
@@ -911,6 +913,10 @@ position = Vector2(-288, -948)
 
 [node name="MovingPlatform6" parent="." instance=ExtResource("4_h14kk")]
 position = Vector2(864, -884)
+
+[node name="Respawn" parent="." instance=ExtResource("9_ukveq")]
+position = Vector2(-595, 37)
+script = ExtResource("9_g4w76")
 
 [node name="Walls-white" parent="." instance=ExtResource("5_lfit2")]
 position = Vector2(1.45519e-11, 1.45519e-11)

@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlx831iev2fce"]
+
+[ext_resource type="Texture2D" uid="uid://cek3t6sddkory" path="res://Actors/Player/Animations/Spritesheets/Respawn (2).png" id="1_8kyvb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfau3"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykynb"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mh36"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p24pf"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q80ts"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho1ay"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sokuo"]
+atlas = ExtResource("1_8kyvb")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4ck"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfau3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykynb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mh36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p24pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q80ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho1ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sokuo")
+}],
+"loop": true,
+"name": &"respawn",
+"speed": 10.0
+}]
+
+[node name="Respawn" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, 3.8147e-06)
+scale = Vector2(0.189453, 0.184814)
+sprite_frames = SubResource("SpriteFrames_0h4ck")
+animation = &"respawn"
+frame_progress = 0.917112
