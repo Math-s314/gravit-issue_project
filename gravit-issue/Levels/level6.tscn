@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://duuqerf85vpog"]
+[gd_scene load_steps=9 format=4 uid="uid://c44kqkjgahq4f"]
 
-[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_8whwf"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_25qem"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_25qem"]
-[ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls-White.tscn" id="4_e2lxf"]
-[ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/object/moving platform.tscn" id="5_x3bpa"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_nft2l"]
+[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_wiukq"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_g804b"]
+[ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls-White.tscn" id="4_ftf2w"]
+[ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/object/moving platform.tscn" id="5_bc7qw"]
 
 [sub_resource type="Animation" id="Animation_vr4rd"]
 length = 0.001
@@ -45,19 +45,19 @@ _data = {
 }
 
 [node name="level" type="Node2D"]
-script = ExtResource("1_8whwf")
+script = ExtResource("1_nft2l")
 
-[node name="Player" parent="." instance=ExtResource("2_25qem")]
+[node name="Player" parent="." instance=ExtResource("2_wiukq")]
 position = Vector2(-0.999969, 26)
 air_control = 0.8
 
-[node name="Laser" parent="." instance=ExtResource("3_25qem")]
+[node name="Laser" parent="." instance=ExtResource("3_g804b")]
 
-[node name="Walls-white" parent="." instance=ExtResource("4_e2lxf")]
+[node name="Walls-white" parent="." instance=ExtResource("4_ftf2w")]
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD/////AAABAAIAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD+////AAABAAIAAAD9////AAABAAIAAAD8////AAABAAIAAAD7////AAABAAIAAAA=")
 
-[node name="MovingPlatform" parent="." instance=ExtResource("5_x3bpa")]
+[node name="MovingPlatform" parent="." instance=ExtResource("5_bc7qw")]
 position = Vector2(-102, 76)
 
 [node name="Animation_2s" type="AnimationPlayer" parent="."]
