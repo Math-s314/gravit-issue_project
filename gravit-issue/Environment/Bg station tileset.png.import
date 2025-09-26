@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://bti2da7rqyf2x"
-=======
-uid="uid://brsug0p7780a"
->>>>>>> Stashed changes
-path="res://.godot/imported/Background espace.png-5db6d91e3264ce39f91692447a5d2f3a.ctex"
+uid="uid://c5rdafq6hvr8u"
+path="res://.godot/imported/Bg station tileset.png-8cfcc12e88109201ac47c8e081aeb3de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Background espace.png"
-dest_files=["res://.godot/imported/Background espace.png-5db6d91e3264ce39f91692447a5d2f3a.ctex"]
+source_file="res://Environment/Bg station tileset.png"
+dest_files=["res://.godot/imported/Bg station tileset.png-8cfcc12e88109201ac47c8e081aeb3de.ctex"]
 
 [params]
 
