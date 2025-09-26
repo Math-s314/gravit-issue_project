@@ -44,8 +44,6 @@ func _ready() -> void:
 	max_particle_speed = particles.initial_velocity_max
 	
 	sprite.play(&"Idle") # To avoid blocking animations...
-	$"../AnimationPlayer".play("move")
-	$"../AnimationPlayer".play("move2")
 
 func _process(delta: float) -> void:
 	# Gravity
