@@ -44,6 +44,7 @@ flip_v = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bum52")]
 position = Vector2(-100, 468)
+move_strength = 0.0
 
 [node name="Door" parent="." instance=ExtResource("4_fxk6y")]
 position = Vector2(-487, 467)

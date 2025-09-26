@@ -66,7 +66,8 @@ func launch_move(delta : float):
 	else : velocity.y = 0.0
 	
 	if !kill_input:
-		velocity.x = input_velocity.x
+		if input_velocity.x == INF : velocity.x = 0.0
+		elif abs(input_velocity.x) > EPSILON || is_on_floor() :velocity.x = input_velocity.x
 		velocity.y += input_velocity.y
 	
 	move_and_slide()
@@ -88,6 +89,10 @@ func handle_input():
 		jump_timer.start()
 		
 	input_velocity = Vector2(input_axis * move_speed, input_velocity.y)
+	
+	if Input.is_action_just_released("Left") || Input.is_action_just_released("Right"):
+		input_velocity.x = INF
+		print("Rel")
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cji0tdneaopua"
-path="res://.godot/imported/Tilemap v2.png-c33b3047578ae02e44bc88081def73ef.ctex"
+uid="uid://cnkg8185nmwy"
+path="res://.godot/imported/Death orb.png-501b3ee9ecda046a07cd5b92cfdaaac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/Tilemap v2.png"
-dest_files=["res://.godot/imported/Tilemap v2.png-c33b3047578ae02e44bc88081def73ef.ctex"]
+source_file="res://Environment/object/Death orb.png"
+dest_files=["res://.godot/imported/Death orb.png-501b3ee9ecda046a07cd5b92cfdaaac2.ctex"]
 
 [params]
 

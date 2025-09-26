@@ -49,6 +49,7 @@ script = ExtResource("1_0n3a6")
 
 [node name="Player" parent="." instance=ExtResource("2_b3501")]
 position = Vector2(406, 27)
+move_strength = 0.0
 air_control = 0.8
 
 [node name="Laser" parent="." instance=ExtResource("3_fj68v")]

@@ -9,5 +9,5 @@ position = Vector2(0, -3.57628e-07)
 scale = Vector2(6, 5)
 texture = SubResource("PlaceholderTexture2D_3abb8")
 script = ExtResource("1_3abb8")
-strength = 50.0
-detection_length = 500.0
+strength = 15.0
+detection_length = 300.0

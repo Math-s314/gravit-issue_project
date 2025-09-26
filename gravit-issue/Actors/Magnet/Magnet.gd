@@ -3,6 +3,7 @@ class_name Magnet
 
 @export var strength := 300.0
 @export var detection_length := 200.0
+@export var release_length = 50.0
 var active := false
 
 func _on_start_attraction() -> void:
@@ -19,8 +20,11 @@ func _process(delta: float) -> void:
 		else : _on_start_attraction()
 		
 	if active:
-		var player := GameInstance.getLevelManager().player
+		var player := GameInstance.getLevelManager().player		
 		player.velocity += (position - player.position) * strength * delta
 		player.move_and_slide()
+		
+		if (player.position - position).length() < release_length:
+			_on_stop_attraction()
 		
 		
