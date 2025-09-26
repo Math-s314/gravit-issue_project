@@ -143,6 +143,7 @@ func _on_gravity_switch():
 		gravity_transition = true
 		gravity_timer.wait_time = transition_duration
 		gravity_dir = -gravity_dir
+		velocity[1]  = velocity[1] /2
 		sprite.play(&"Renversement")
 	gravity_timer.start();
 
