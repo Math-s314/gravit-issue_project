@@ -6,6 +6,9 @@ class_name Player
 @export var transition_duration : float
 @export var still_duration : float
 
+@export var acceleration := 800.0  # pixels/s², ajuste selon le feeling
+@export var max_speed := move_speed  # vitesse maximale
+
 @export var respawn_point: Node2D   # glisse le Marker2D dans l’inspecteur
 #@export_exp_easing var transition_speed := 1.0
 
@@ -78,7 +81,8 @@ func handle_input() -> float:
 		explose_particles(true)
 		jump_timer.start()
 		
-	velocity = Vector2(inputAxis * move_speed, velocity.y)
+	var target_velocity_x = inputAxis * move_speed
+	velocity.x = lerp(velocity.x, target_velocity_x, acceleration)
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
 	
@@ -138,6 +142,7 @@ func _on_PlayerArea_body_entered(body : Node2D):
 		print("eljkfbezjfezykf")
 		Animation_playing = true
 		sprite.play(&"Mort")  
+		
 
 func respawn():
 	if respawn_point:
