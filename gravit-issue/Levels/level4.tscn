@@ -1,10 +1,62 @@
-[gd_scene load_steps=10 format=4 uid="uid://bq5jsyr36p27b"]
+[gd_scene load_steps=11 format=4 uid="uid://bq5jsyr36p27b"]
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls-Stone.tscn" id="1_n1e7r"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_nanxr"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/object/moving platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls-White.tscn" id="5_lfit2"]
+
+[sub_resource type="Animation" id="Animation_nanxr"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingPlatform2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovingPlatform3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-101, 396)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MovingPlatform4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1056, -22)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MovingPlatform5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_lfit2"]
 resource_name = "move"
@@ -59,57 +111,6 @@ tracks/3/keys = {
 "values": [Vector2(863, 10), Vector2(1055, 10)]
 }
 
-[sub_resource type="Animation" id="Animation_nanxr"]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MovingPlatform2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(608, 76)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MovingPlatform3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-101, 396)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MovingPlatform4:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1056, -22)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MovingPlatform5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
 [sub_resource type="Animation" id="Animation_btbpw"]
 resource_name = "move2"
 length = 4.0
@@ -135,6 +136,7 @@ _data = {
 }
 
 [node name="level4" type="Node2D"]
+script = ExtResource("1_nanxr")
 
 [node name="Stone" parent="." instance=ExtResource("1_n1e7r")]
 tile_map_data = PackedByteArray("AAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAHAAQAAAABAAAAAABHAAAAAAABAAEAAABGAAAAAAABAAEAAABEAAAAAAABAAEAAABFAAAAAAABAAEAAAA=")
