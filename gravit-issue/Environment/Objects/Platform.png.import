@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df5jqrjn6bm4h"
-path="res://.godot/imported/TM-Base.png-e02e5e7173607eaeb15d797b5d6d8e5b.ctex"
+uid="uid://cl16yjxea16f8"
+path="res://.godot/imported/Platform.png-4e2f7c83743fa403950c06595b1ef401.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/TM-Base.png"
-dest_files=["res://.godot/imported/TM-Base.png-e02e5e7173607eaeb15d797b5d6d8e5b.ctex"]
+source_file="res://Environment/Objects/Platform.png"
+dest_files=["res://.godot/imported/Platform.png-4e2f7c83743fa403950c06595b1ef401.ctex"]
 
 [params]
 

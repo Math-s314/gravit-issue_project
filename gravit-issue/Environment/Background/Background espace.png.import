@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl16yjxea16f8"
-path="res://.godot/imported/Plateforme de base.png-b18095d8fa127bf89b4084492276aef8.ctex"
+uid="uid://baay0nst0r5yb"
+path="res://.godot/imported/Background espace.png-5cfbe3af2d1fe4d5b39eadf6e90ebcf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/object/Plateforme de base.png"
-dest_files=["res://.godot/imported/Plateforme de base.png-b18095d8fa127bf89b4084492276aef8.ctex"]
+source_file="res://Environment/Background/Background espace.png"
+dest_files=["res://.godot/imported/Background espace.png-5cfbe3af2d1fe4d5b39eadf6e90ebcf4.ctex"]
 
 [params]
 

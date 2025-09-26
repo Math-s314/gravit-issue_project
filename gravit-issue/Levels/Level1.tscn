@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=4 uid="uid://dxqv5xp6bc1sp"]
 
-[ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls-Stone.tscn" id="1_fhqol"]
-[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_nutv8"]
+[ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_fhqol"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/LevelManager.gd" id="1_nutv8"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_fhqol"]
 [ext_resource type="PackedScene" uid="uid://bx102kmwd60k6" path="res://Levels/level2.tscn" id="4_iotdp"]
+
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nutv8")

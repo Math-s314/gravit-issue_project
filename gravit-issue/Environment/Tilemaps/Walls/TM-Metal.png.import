@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baay0nst0r5yb"
-path="res://.godot/imported/Background espace.png-5db6d91e3264ce39f91692447a5d2f3a.ctex"
+uid="uid://byyla6oydgkxq"
+path="res://.godot/imported/TM-Metal.png-c59e9e1867710d342c0f2039e8e33ace.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Background espace.png"
-dest_files=["res://.godot/imported/Background espace.png-5db6d91e3264ce39f91692447a5d2f3a.ctex"]
+source_file="res://Environment/Tilemaps/Walls/TM-Metal.png"
+dest_files=["res://.godot/imported/TM-Metal.png-c59e9e1867710d342c0f2039e8e33ace.ctex"]
 
 [params]
 

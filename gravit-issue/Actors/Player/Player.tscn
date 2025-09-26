@@ -12,6 +12,7 @@ _data = [Vector2(0, 0.827561), 0.0, 1.11864, 0, 0, Vector2(0.523715, 0.894621), 
 point_count = 3
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_ech6m")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://om4bwksk7vaj"
-path="res://.godot/imported/Bg station tileset.png-c42777eef8675a406265ecc6f999ebf8.ctex"
+uid="uid://cpfib7tdsbo2s"
+path="res://.godot/imported/TM-Stone.png-e4b0ba85203ad3bce7263f6b944b0fe5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bg station tileset.png"
-dest_files=["res://.godot/imported/Bg station tileset.png-c42777eef8675a406265ecc6f999ebf8.ctex"]
+source_file="res://Environment/Tilemaps/Walls/TM-Stone.png"
+dest_files=["res://.godot/imported/TM-Stone.png-e4b0ba85203ad3bce7263f6b944b0fe5.ctex"]
 
 [params]
 

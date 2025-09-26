@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnkg8185nmwy"
-path="res://.godot/imported/Death orb.png-501b3ee9ecda046a07cd5b92cfdaaac2.ctex"
+path="res://.godot/imported/Orb.png-bbf0c0b888a6f8d38a599ad85bfa8965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/object/Death orb.png"
-dest_files=["res://.godot/imported/Death orb.png-501b3ee9ecda046a07cd5b92cfdaaac2.ctex"]
+source_file="res://Environment/Objects/Orb.png"
+dest_files=["res://.godot/imported/Orb.png-bbf0c0b888a6f8d38a599ad85bfa8965.ctex"]
 
 [params]
 

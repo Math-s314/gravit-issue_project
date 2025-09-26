@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://csjehqdiojqhc"]
 
-[ext_resource type="Texture2D" uid="uid://cpfib7tdsbo2s" path="res://Environment/Tilemaps/TM-Stone.png" id="1_hk506"]
+[ext_resource type="Texture2D" uid="uid://cpfib7tdsbo2s" path="res://Environment/Tilemaps/Walls/TM-Stone.png" id="1_hk506"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkmos"]
 texture = ExtResource("1_hk506")

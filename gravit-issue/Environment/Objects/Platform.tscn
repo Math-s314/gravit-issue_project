@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://nhcw2sc4mebl"]
 
-[ext_resource type="Texture2D" uid="uid://cl16yjxea16f8" path="res://Environment/object/Plateforme de base.png" id="1_qxom5"]
+[ext_resource type="Texture2D" uid="uid://cl16yjxea16f8" path="res://Environment/Objects/Platform.png" id="1_qxom5"]
+
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 

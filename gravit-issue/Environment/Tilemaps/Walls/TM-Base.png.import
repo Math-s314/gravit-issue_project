@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpfib7tdsbo2s"
-path="res://.godot/imported/TM-Stone.png-c06f08fb447bd70f7571ed5ad4c20bdf.ctex"
+uid="uid://df5jqrjn6bm4h"
+path="res://.godot/imported/TM-Base.png-3b57a24346dc7ecb03056e2e050faffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/TM-Stone.png"
-dest_files=["res://.godot/imported/TM-Stone.png-c06f08fb447bd70f7571ed5ad4c20bdf.ctex"]
+source_file="res://Environment/Tilemaps/Walls/TM-Base.png"
+dest_files=["res://.godot/imported/TM-Base.png-3b57a24346dc7ecb03056e2e050faffe.ctex"]
 
 [params]
 
