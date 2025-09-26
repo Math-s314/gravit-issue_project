@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0gh37g0lksgk"]
+[gd_scene load_steps=4 format=3 uid="uid://d0gh37g0lksgk"]
 
 [ext_resource type="Texture2D" uid="uid://dkc3dd7f0yxed" path="res://Environment/Tilemaps/hazard/Laser.png" id="1_n5uyj"]
 
@@ -58,4 +58,3 @@ sources/0 = SubResource("TileSetAtlasSource_7ughy")
 scale = Vector2(0.25, 0.25)
 tile_set = SubResource("TileSet_3tjeb")
 collision_visibility_mode = 1
-script = ExtResource("2_7ughy")
