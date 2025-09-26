@@ -14,12 +14,12 @@ point_count = 3
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_ech6m")
-gravity_strength = 800.0
-transition_duration = 0.5
-still_duration = 1.5e+06
-move_speed = 200.0
+gravity_strength = 500.0
+transition_duration = 1.0
+still_duration = 7.0
+move_speed = 300.0
 jump_force = 300.0
-air_control = 0.5
+air_control = 0.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -31,8 +31,9 @@ sprite_frames = ExtResource("2_4x03u")
 animation = &"Saut"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 27)
