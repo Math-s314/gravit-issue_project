@@ -1,12 +1,34 @@
-[gd_scene load_steps=14 format=4 uid="uid://bq5jsyr36p27b"]
+[gd_scene load_steps=20 format=4 uid="uid://bq5jsyr36p27b"]
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls-Stone.tscn" id="1_n1e7r"]
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/BaseLevel/LevelManager.gd" id="1_nanxr"]
+[ext_resource type="Texture2D" uid="uid://dby0q3a0ss604" path="res://Environment/Bg station plus gris.png" id="2_btbpw"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
+[ext_resource type="Texture2D" uid="uid://chdsrhkxr8mes" path="res://Environment/bg_space_seamless_1.png" id="2_qep4h"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/object/moving platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls-White.tscn" id="5_lfit2"]
 [ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukveq"]
+texture = ExtResource("2_qep4h")
+texture_region_size = Vector2i(512, 256)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4w76"]
+tile_size = Vector2i(512, 256)
+sources/0 = SubResource("TileSetAtlasSource_ukveq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qep4h"]
+texture = ExtResource("2_btbpw")
+texture_region_size = Vector2i(512, 256)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ukveq"]
+tile_size = Vector2i(512, 256)
+sources/0 = SubResource("TileSetAtlasSource_qep4h")
 
 [sub_resource type="Animation" id="Animation_nanxr"]
 length = 2.0
@@ -106,6 +128,33 @@ _data = {
 &"move": SubResource("Animation_lfit2")
 }
 
+[sub_resource type="Animation" id="Animation_qep4h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("platform/MovingPlatform5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-288, -948)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("platform/MovingPlatform6:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, -884)]
+}
+
 [sub_resource type="Animation" id="Animation_btbpw"]
 resource_name = "move4"
 length = 4.0
@@ -135,33 +184,6 @@ tracks/1/keys = {
 "values": [Vector2(864, -884), Vector2(1376, -884)]
 }
 
-[sub_resource type="Animation" id="Animation_qep4h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("platform/MovingPlatform5:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-288, -948)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("platform/MovingPlatform6:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(864, -884)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukveq"]
 _data = {
 &"RESET": SubResource("Animation_qep4h"),
@@ -170,6 +192,19 @@ _data = {
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_nanxr")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D2"]
+tile_map_data = PackedByteArray("AAD///3/AAAAAAAAAAAAAP3/AAAAAAEAAAD///z/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD/////AAAAAAAAAAD///7/AAAAAAEAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAD///v/AAAAAAAAAAD+//v/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAEAAAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAABAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD+//z/AAAAAAAAAAACAPz/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAAEAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAEAAAAAAAAAAAD9//z/AAAAAAAAAAD9//v/AAAAAAAAAAD9//r/AAAAAAAAAAD9//n/AAAAAAAAAAD9//j/AAAAAAAAAAD+//f/AAAAAAAAAAD///f/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD///n/AAAAAAAAAAD+//j/AAAAAAAAAAD///j/AAAAAAAAAAABAPj/AAAAAAAAAAACAPn/AAAAAAAAAAADAPn/AAAAAAAAAAADAPr/AAAAAAAAAAABAPn/AAAAAAAAAAADAPv/AAAAAAAAAAADAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_g4w76")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D"]
+tile_map_data = PackedByteArray("AAD+//r/AAAAAAEAAAD///v/AAAAAAEAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAAAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAACAP//AAAAAAAAAAACAP7/AAAAAAEAAAACAPz/AAAAAAEAAAACAP3/AAAAAAEAAAACAPv/AAAAAAEAAAACAPr/AAAAAAEAAAADAPz/AAAAAAEAAAADAP3/AAAAAAEAAAADAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAAAAAAAAAEAAAADAAEAAAAAAAEAAAADAAMAAAAAAAEAAAADAAQAAAAAAAEAAAADAPv/AAAAAAEAAAADAPr/AAAAAAEAAAACAAMAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAP//AAAAAAEAAAAAAP7/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPr/AAAAAAEAAAABAPr/AAAAAAEAAAABAAEAAAAAAAEAAAABAAAAAAAAAAEAAAABAP3/AAAAAAEAAAABAPz/AAAAAAEAAAABAPv/AAAAAAEAAAABAPn/AAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wAAAAAAAAEAAAD/////AAAAAAEAAAD///7/AAAAAAEAAAD///3/AAAAAAEAAAD///z/AAAAAAAAAAD///r/AAAAAAEAAAAAAPn/AAAAAAEAAAD//wEAAAAAAAAAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD+//7/AAAAAAEAAAD+//3/AAAAAAEAAAD+//z/AAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+//v/AAAAAAEAAAD9/wAAAAAAAAEAAAD8////AAAAAAEAAAD8//7/AAAAAAEAAAD8//3/AAAAAAEAAAD8//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//r/AAAAAAEAAAD//wMAAAAAAAEAAAD//wIAAAAAAAEAAAD+/wQAAAAAAAEAAAD9/wMAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD9////AAAAAAEAAAD9//7/AAAAAAEAAAD9//3/AAAAAAEAAAD9//z/AAAAAAEAAAD9//v/AAAAAAEAAAACAAQAAAAAAAEAAAABAAQAAAAAAAEAAAAAAAQAAAAAAAEAAAD///n/AAAAAAEAAAD+//n/AAAAAAEAAAACAPn/AAAAAAEAAAADAPn/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_ukveq")
 
 [node name="Stone" parent="." instance=ExtResource("1_n1e7r")]
 tile_map_data = PackedByteArray("AAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAHAAQAAAABAAAAAABHAAAAAAABAAEAAABGAAAAAAABAAEAAABEAAAAAAABAAEAAABFAAAAAAABAAEAAAA=")

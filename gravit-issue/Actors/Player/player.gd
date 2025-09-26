@@ -5,6 +5,11 @@ class_name Player
 @export var gravity_strength : float
 @export var transition_duration : float
 @export var still_duration : float
+
+@export var acceleration := 800.0  # pixels/s², ajuste selon le feeling
+@export var max_speed := move_speed  # vitesse maximale
+
+@export var respawn_point: Node2D   # glisse le Marker2D dans l’inspecteur
 #@export_exp_easing var transition_speed := 1.0
 
 @export_group("Controls")
@@ -43,10 +48,12 @@ func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
 
 func _ready() -> void:
+	respawn_point = get_tree().current_scene.get_node("Spawn")
+	if respawn_point:
+		global_position = respawn_point.global_position
 	gravity_timer.start(still_duration)
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
-	
 	sprite.play(&"Idle") # To avoid blocking animations...
 
 func _process(delta: float) -> void:
@@ -151,6 +158,12 @@ func _on_PlayerArea_body_entered(body : Node2D):
 		Animation_playing = true
 		sprite.play(&"Mort")  
 		
+
+func respawn():
+	if respawn_point:
+		global_position = respawn_point.global_position
+		velocity = Vector2.ZERO   # stoppe le mouvement
+		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
 		gravity_transition = false
@@ -159,6 +172,7 @@ func _on_gravity_switch():
 		gravity_transition = true
 		gravity_timer.wait_time = transition_duration
 		gravity_dir = -gravity_dir
+		velocity[1]  = velocity[1] /2
 		sprite.play(&"Renversement")
 	gravity_timer.start();
 
@@ -180,6 +194,7 @@ func _on_animation_looped() -> void:
 	
 	if sprite.animation == &"Mort":
 		Animation_playing = false
+		respawn()
 		
 func _on_jump_end() -> void:
 	explose_particles(false)
