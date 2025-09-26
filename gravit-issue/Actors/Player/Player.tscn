@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
 [ext_resource type="SpriteFrames" uid="uid://lfhvyob3ommm" path="res://Actors/Player/Animations/SpriteFrames.tres" id="2_4x03u"]
+[ext_resource type="Shape2D" uid="uid://q77q6uqfka65" path="res://Actors/Player/CollsionPlayer.tres" id="2_vywg6"]
 [ext_resource type="Gradient" uid="uid://d4ghvv4ah3poc" path="res://Actors/Player/Animations/BlueColorGrad.tres" id="3_urha2"]
 [ext_resource type="Texture2D" uid="uid://cskw56xmqgyhk" path="res://Actors/Player/Animations/ParticlesTexture.png" id="3_yqfyh"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4x03u"]
-radius = 15.0
-height = 50.0
 
 [sub_resource type="Curve" id="Curve_ech6m"]
 _data = [Vector2(0, 0.827561), 0.0, 1.11864, 0, 0, Vector2(0.523715, 0.894621), -1.8178, -1.8178, 0, 0, Vector2(0.998024, 0.396463), -0.18644, 0.0, 0, 0]
@@ -15,6 +12,7 @@ point_count = 3
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
+collision_layer = 2
 script = ExtResource("1_ech6m")
 gravity_strength = 800.0
 transition_duration = 0.5
@@ -25,7 +23,7 @@ air_control = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_4x03u")
+shape = ExtResource("2_vywg6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.028, 0.031)
@@ -63,6 +61,14 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = ExtResource("2_vywg6")
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
 [connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_end"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_PlayerArea_body_entered"]
