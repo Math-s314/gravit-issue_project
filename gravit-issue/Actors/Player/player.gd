@@ -21,7 +21,6 @@ class_name Player
 ## Gravity switching
 var gravity_dir := 1.0; # UP is 1, DOWN is -1
 var gravity_transition := false
-var Animation_playing := false
 @onready var gravity_timer := $GravityTimer
 @onready var jump_timer := $JumpTimer
 @onready var sprite := $AnimatedSprite2D
@@ -62,19 +61,19 @@ func _process(delta: float) -> void:
 		handle_animation()
 		handle_particle()
 		launch_move(delta)
-	elif Animation_playing == false :
-		sprite.play(&"Idle")
+	else :
+		if sprite.animation != &"Mort" : sprite.play(&"Idle")
 		handle_particle()
 		
 func launch_move(delta : float):
-	
 	# Gravity
 	if(!is_on_floor()): velocity.y += get_gravity_coef() * gravity_strength * delta;
 	else : velocity.y = 0.0
 	
-	if !kill_input:
+	# In case we want to block input from reaching the player...
+	if !kill_input: # BUG : If input is killed and the player is pressing a key it will continue forever...
 		if input_velocity.x == INF : velocity.x = 0.0
-		elif abs(input_velocity.x) > EPSILON || is_on_floor() :velocity.x = input_velocity.x
+		elif abs(input_velocity.x) > EPSILON || is_on_floor() : velocity.x = input_velocity.x
 		velocity.y += input_velocity.y
 	
 	move_and_slide()
@@ -105,9 +104,9 @@ func handle_input():
 	
 func handle_animation(ended := &"") -> void:
 	# Blocking animations
-	if sprite.animation == &"Demi-tour" and ended != &"Demi-tour" : return
+	if sprite.animation == &"Demi-tour" and ended != &"Demi-tour" 		: return
 	if sprite.animation == &"Renversement" and ended != &"Renversement" : return
-	if Animation_playing == true : return;
+	if sprite.animation == &"Mort" and ended != &"Mort" 				: return
 	
 	# Looping animations
 	if abs(input_axis) > EPSILON :
@@ -133,6 +132,7 @@ func handle_particle() -> void:
 				0: particles.transform = MID_DOWN_EMITTER
 				1: kill = true
 				2: particles.transform = MID_UP_EMITTER
+		&"Mort" : kill = true
 		_: particles.transform = BASE_EMITTER
 	
 	particles.visible = !kill
@@ -150,19 +150,16 @@ func explose_particles(expl : bool) :
 		particles.scale_amount_min = 0.01
 		particles.scale_amount_max = 0.02
 		particles.color = Color(0.0, 1.0, 1.0)
-		
-func _on_PlayerArea_body_entered(body : Node2D):
-	print("fonction lancée")
-	if body.name == "Laser": 
-		print("eljkfbezjfezykf")
-		Animation_playing = true
-		sprite.play(&"Mort")  
-		
 
 func respawn():
 	if respawn_point:
 		global_position = respawn_point.global_position
 		velocity = Vector2.ZERO   # stoppe le mouvement
+		
+func _on_hazard_entered(body : Node2D):
+	if body.name == "Laser": #Cas des lasers
+		freeze = true
+		sprite.play(&"Mort")
 		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
@@ -193,7 +190,6 @@ func _on_animation_looped() -> void:
 		handle_particle()
 	
 	if sprite.animation == &"Mort":
-		Animation_playing = false
 		respawn()
 		
 func _on_jump_end() -> void:

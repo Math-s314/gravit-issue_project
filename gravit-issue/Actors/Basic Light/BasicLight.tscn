@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dman68d2orcj"]
+
+[ext_resource type="Texture2D" uid="uid://dqs46t56y484x" path="res://Actors/Red Light/TXT-Light.png" id="1_1naa0"]
+
+[node name="BasicLight" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0, 0.627451, 1, 1)
+texture = ExtResource("1_1naa0")
+texture_scale = 0.5

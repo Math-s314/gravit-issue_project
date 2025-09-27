@@ -3,11 +3,16 @@
 [ext_resource type="Script" uid="uid://nf5e1g6p07ds" path="res://Actors/Magnet/Magnet.gd" id="1_3abb8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3abb8"]
+size = Vector2(6, 6)
 
-[node name="Magnet" type="Sprite2D"]
+[node name="Magnet" type="Area2D"]
 position = Vector2(0, -3.57628e-07)
-scale = Vector2(6, 5)
-texture = SubResource("PlaceholderTexture2D_3abb8")
 script = ExtResource("1_3abb8")
 strength = 15.0
 detection_length = 300.0
+release_length = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_3abb8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

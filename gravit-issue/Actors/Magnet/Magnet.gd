@@ -1,9 +1,10 @@
-extends Sprite2D
+extends Area2D
 class_name Magnet
 
-@export var strength := 300.0
-@export var detection_length := 200.0
-@export var release_length = 50.0
+@export var strength : float
+@export var detection_length : float
+@export var release_length : float
+
 var active := false
 
 func _on_start_attraction() -> void:
@@ -14,19 +15,24 @@ func _on_stop_attraction() -> void:
 	active = false
 	GameInstance.getLevelManager().player.kill_input = false
 	
+func _on_body_entered(body : Node2D) -> void:
+	if body is Player : _on_stop_attraction()
+	
+func check_player_release() -> bool:
+	var player : Player = GameInstance.getLevelManager().player
+	return (player.position - position).length() < release_length \
+		|| player.is_on_floor() || player.is_on_ceiling() \
+		|| player.freeze
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Magnet") && detection_length > (position - GameInstance.getLevelManager().player.position).length():
 		if active : _on_stop_attraction()
 		else : _on_start_attraction()
 		
 	if active:
-		var player := GameInstance.getLevelManager().player
+		var player : Player = GameInstance.getLevelManager().player
 		player.velocity += (position - player.position) * strength * delta
 		player.move_and_slide()
 		
-		if (player.position - position).length() < release_length:
+		if check_player_release():
 			_on_stop_attraction()
-		elif player.is_on_floor() or player.is_on_ceiling():
-			_on_stop_attraction()
-		
-		

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cl16yjxea16f8" path="res://Environment/Objects/Platform.png" id="1_qxom5"]
 
-
 [node name="MovingPlatform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -10,4 +9,4 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_qxom5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-31, -10, 32, -10, 26, 4, -25, 4)
+polygon = PackedVector2Array(-29, -10, 29, -10, 23, 3, -23, 3)

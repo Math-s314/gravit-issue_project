@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://bq5jsyr36p27b"]
+[gd_scene load_steps=18 format=4 uid="uid://bq5jsyr36p27b"]
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_n1e7r"]
-[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/LevelManager.gd" id="1_nanxr"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_nanxr"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_ukveq"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_lfit2"]
@@ -170,8 +170,15 @@ _data = {
 &"move4": SubResource("Animation_btbpw")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukveq"]
+radius = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukveq"]
+size = Vector2(20, 100)
+
 [node name="level4" type="Node2D"]
 script = ExtResource("1_nanxr")
+level_number = 4
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 z_index = -1
@@ -238,11 +245,19 @@ autoplay = "move4"
 [node name="Magnet1" parent="magnet" instance=ExtResource("7_btbpw")]
 position = Vector2(159, -1065)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="magnet/Magnet1"]
+position = Vector2(0, 50)
+shape = SubResource("CircleShape2D_ukveq")
+
 [node name="Magnet2" parent="magnet" instance=ExtResource("7_btbpw")]
 position = Vector2(1402, -663)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="magnet/Magnet2"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_ukveq")
+
 [node name="Player" parent="." instance=ExtResource("2_h14kk")]
-position = Vector2(1830, -166)
+position = Vector2(1179, -603)
 transition_duration = 0.5
 still_duration = 10000.0
 move_strength = 0.0

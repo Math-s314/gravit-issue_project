@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://m5qf51b24mwv"]
 
-[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/LevelManager.gd" id="1_vr4rd"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_vr4rd"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_25qem"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_25qem"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="3_c5oim"]
@@ -68,8 +68,9 @@ _data = {
 &"move2": SubResource("Animation_eh6o7")
 }
 
-[node name="level" type="Node2D"]
+[node name="level3" type="Node2D"]
 script = ExtResource("1_vr4rd")
+level_number = 3
 
 [node name="Player" parent="." instance=ExtResource("2_25qem")]
 position = Vector2(-318, 32)

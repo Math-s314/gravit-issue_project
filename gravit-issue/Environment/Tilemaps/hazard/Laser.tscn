@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dkc3dd7f0yxed" path="res://Environment/Tilemaps/Hazard/TM-Laser.png" id="1_n5uyj"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ughy"]
 texture = ExtResource("1_n5uyj")
 texture_region_size = Vector2i(128, 128)
@@ -55,7 +54,7 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_7ughy")
 
-[node name="laser" type="TileMapLayer"]
+[node name="Laser" type="TileMapLayer"]
 scale = Vector2(0.25, 0.25)
 tile_set = SubResource("TileSet_3tjeb")
 collision_visibility_mode = 1
