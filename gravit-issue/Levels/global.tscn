@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckdqhmhhrhama"]
+[gd_scene load_steps=5 format=3 uid="uid://dnp7mmdh2ejb0"]
 
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="1_uol8u"]
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="2_svy6q"]
-[ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="3_svy6q"]
-[ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="4_8xwhe"]
+[ext_resource type="PackedScene" uid="uid://b13eqldi7bupt" path="res://Levels/level5.tscn" id="3_svy6q"]
+[ext_resource type="PackedScene" uid="uid://ceg4fb563o8q1" path="res://Levels/level6.tscn" id="4_8xwhe"]
 
 [node name="Global" type="Node2D"]
 

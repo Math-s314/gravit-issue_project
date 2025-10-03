@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://cajhgrw28yl67"]
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
-[ext_resource type="PackedScene" uid="uid://dxqv5xp6bc1sp" path="res://Levels/level1.tscn" id="2_7mj7t"]
 [ext_resource type="PackedScene" uid="uid://7ltbw35bwoft" path="res://Levels/MainTest.tscn" id="2_q5qeu"]
+[ext_resource type="PackedScene" uid="uid://c61y3hrp6ivkh" path="res://Levels/Level1.tscn" id="3_ag1o7"]
 [ext_resource type="PackedScene" uid="uid://bx102kmwd60k6" path="res://Levels/level2.tscn" id="3_q5qeu"]
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="4_ag1o7"]
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="5_faa51"]
-[ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="6_bwc7g"]
-[ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="7_gf0xu"]
+[ext_resource type="PackedScene" uid="uid://b13eqldi7bupt" path="res://Levels/level5.tscn" id="6_bwc7g"]
+[ext_resource type="PackedScene" uid="uid://ceg4fb563o8q1" path="res://Levels/level6.tscn" id="7_gf0xu"]
 
 [node name="GameInstance" type="Node"]
 script = ExtResource("1_s8j48")
 transition_duration = 2.0
-levels = Array[PackedScene]([ExtResource("2_q5qeu"), ExtResource("2_7mj7t"), ExtResource("3_q5qeu"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu")])
+levels = Array[PackedScene]([ExtResource("2_q5qeu"), ExtResource("3_ag1o7"), ExtResource("3_q5qeu"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu")])
 metadata/_custom_type_script = "uid://csfn1aml2p131"

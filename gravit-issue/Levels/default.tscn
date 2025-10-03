@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_25qem"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_e2lxf"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_x3bpa"]
-[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="6_e2lxf"]
+[ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="6_e2lxf"]
 
 [sub_resource type="Animation" id="Animation_vr4rd"]
 length = 0.001

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c28roodir7263" path="res://Environment/Background/BG-Gris.tscn" id="3_ukveq"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="5_lfit2"]
-[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+[ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
 
 [sub_resource type="Animation" id="Animation_nanxr"]
 length = 2.0
