@@ -6,8 +6,8 @@ extends Spawner
 var active := true
 
 func spawn_player(player : Player) -> void:
-	active = false
-	player.position = to_global(Vector2(-10, 20))
+	active = true
+	player.position = to_global(Vector2(-50, 20))
 	player.freeze = false
 	
 func _on_body_entered(body:Node2D) -> void:

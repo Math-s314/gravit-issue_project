@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingPlatform:position")
+tracks/0/path = NodePath("platforms/MovingPlatform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MovingPlatform2:position")
+tracks/1/path = NodePath("platforms/MovingPlatform2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,34 +33,82 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-101, -12)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("platforms/MovingPlatform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(204, 33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("platforms/MovingPlatform4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-140, 31)]
+}
 
 [sub_resource type="Animation" id="Animation_eh6o7"]
 resource_name = "move2"
-length = 2.0
+length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingPlatform:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("platforms/MovingPlatform:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-102, 76), Vector2(165, 76)]
+"values": [Vector2(-95, 76), Vector2(-95, 76), Vector2(160, 76), Vector2(160, 76)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MovingPlatform2:position")
-tracks/1/interp = 2
+tracks/1/path = NodePath("platforms/MovingPlatform2:position")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-101, -12), Vector2(167, -12)]
+"values": [Vector2(-95, -12), Vector2(-95, -12), Vector2(160, -12), Vector2(160, -12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("platforms/MovingPlatform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-50, 32), Vector2(-50, 32), Vector2(204, 33), Vector2(204, 103)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("platforms/MovingPlatform4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-140, 103), Vector2(-140, 31), Vector2(116, 32), Vector2(116, 32)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eex2w"]
@@ -82,19 +130,6 @@ tile_map_data = PackedByteArray("AAD+/wIAAAAAAAAAAAD//wIAAAAAAAUAAAACAAIAAAAAAAI
 [node name="Walls-white" parent="." instance=ExtResource("3_c5oim")]
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAD4/wEAAAABAAAAAAD5/wEAAAABAAAAAAD6/wEAAAABAAAAAAD7/wEAAAABAAAAAAD8/wEAAAABAAAAAAD9/wEAAAACAAAAAAADAAEAAAAAAAAAAAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAD4////AAABAAIAAAD5////AAABAAIAAAD6////AAABAAIAAAD7////AAABAAIAAAD8////AAABAAIAAAD9////AAACAAIAAAADAP//AAAAAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAABAAQAAAAAAAEAAAABAAUAAAAAAAEAAAABAAYAAAAAAAEAAAABAPv/AAAAAAEAAAABAPr/AAAAAAEAAAABAPn/AAAAAAEAAAD///v/AAACAAEAAAD///r/AAACAAEAAAD///n/AAACAAEAAAD//wMAAAACAAAAAAABAAMAAAAAAAAAAAACAAMAAAABAAAAAAADAAIAAAAAAAEAAAADAP7/AAAAAAEAAAD9/wIAAAACAAEAAAD9//7/AAACAAEAAAD+//3/AAABAAIAAAACAP3/AAABAAIAAAD+/wMAAAABAAAAAAD9/wMAAAABAAMAAAADAP3/AAACAAMAAAADAAMAAAAAAAMAAAD9//3/AAAAAAQAAAD///z/AAACAAEAAAABAPz/AAAAAAEAAAD///3/AAACAAIAAAABAP3/AAAAAAIAAAD//wcAAAACAAEAAAABAAcAAAAAAAEAAAABAAgAAAAAAAEAAAD//wgAAAACAAEAAAAGAP7/AAABAAAAAAAFAP7/AAABAAAAAAAEAP7/AAABAAMAAAAEAP3/AAACAAEAAAAEAPz/AAACAAAAAAADAPz/AAABAAAAAAACAPz/AAABAAMAAAACAPv/AAACAAEAAAACAPr/AAACAAEAAAAHAPz/AAABAAIAAAAHAP7/AAABAAAAAAAHAP//AAABAAIAAAAHAAEAAAABAAAAAAAGAPz/AAAAAAIAAAAGAPv/AAAAAAEAAAAGAPr/AAAAAAEAAAAFAPn/AAABAAIAAAAEAPn/AAABAAIAAAADAPn/AAABAAIAAAACAPn/AAAAAAQAAAAGAPn/AAACAAMAAAA=")
-
-[node name="MovingPlatform" parent="." instance=ExtResource("4_eh6o7")]
-position = Vector2(-102, 76)
-
-[node name="MovingPlatform2" parent="." instance=ExtResource("4_eh6o7")]
-position = Vector2(-101, -12)
-rotation = 3.14159
-
-[node name="Animation_2s" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_eex2w")
-}
-autoplay = "move2"
 
 [node name="doors" type="Node" parent="."]
 
@@ -120,3 +155,27 @@ connected_door = NodePath("doors/Door2")
 [node name="Door5" parent="doors" instance=ExtResource("6_eex2w")]
 position = Vector2(519, -161)
 connected_level = 4
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="platforms" instance=ExtResource("4_eh6o7")]
+position = Vector2(-102, 76)
+
+[node name="MovingPlatform2" parent="platforms" instance=ExtResource("4_eh6o7")]
+position = Vector2(-101, -12)
+rotation = 3.14159
+
+[node name="MovingPlatform3" parent="platforms" instance=ExtResource("4_eh6o7")]
+position = Vector2(204, 33)
+rotation = -1.5708
+
+[node name="MovingPlatform4" parent="platforms" instance=ExtResource("4_eh6o7")]
+position = Vector2(-140, 31)
+rotation = 1.5708
+
+[node name="Animation_2s" type="AnimationPlayer" parent="platforms"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_eex2w")
+}
+autoplay = "move2"
