@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bx102kmwd60k6"]
+[gd_scene load_steps=7 format=4 uid="uid://bx102kmwd60k6"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_ty1rc"]
 [ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_xv7eh"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_pcft3"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="5_p0prn"]
 [ext_resource type="PackedScene" uid="uid://cb4oqmsfpfedi" path="res://Actors/Red Light/RedLight.tscn" id="6_dj5hn"]
 
 [node name="Level2" type="Node2D"]
@@ -30,8 +29,7 @@ tile_map_data = PackedByteArray("AAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAUAAIAAAAAAAA
 
 [node name="Door" parent="." instance=ExtResource("3_pcft3")]
 position = Vector2(375, -1)
-
-[node name="Player" parent="." instance=ExtResource("5_p0prn")]
+connected_level = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0846899, 0.0846899, 0.0846899, 1)

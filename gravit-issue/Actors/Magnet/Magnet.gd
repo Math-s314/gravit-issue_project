@@ -9,11 +9,11 @@ var active := false
 
 func _on_start_attraction() -> void:
 	active = true
-	GameInstance.getLevelManager().player.kill_input = true
+	GameInstance.getLevelManager().player.kill_mvt_input = true
 
 func _on_stop_attraction() -> void:
 	active = false
-	GameInstance.getLevelManager().player.kill_input = false
+	GameInstance.getLevelManager().player.kill_mvt_input = false
 	
 func _on_body_entered(body : Node2D) -> void:
 	if body is Player : _on_stop_attraction()

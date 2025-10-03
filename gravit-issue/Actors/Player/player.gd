@@ -6,11 +6,7 @@ class_name Player
 @export var transition_duration : float
 @export var still_duration : float
 
-@export var acceleration := 800.0  # pixels/s², ajuste selon le feeling
-@export var max_speed := move_speed  # vitesse maximale
-
 @export var respawn_point: Node2D   # glisse le Marker2D dans l’inspecteur
-#@export_exp_easing var transition_speed := 1.0
 
 @export_group("Controls")
 @export var move_speed : float
@@ -37,8 +33,8 @@ var min_particle_speed : float
 var max_particle_speed : float
 
 ## Input information
-var freeze := false
-var kill_input :=false
+var freeze         := false
+var kill_mvt_input := false
 
 var input_axis     := 0.0
 var input_velocity := Vector2(0.0, 0.0)
@@ -48,22 +44,19 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	respawn_point = get_tree().current_scene.get_node("Spawn")
-	if respawn_point:
-		global_position = respawn_point.global_position
+	if respawn_point: global_position = respawn_point.global_position
+	
 	gravity_timer.start(still_duration)
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
 	sprite.play(&"Idle") # To avoid blocking animations...
 
 func _process(delta: float) -> void:
-	if !freeze :
-		handle_input()
-		handle_animation()
-		handle_particle()
-		launch_move(delta)
-	else :
-		if sprite.animation != &"Mort" : sprite.play(&"Idle")
-		handle_particle()
+	handle_input()
+	handle_animation()
+	handle_particle()
+	
+	if !freeze : launch_move(delta)
 		
 func launch_move(delta : float):
 	# Gravity
@@ -71,7 +64,7 @@ func launch_move(delta : float):
 	else : velocity.y = 0.0
 	
 	# In case we want to block input from reaching the player...
-	if !kill_input: # BUG : If input is killed and the player is pressing a key it will continue forever...
+	if !kill_mvt_input: # BUG : If input is killed and the player is pressing a key it will continue forever...
 		if input_velocity.x == INF : velocity.x = 0.0
 		elif abs(input_velocity.x) > EPSILON || is_on_floor() : velocity.x = input_velocity.x
 		velocity.y += input_velocity.y
@@ -98,7 +91,6 @@ func handle_input():
 	
 	if Input.is_action_just_released("Left") || Input.is_action_just_released("Right"):
 		input_velocity.x = INF
-		print("Rel")
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
 	
@@ -158,8 +150,8 @@ func respawn():
 		
 func _on_hazard_entered(body : Node2D):
 	if body.name == "Laser": #Cas des lasers
-		freeze = true
 		sprite.play(&"Mort")
+		freeze = true
 		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
@@ -169,14 +161,15 @@ func _on_gravity_switch():
 		gravity_transition = true
 		gravity_timer.wait_time = transition_duration
 		gravity_dir = -gravity_dir
-		velocity[1]  = velocity[1] /2
+		velocity.y  = velocity.y /2 #TODO : Why ??
 		sprite.play(&"Renversement")
 	gravity_timer.start();
-
-func _on_animation_looped() -> void:
+	
+func _on_animation_finished() -> void:
+	print("Finished")
+	print(sprite.animation)
 	if sprite.animation == &"Demi-tour" :
 		sprite.flip_h = not sprite.flip_h
-		sprite.stop()
 		
 		handle_animation(&"Demi-tour")
 		handle_particle()
@@ -184,7 +177,6 @@ func _on_animation_looped() -> void:
 	if sprite.animation == &"Renversement"  :
 		scale.y = gravity_dir * abs(scale.y)
 		up_direction.y = -gravity_dir
-		sprite.stop()
 
 		handle_animation(&"Renversement")
 		handle_particle()

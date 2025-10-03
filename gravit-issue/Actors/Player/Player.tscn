@@ -1,16 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://74wocrxi6qah"]
+[gd_scene load_steps=10 format=3 uid="uid://74wocrxi6qah"]
 
 [ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
 [ext_resource type="SpriteFrames" uid="uid://lfhvyob3ommm" path="res://Actors/Player/Animations/SpriteFrames.tres" id="2_4x03u"]
-[ext_resource type="Shape2D" uid="uid://q77q6uqfka65" path="res://Actors/Player/CollsionPlayer.tres" id="2_vywg6"]
 [ext_resource type="Gradient" uid="uid://d4ghvv4ah3poc" path="res://Actors/Player/Animations/BlueColorGrad.tres" id="3_urha2"]
 [ext_resource type="Texture2D" uid="uid://cskw56xmqgyhk" path="res://Actors/Player/Animations/ParticlesTexture.png" id="3_yqfyh"]
 [ext_resource type="Script" uid="uid://narkb22wwdx1" path="res://Actors/Player/camera_2d.gd" id="4_l6vkj"]
 [ext_resource type="Texture2D" uid="uid://dqs46t56y484x" path="res://Actors/Red Light/TXT-Light.png" id="7_rsi04"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsi04"]
+radius = 15.0
+height = 50.0
+
 [sub_resource type="Curve" id="Curve_ech6m"]
 _data = [Vector2(0, 0.827561), 0.0, 1.11864, 0, 0, Vector2(0.523715, 0.894621), -1.8178, -1.8178, 0, 0, Vector2(0.998024, 0.396463), -0.18644, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6vkj"]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -18,10 +23,8 @@ scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_ech6m")
 gravity_strength = 500.0
-transition_duration = 1.0
-still_duration = 7.0
-acceleration = 0.2
-max_speed = 0.5
+transition_duration = 0.01
+still_duration = 100000.0
 move_speed = 300.0
 move_strength = 50.0
 jump_force = 300.0
@@ -29,13 +32,12 @@ air_control = 0.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
-shape = ExtResource("2_vywg6")
+shape = SubResource("CapsuleShape2D_rsi04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.028, 0.031)
 sprite_frames = ExtResource("2_4x03u")
-animation = &"Mort"
-frame_progress = 0.918267
+animation = &"Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(2, 2)
@@ -79,8 +81,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 8)
-scale = Vector2(0.3, 0.3)
-shape = ExtResource("2_vywg6")
+shape = SubResource("CapsuleShape2D_l6vkj")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(0, 5.96046e-07)
@@ -88,7 +89,7 @@ color = Color(0, 0.627451, 1, 1)
 texture = ExtResource("7_rsi04")
 texture_scale = 0.5
 
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_end"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_hazard_entered"]

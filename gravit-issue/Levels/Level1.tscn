@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dxqv5xp6bc1sp"]
+[gd_scene load_steps=4 format=4 uid="uid://dxqv5xp6bc1sp"]
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_fhqol"]
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_nutv8"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_fhqol"]
-[ext_resource type="PackedScene" uid="uid://bx102kmwd60k6" path="res://Levels/level2.tscn" id="4_iotdp"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_nutv8")
@@ -14,4 +13,4 @@ tile_map_data = PackedByteArray("AAD4//b/AAABAAAAAAD5//b/AAABAAAAAAD6//b/AAABAAA
 
 [node name="Door" parent="." instance=ExtResource("3_fhqol")]
 position = Vector2(103, -192)
-connected_level = ExtResource("4_iotdp")
+connected_level = 2
