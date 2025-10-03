@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b13eqldi7bupt"]
+[gd_scene load_steps=9 format=4 uid="uid://c2me0iiitxuxj"]
 
-[ext_resource type="Script" path="res://Environment/Game Management/LevelManager.gd" id="1_0n3a6"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_b3501"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_fj68v"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_0n3a6"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_fj68v"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_ggu74"]
+[ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="5_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_4omtb"]
 
 [sub_resource type="Animation" id="Animation_vr4rd"]
@@ -47,11 +47,6 @@ _data = {
 [node name="level" type="Node2D"]
 script = ExtResource("1_0n3a6")
 
-[node name="Player" parent="." instance=ExtResource("2_b3501")]
-position = Vector2(406, 27)
-move_strength = 0.0
-air_control = 0.8
-
 [node name="Laser" parent="." instance=ExtResource("3_fj68v")]
 
 [node name="Walls-white" parent="." instance=ExtResource("4_ggu74")]
@@ -65,3 +60,21 @@ position = Vector2(-102, 76)
 libraries = {
 &"": SubResource("AnimationLibrary_eex2w")
 }
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="Door1" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(522, 32)
+connected_level = 4
+connected_door = NodePath("doors/Door2")
+
+[node name="Door2" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(33, 906)
+rotation = 1.5708
+connected_level = 3
+connected_door = NodePath("doors/Door3")
+
+[node name="Door3" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(522, 800)
+connected_level = 4
+connected_door = NodePath("doors/Door5")
