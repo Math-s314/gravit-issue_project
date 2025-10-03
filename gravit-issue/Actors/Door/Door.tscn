@@ -10,6 +10,7 @@ size = Vector2(20, 64)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_41oc4")
+connected_door = NodePath("doors/Door1")
 metadata/_custom_type_script = "uid://dc8fqmfvw5qlv"
 
 [node name="Area2D" type="Area2D" parent="."]

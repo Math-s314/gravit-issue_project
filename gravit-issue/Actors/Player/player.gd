@@ -43,7 +43,7 @@ func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
 
 func _ready() -> void:
-	respawn_point = get_tree().current_scene.get_node("Spawn")
+	#respawn_point = get_tree().current_scene.get_node("Spawn")
 	if respawn_point: global_position = respawn_point.global_position
 	
 	gravity_timer.start(still_duration)

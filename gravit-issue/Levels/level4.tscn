@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_n1e7r"]
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_nanxr"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_ukveq"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_lfit2"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://c28roodir7263" path="res://Environment/Background/BG-Gris.tscn" id="3_ukveq"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="5_lfit2"]
-[ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+[ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="10_g4w76"]
 
 [sub_resource type="Animation" id="Animation_nanxr"]
 length = 2.0
@@ -256,8 +256,36 @@ position = Vector2(1402, -663)
 position = Vector2(0, 60)
 shape = SubResource("RectangleShape2D_ukveq")
 
-[node name="Player" parent="." instance=ExtResource("2_h14kk")]
-position = Vector2(1179, -603)
-transition_duration = 0.5
-still_duration = 10000.0
-move_strength = 0.0
+[node name="doors" type="Node2D" parent="."]
+
+[node name="Door1" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(-778, 32)
+rotation = 3.14159
+scale = Vector2(1, -1)
+connected_level = 3
+
+[node name="Door2" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(-778, -1313)
+scale = Vector2(-1, 1)
+connected_level = 5
+
+[node name="Door3" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(1995, -610)
+connected_level = 6
+
+[node name="Door4" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(1994, -160)
+connected_level = 6
+connected_door = NodePath("doors/Door2")
+
+[node name="Door5" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(-780, -545)
+scale = Vector2(-1, 1)
+connected_level = 5
+connected_door = NodePath("doors/Door3")
+
+[node name="Door6" parent="doors" instance=ExtResource("10_g4w76")]
+position = Vector2(-778, -160)
+scale = Vector2(-1, 1)
+connected_level = 3
+connected_door = NodePath("doors/Door5")
