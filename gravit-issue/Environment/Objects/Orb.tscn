@@ -1,5 +1,40 @@
-[gd_scene format=3 uid="uid://dy2it1crgkq6r"]
+[gd_scene load_steps=6 format=3 uid="uid://dy2it1crgkq6r"]
+
+[ext_resource type="Texture2D" uid="uid://cnkg8185nmwy" path="res://Environment/Objects/Orb.png" id="1_uuxsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktb72"]
+atlas = ExtResource("1_uuxsg")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_los6b"]
+atlas = ExtResource("1_uuxsg")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr0am"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktb72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_los6b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uuxsg"]
+radius = 85.4751
 
 [node name="DeathOrb" type="AnimatableBody2D"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fr0am")
+animation = &"Idle"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uuxsg")

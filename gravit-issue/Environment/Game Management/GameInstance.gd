@@ -33,20 +33,20 @@ func _switch() -> void:
 	var current : LevelManager = getLevelManager()
 	var next : LevelManager    = levels[next_lvl].instantiate()
 	
-	# Player
+	# Dispawn Player
 	next.player = current.player
 	current.remove_child(next.player)
-	next.add_child(next.player)
 	
 	# Scene switch
 	get_tree().get_root().remove_child(current)
 	get_tree().get_root().add_child(next)
 	current_lvl = next_lvl
-	getLevelManager().modulate = Color.WHITE
+	getLevelManager().modulate = Color.BLACK
 	current.queue_free()
 	
-	# Spawn
+	# Spawn Player
 	_spawn_player()
+	next.add_child(next.player)
 	
 func _spawn_player():
 	var spawner : Spawner = getLevelManager().get_node(spawn_path)

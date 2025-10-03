@@ -7,7 +7,7 @@ var active := true
 
 func spawn_player(player : Player) -> void:
 	active = false
-	player.position = position + Vector2(-10, 20)
+	player.position = to_global(Vector2(-10, 20))
 	player.freeze = false
 	
 func _on_body_entered(body:Node2D) -> void:
