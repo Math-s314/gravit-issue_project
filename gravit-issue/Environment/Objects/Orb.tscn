@@ -32,9 +32,11 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_fr0am")
 animation = &"Idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.08, 0.08)
 shape = SubResource("CircleShape2D_uuxsg")

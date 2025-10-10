@@ -161,10 +161,9 @@ func respawn():
 		
 		GameInstance.switch_scene(last_checkpoint_lvl, last_checkpoint_spa, true)
 		
-func _on_hazard_entered(body : Node2D):
-	if body.name == "Laser": #Cas des lasers
-		sprite.play(&"Mort")
-		freeze = true
+func _on_hazard_entered(_body : Node2D):
+	sprite.play(&"Mort")
+	freeze = true
 		
 func _on_gravity_switch():
 	if(gravity_transition): # Ending transition period
