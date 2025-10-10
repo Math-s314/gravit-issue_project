@@ -39,11 +39,15 @@ var kill_mvt_input := false
 var input_axis     := 0.0
 var input_velocity := Vector2(0.0, 0.0)
 
+## Respawn informations
+
+var last_checkpoint_lvl : int = -1
+var last_checkpoint_spa : NodePath = ^""
+
 func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
 
 func _ready() -> void:
-	#respawn_point = get_tree().current_scene.get_node("Spawn")
 	if respawn_point: global_position = respawn_point.global_position
 	
 	gravity_timer.start(still_duration)
@@ -52,7 +56,7 @@ func _ready() -> void:
 	sprite.play(&"Idle") # To avoid blocking animations...
 
 func _process(delta: float) -> void:
-	handle_input()
+	if !freeze : handle_input()
 	handle_animation()
 	handle_particle()
 	
@@ -144,9 +148,18 @@ func explose_particles(expl : bool) :
 		particles.color = Color(0.0, 1.0, 1.0)
 
 func respawn():
-	if respawn_point:
-		global_position = respawn_point.global_position
-		velocity = Vector2.ZERO   # stoppe le mouvement
+	if last_checkpoint_spa != ^"":
+		
+		# Reset movement
+		velocity = Vector2.ZERO
+		gravity_dir = 1.0
+		up_direction.y = -gravity_dir
+		
+		# Reset appearence
+		sprite.flip_h = false
+		scale.y = abs(scale.y)
+		
+		GameInstance.switch_scene(last_checkpoint_lvl, last_checkpoint_spa, true)
 		
 func _on_hazard_entered(body : Node2D):
 	if body.name == "Laser": #Cas des lasers

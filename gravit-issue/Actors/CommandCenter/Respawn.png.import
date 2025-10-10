@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2ibstdlwv0pq"
-path="res://.godot/imported/Respawn.png-c08b120e89a0028a0c1e64dcb1c79cf7.ctex"
+path="res://.godot/imported/Respawn.png-02efa0cb1e3a9feac1043cb338caa8a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Respawn/Respawn.png"
-dest_files=["res://.godot/imported/Respawn.png-c08b120e89a0028a0c1e64dcb1c79cf7.ctex"]
+source_file="res://Actors/CommandCenter/Respawn.png"
+dest_files=["res://.godot/imported/Respawn.png-02efa0cb1e3a9feac1043cb338caa8a5.ctex"]
 
 [params]
 
