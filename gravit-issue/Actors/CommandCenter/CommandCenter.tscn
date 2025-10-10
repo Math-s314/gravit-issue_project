@@ -72,7 +72,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CommandCenter" type="Area2D"]
+[node name="respawn" type="Area2D"]
 script = ExtResource("1_s3bqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
