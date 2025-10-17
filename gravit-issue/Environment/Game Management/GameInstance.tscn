@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
 [ext_resource type="PackedScene" uid="uid://7ltbw35bwoft" path="res://Levels/MainTest.tscn" id="2_q5qeu"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://c56gevncfqok" path="res://Levels/Level1.tscn" id="3_ag1o7"]
-[ext_resource type="PackedScene" uid="uid://bx102kmwd60k6" path="res://Levels/level2.tscn" id="3_q5qeu"]
-=======
 [ext_resource type="PackedScene" uid="uid://c61y3hrp6ivkh" path="res://Levels/Level1 old.tscn" id="3_ag1o7"]
 [ext_resource type="PackedScene" uid="uid://bx102kmwd60k6" path="res://Levels/level2 old.tscn" id="3_q5qeu"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="4_ag1o7"]
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="5_faa51"]
 [ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="6_bwc7g"]
