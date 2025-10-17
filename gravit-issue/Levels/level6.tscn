@@ -127,6 +127,8 @@ connected_door = NodePath("doors/Door7")
 [node name="Door4" parent="doors" instance=ExtResource("6_g804b")]
 position = Vector2(800, 1418)
 rotation = 1.5708
+connected_level = 8
+connected_door = NodePath("doors/Door8")
 
 [node name="Player" parent="." instance=ExtResource("2_wiukq")]
 position = Vector2(-213, 1309)
