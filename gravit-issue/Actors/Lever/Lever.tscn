@@ -1,33 +1,31 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt288a6uipyly"]
 
-[ext_resource type="Script" uid="uid://dgpu4fqsipl63" path="res://Actors/gate/lever.gd" id="1_ol8sc"]
-[ext_resource type="Texture2D" uid="uid://1u558bkmouf3" path="res://Actors/gate/button.png" id="2_m4o0b"]
+[ext_resource type="Script" uid="uid://dgpu4fqsipl63" path="res://Actors/Lever/Lever.gd" id="1_ol8sc"]
+[ext_resource type="Texture2D" uid="uid://1u558bkmouf3" path="res://Actors/Lever/Lever.png" id="2_m4o0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4o0b"]
-size = Vector2(373, 10.25)
+size = Vector2(375, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh8aw"]
-size = Vector2(373, 43)
+size = Vector2(375, 100)
 
 [node name="Lever" type="Area2D"]
+scale = Vector2(0.08, 0.08)
 script = ExtResource("1_ol8sc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_m4o0b")
 hframes = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-texture = ExtResource("2_m4o0b")
-hframes = 2
-frame = 1
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -29.875)
+position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_m4o0b")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(5, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-7, -23)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_eh8aw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

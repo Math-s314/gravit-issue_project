@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://bx102kmwd60k6"]
 
-[ext_resource type="Script" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
 [ext_resource type="PackedScene" uid="uid://csjehqdiojqhc" path="res://Environment/Tilemaps/Walls/Walls-Stone.tscn" id="1_ty1rc"]
 [ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_xv7eh"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]

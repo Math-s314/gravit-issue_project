@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://7ltbw35bwoft"]
 
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="1_bum52"]
-[ext_resource type="Script" path="res://Environment/Game Management/LevelManager.gd" id="1_fxk6y"]
+[ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_fxk6y"]
 [ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_p0vmq"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="4_fxk6y"]
 [ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="6_5iydn"]
@@ -19,7 +19,8 @@ script = ExtResource("1_fxk6y")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -1
-scale = Vector2(10.35, 10)
+position = Vector2(-1551, -592)
+scale = Vector2(41.2844, 34.5156)
 texture = ExtResource("2_p0vmq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -56,3 +57,6 @@ position = Vector2(-162, 371)
 [node name="Magnet2" parent="." instance=ExtResource("6_5iydn")]
 position = Vector2(-38, 363)
 detection_length = 200.0
+
+[node name="Door2" parent="." instance=ExtResource("4_fxk6y")]
+position = Vector2(499, 471)

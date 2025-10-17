@@ -26,7 +26,7 @@ func spawn_player(player : Player) -> void:
 	sprite.play(&"open")	
 
 func _on_body_entered(body:Node2D) -> void:
-	if body is Player: register_checkpoint(body)
+	if body is Player: register_checkpoint(body as Player)
 
 func _on_animation_finished() -> void:
 	if sprite.animation == &"open":
