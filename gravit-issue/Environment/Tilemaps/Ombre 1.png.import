@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkc3dd7f0yxed"
-path="res://.godot/imported/TM-Laser.png-6b8d94b97d43752b8c28bc49b01576a5.ctex"
+uid="uid://dd6ynbxenvjhy"
+path="res://.godot/imported/Ombre 1.png-7a163ef23c0221afeb108268a13ba710.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/hazard/TM-Laser.png"
-dest_files=["res://.godot/imported/TM-Laser.png-6b8d94b97d43752b8c28bc49b01576a5.ctex"]
+source_file="res://Environment/Tilemaps/Ombre 1.png"
+dest_files=["res://.godot/imported/Ombre 1.png-7a163ef23c0221afeb108268a13ba710.ctex"]
 
 [params]
 

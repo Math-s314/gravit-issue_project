@@ -2,7 +2,7 @@
 extends Camera2D
 
 @export var player: CharacterBody2D  # glisse ton joueur dans l'inspecteur
-@export var max_offset := 100.0      # combien la caméra anticipe en pixels
+@export var max_offset := 150.0      # combien la caméra anticipe en pixels
 @export var follow_speed := 2.0     # vitesse de lissage
 
 func _process(delta):
