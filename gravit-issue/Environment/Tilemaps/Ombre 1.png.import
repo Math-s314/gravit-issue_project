@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vcqh0off4svh"
-path="res://.godot/imported/gate.png-bdc8146c5dc732a391653b1644e2a059.ctex"
+uid="uid://dd6ynbxenvjhy"
+path="res://.godot/imported/Ombre 1.png-7a163ef23c0221afeb108268a13ba710.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Gate/gate.png"
-dest_files=["res://.godot/imported/gate.png-bdc8146c5dc732a391653b1644e2a059.ctex"]
+source_file="res://Environment/Tilemaps/Ombre 1.png"
+dest_files=["res://.godot/imported/Ombre 1.png-7a163ef23c0221afeb108268a13ba710.ctex"]
 
 [params]
 

@@ -1,16 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://blx3201fubvhi"]
+[gd_scene load_steps=6 format=3 uid="uid://blx3201fubvhi"]
 
 [ext_resource type="Texture2D" uid="uid://byyla6oydgkxq" path="res://Environment/Tilemaps/Walls/TM-Metal.png" id="1_hcjvi"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f5cj5"]
+polygon = PackedVector2Array(0, 0, 256, 0, 256, 256, 0, 256)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_14rua"]
+polygon = PackedVector2Array(-256, -64, 64, -64, 64, 256, -256, 256)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1xl6"]
 texture = ExtResource("1_hcjvi")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_f5cj5")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-176, -240, 256, -240, 256, 256, -240, 256, -240, -176)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(256, -240, 256, 256, -256, 256, -256, -240)
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_14rua")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(240, -176, 240, 256, -256, 256, -256, -240, 176, -240)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-240, -256, 256, -256, 256, 256, -240, 256)
@@ -35,6 +42,7 @@ texture_region_size = Vector2i(512, 512)
 
 [sub_resource type="TileSet" id="TileSet_4opmm"]
 tile_size = Vector2i(512, 512)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_o1xl6")
 
