@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gravit'Issue"
-run/main_scene="uid://bq5jsyr36p27b"
+run/main_scene="uid://dgn1h77ge5jhh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
