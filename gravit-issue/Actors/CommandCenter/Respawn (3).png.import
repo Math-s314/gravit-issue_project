@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ibstdlwv0pq"
-path="res://.godot/imported/Respawn.png-02efa0cb1e3a9feac1043cb338caa8a5.ctex"
+uid="uid://cnfofmcvokme1"
+path="res://.godot/imported/Respawn (3).png-1a0e2cdb63c4065bb648a85900c19b59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/CommandCenter/Respawn.png"
-dest_files=["res://.godot/imported/Respawn.png-02efa0cb1e3a9feac1043cb338caa8a5.ctex"]
+source_file="res://Actors/CommandCenter/Respawn (3).png"
+dest_files=["res://.godot/imported/Respawn (3).png-1a0e2cdb63c4065bb648a85900c19b59.ctex"]
 
 [params]
 

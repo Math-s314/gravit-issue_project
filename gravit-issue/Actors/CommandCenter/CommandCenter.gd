@@ -4,9 +4,6 @@ class_name CommandCenter
 @onready var sprite := $AnimatedSprite2D
 var respawning_player : Player = null
 
-func _ready() -> void:
-	sprite.animation = &"default"
-
 func register_checkpoint(player : Player) -> void:
 	player.last_checkpoint_lvl = GameInstance.getLevelManager().level_number
 	player.last_checkpoint_spa = GameInstance.getLevelManager().get_path_to(self)
@@ -34,6 +31,7 @@ func _on_animation_finished() -> void:
 		respawning_player.velocity = Vector2.ZERO
 		respawning_player.sprite.play(&"Idle")
 		respawning_player.visible = true
+		sprite.play(&"close")
 		
-	if sprite.animation == &"close" :
+	elif sprite.animation == &"close" :
 		sprite.play(&"default")
