@@ -9,3 +9,7 @@ func change_state() -> void:
 		animation_player.play("animation")
 	else:
 		animation_player.play_backwards("animation")
+
+
+func _on_lever_2_activate() -> void:
+	pass # Replace with function body.
