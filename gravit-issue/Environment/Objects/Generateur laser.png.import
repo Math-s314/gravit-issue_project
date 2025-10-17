@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8oxcjybjl2yy"
-path="res://.godot/imported/Tilemap background.png-957f6a931858de58d567c0345627f5e2.ctex"
+uid="uid://bbjkx5fidqkn4"
+path="res://.godot/imported/Generateur laser.png-c8de2ee90e35b6ca6ed6a928726dd5b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/Walls/Tilemap background.png"
-dest_files=["res://.godot/imported/Tilemap background.png-957f6a931858de58d567c0345627f5e2.ctex"]
+source_file="res://Environment/Objects/Generateur laser.png"
+dest_files=["res://.godot/imported/Generateur laser.png-c8de2ee90e35b6ca6ed6a928726dd5b0.ctex"]
 
 [params]
 

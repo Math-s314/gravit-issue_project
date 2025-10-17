@@ -84,17 +84,18 @@ func get_gravity_coef() -> float:
 
 func handle_input():
 	input_velocity = Vector2.ZERO
-	input_axis =  Input.get_axis("Left", "Right") * (1.0 if is_on_floor() else air_control)
+	input_axis =  Input.get_axis("Left", "Right") 
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		input_velocity.y = -gravity_dir * jump_force
 		explose_particles(true)
 		jump_timer.start()
-		
-	input_velocity = Vector2(input_axis * move_speed, input_velocity.y)
 	
-	if Input.is_action_just_released("Left") || Input.is_action_just_released("Right"):
-		input_velocity.x = INF
+	if is_on_floor():
+		input_velocity = Vector2(input_axis * move_speed , input_velocity.y)
+	else : 
+		input_velocity = Vector2(0.04 * move_speed * input_axis * air_control + 0.96 * velocity.x, input_velocity.y)
+	
 
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
 	

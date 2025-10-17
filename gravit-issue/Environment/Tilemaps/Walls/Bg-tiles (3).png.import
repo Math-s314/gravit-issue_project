@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vcqh0off4svh"
-path="res://.godot/imported/gate.png-840669becb8caef266c99fdce1b186eb.ctex"
+uid="uid://biy18jc4umr5e"
+path="res://.godot/imported/Bg-tiles (3).png-4a7d4eb8e59de14052c7e9c23ebb4aa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/gate/gate.png"
-dest_files=["res://.godot/imported/gate.png-840669becb8caef266c99fdce1b186eb.ctex"]
+source_file="res://Environment/Tilemaps/Walls/Bg-tiles (3).png"
+dest_files=["res://.godot/imported/Bg-tiles (3).png-4a7d4eb8e59de14052c7e9c23ebb4aa3.ctex"]
 
 [params]
 
