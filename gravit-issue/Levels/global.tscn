@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckdqhmhhrhama"]
+[gd_scene load_steps=8 format=3 uid="uid://ckdqhmhhrhama"]
 
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="1_uol8u"]
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="2_svy6q"]
 [ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="3_svy6q"]
 [ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="4_8xwhe"]
 [ext_resource type="PackedScene" uid="uid://cyqt24nr2nsgt" path="res://Levels/level8.tscn" id="5_3dv6e"]
+[ext_resource type="PackedScene" uid="uid://bff14qymfiw12" path="res://Levels/level2.tscn" id="6_smx1m"]
+[ext_resource type="PackedScene" uid="uid://cs6l5g0xcrhcl" path="res://Levels/level1.tscn" id="7_l0jxp"]
 
 [node name="Global" type="Node2D"]
 
@@ -22,3 +24,9 @@ position = Vector2(3584, -639)
 
 [node name="level" parent="." instance=ExtResource("5_3dv6e")]
 position = Vector2(64, 896)
+
+[node name="level2" parent="." instance=ExtResource("6_smx1m")]
+position = Vector2(-1024, 1)
+
+[node name="level7" parent="." instance=ExtResource("7_l0jxp")]
+position = Vector2(-1856, -639)
