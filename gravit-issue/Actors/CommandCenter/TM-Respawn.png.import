@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biy18jc4umr5e"
-path="res://.godot/imported/Bg-tiles (3).png-4a7d4eb8e59de14052c7e9c23ebb4aa3.ctex"
+uid="uid://cnfofmcvokme1"
+path="res://.godot/imported/TM-Respawn.png-25960695b0ea9949916405ae8467e089.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Tilemaps/Walls/Bg-tiles (3).png"
-dest_files=["res://.godot/imported/Bg-tiles (3).png-4a7d4eb8e59de14052c7e9c23ebb4aa3.ctex"]
+source_file="res://Actors/CommandCenter/TM-Respawn.png"
+dest_files=["res://.godot/imported/TM-Respawn.png-25960695b0ea9949916405ae8467e089.ctex"]
 
 [params]
 

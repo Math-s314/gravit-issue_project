@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_nanxr"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_ukveq"]
-[ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Tilemaps/Walls/Walls_bg.tscn" id="3_k2rgy"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
+[ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="3_k2rgy"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://c28roodir7263" path="res://Environment/Background/BG-Gris.tscn" id="3_ukveq"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="5_lfit2"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="5_pht4a"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="5_pht4a"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="6_fygpt"]
-[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+[ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
 [ext_resource type="Texture2D" uid="uid://bbjkx5fidqkn4" path="res://Environment/Objects/Generateur laser.png" id="8_cipbp"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="10_g4w76"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="11_f4ugn"]
@@ -212,6 +212,10 @@ tile_map_data = PackedByteArray("AAAXAA4AAAAAAAAAAAAYAA4AAAABAAAAAAAZAA4AAAACAAA
 visible = false
 tile_map_data = PackedByteArray("AAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPv/AAAAAAEAAAD9//z/AAAAAAEAAAD+//z/AAAAAAEAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAEAAAACAPz/AAAAAAAAAAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAACAP3/AAAAAAEAAAABAP3/AAAAAAEAAAAAAP3/AAAAAAEAAAD+//7/AAAAAAEAAAD///7/AAAAAAAAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAACAP7/AAAAAAEAAAD+////AAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAABAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAEAAAABAAAAAAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD//wIAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAACAAAAAAAAAAEAAAD+//r/AAAAAAEAAAD9//r/AAAAAAEAAAD///r/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPn/AAAAAAEAAAABAPr/AAAAAAEAAAACAPr/AAAAAAEAAAACAPn/AAAAAAEAAAABAPn/AAAAAAEAAAD///n/AAAAAAEAAAD+//n/AAAAAAEAAAD9//n/AAAAAAEAAAADAAIAAAAAAAEAAAADAAEAAAAAAAEAAAADAAAAAAAAAAEAAAADAP//AAAAAAEAAAADAP7/AAAAAAEAAAADAP3/AAAAAAEAAAADAPz/AAAAAAEAAAD+/wMAAAAAAAEAAAD//wMAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAABAAQAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAD//wUAAAAAAAEAAAD//wQAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wUAAAAAAAEAAAADAPv/AAAAAAEAAAADAPr/AAAAAAEAAAADAPn/AAAAAAEAAAACAPj/AAAAAAEAAAABAPj/AAAAAAEAAAAAAPj/AAAAAAEAAAD///j/AAAAAAEAAAD+//j/AAAAAAEAAAD9//j/AAAAAAEAAAADAAMAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAD9//3/AAAAAAEAAAD9//7/AAAAAAEAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD9/wQAAAAAAAEAAAD9/wUAAAAAAAEAAAADAPj/AAAAAAEAAAA=")
 
+[node name="CommandCenter" parent="." instance=ExtResource("11_f4ugn")]
+position = Vector2(-373, 44)
+scale = Vector2(3, 3)
+
 [node name="gates" type="Node2D" parent="."]
 z_index = -1
 
@@ -369,11 +373,8 @@ scale = Vector2(1, -1)
 connected_level = 5
 connected_door = NodePath("doors/Door4")
 
-[node name="CommandCenter" parent="." instance=ExtResource("11_f4ugn")]
-position = Vector2(-385, 32)
-
 [node name="Player" parent="." instance=ExtResource("2_h14kk")]
-position = Vector2(-107, -999)
+position = Vector2(-305, 44)
 transition_duration = 0.5
 still_duration = 10000.0
 move_strength = 0.0
