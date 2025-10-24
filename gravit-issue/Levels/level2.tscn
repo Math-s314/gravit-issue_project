@@ -31,6 +31,7 @@ connected_level = 1
 
 [node name="Door2" parent="doors" instance=ExtResource("3_pcft3")]
 position = Vector2(522, 32)
+connected_level = 3
 
 [node name="Door3" parent="doors" instance=ExtResource("3_pcft3")]
 position = Vector2(160, 586)

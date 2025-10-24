@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgn1h77ge5jhh"]
+
+[ext_resource type="Texture2D" uid="uid://mmuqnj3jgqgo" path="res://Play Screen/Fond spatial.png" id="1_ci15k"]
+[ext_resource type="Texture2D" uid="uid://cly5hf8hmxu8y" path="res://Play Screen/Lune.png" id="2_0euae"]
+[ext_resource type="Script" uid="uid://byjcttab8t60a" path="res://Play Screen/sprite_2d_lune.gd" id="3_jbj33"]
+[ext_resource type="Texture2D" uid="uid://dj35y8nwcrkih" path="res://Play Screen/Mars.png" id="4_uwlrd"]
+[ext_resource type="Script" uid="uid://14eihnr7csql" path="res://Play Screen/sprite_2d_planèterandom.gd" id="5_8bgfw"]
+[ext_resource type="Texture2D" uid="uid://2dgfbeu1vbrn" path="res://Play Screen/Terre.png" id="6_vj6yd"]
+[ext_resource type="Script" uid="uid://bua0qu6sply6g" path="res://Play Screen/sprite_2d_terre.gd" id="7_sf5u4"]
+[ext_resource type="Texture2D" uid="uid://qsy6ws3i2wps" path="res://Play Screen/Titre.png" id="8_4k0mo"]
+
+[node name="Play Screen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10.5, -169.25)
+scale = Vector2(1.50313, 1.45208)
+texture = ExtResource("1_ci15k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-26, -197)
+scale = Vector2(0.554375, 0.57625)
+texture = ExtResource("2_0euae")
+script = ExtResource("3_jbj33")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture = ExtResource("4_uwlrd")
+script = ExtResource("5_8bgfw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(77, -206)
+texture = ExtResource("6_vj6yd")
+region_enabled = true
+region_rect = Rect2(121.245, 269.579, 550.432, 467.033)
+script = ExtResource("7_sf5u4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-6.10352e-05, 3.05176e-05)
+texture = ExtResource("8_4k0mo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.72, 0.72)

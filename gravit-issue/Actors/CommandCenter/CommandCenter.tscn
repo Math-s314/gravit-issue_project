@@ -167,6 +167,7 @@ z_index = -1
 script = ExtResource("1_s3bqx")
 
 [node name="PointLight2D18" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-298, -741)
 scale = Vector2(6.80398, 8.4233)
 color = Color(0.584928, 0.661743, 0.800655, 1)

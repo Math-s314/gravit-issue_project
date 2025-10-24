@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_h14kk"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_ukveq"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="3_k2rgy"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_lfit2"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_lfit2"]
 [ext_resource type="PackedScene" uid="uid://c28roodir7263" path="res://Environment/Background/BG-Gris.tscn" id="3_ukveq"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_h14kk"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="5_lfit2"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="5_pht4a"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="5_pht4a"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="6_fygpt"]
-[ext_resource type="PackedScene" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
+[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
 [ext_resource type="Texture2D" uid="uid://bbjkx5fidqkn4" path="res://Environment/Objects/Generateur laser.png" id="8_cipbp"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="10_g4w76"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="11_f4ugn"]
@@ -182,11 +182,11 @@ radius = 40.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukveq"]
 size = Vector2(20, 100)
 
-[sub_resource type="Gradient" id="Gradient_f5cj5"]
+[sub_resource type="Gradient" id="Gradient_pht4a"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ukveq"]
-gradient = SubResource("Gradient_f5cj5")
+gradient = SubResource("Gradient_pht4a")
 fill = 1
 fill_from = Vector2(0.529915, 0.525641)
 fill_to = Vector2(0.504274, 0.115385)
@@ -380,7 +380,6 @@ still_duration = 10000.0
 move_strength = 0.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0705298, 0.0828365, 0.12501, 1)
 
 [node name="PointLights" type="Node2D" parent="."]
@@ -472,7 +471,6 @@ texture = SubResource("GradientTexture2D_ukveq")
 texture_scale = 1.1
 
 [node name="Lumières rectangulaires" type="Node2D" parent="."]
-visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lumières rectangulaires"]
 position = Vector2(145, -1267.5)
