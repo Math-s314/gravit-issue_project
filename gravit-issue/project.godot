@@ -13,6 +13,8 @@ config_version=5
 config/name="Gravit'Issue"
 run/main_scene="uid://m5qf51b24mwv"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/use_filter=false
+boot_splash/image="uid://n0yqhevsfonv"
 config/icon="res://icon.svg"
 
 [autoload]
