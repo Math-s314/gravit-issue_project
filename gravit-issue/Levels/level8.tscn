@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cyqt24nr2nsgt"]
+[gd_scene load_steps=23 format=4 uid="uid://cyqt24nr2nsgt"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_87c1g"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_o5ju2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="6_soxnf"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_h4egd"]
 [ext_resource type="PackedScene" uid="uid://dy2it1crgkq6r" path="res://Environment/Objects/Orb.tscn" id="8_nq3mb"]
+[ext_resource type="Script" uid="uid://n7hvmjwgqutn" path="res://Levels/fast.gd" id="10_vfg7c"]
 
 [sub_resource type="Animation" id="Animation_fki3c"]
 resource_name = "move6"
@@ -32,6 +33,39 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3rh1d"]
 _data = {
 &"move6": SubResource("Animation_fki3c")
+}
+
+[sub_resource type="Animation" id="Animation_ptlqi"]
+resource_name = "goFast"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.999503, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4394, 355), Vector2(4394, 288), Vector2(-982, 289), Vector2(-982, 355)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovingPlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4352, 332), Vector2(4351, 317), Vector2(-1025, 318), Vector2(-1025, 332)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fki3c"]
+_data = {
+&"goFast": SubResource("Animation_ptlqi")
 }
 
 [sub_resource type="Animation" id="Animation_eh6o7"]
@@ -296,7 +330,7 @@ _data = {
 script = ExtResource("1_87c1g")
 
 [node name="Player" parent="." instance=ExtResource("2_o5ju2")]
-position = Vector2(614, 26)
+position = Vector2(4306, 30)
 move_strength = 0.0
 air_control = 0.8
 
@@ -383,6 +417,23 @@ libraries = {
 &"": SubResource("AnimationLibrary_3rh1d")
 }
 autoplay = "move6"
+
+[node name="MovingPlatform" parent="platform" instance=ExtResource("5_m8385")]
+visible = false
+position = Vector2(4394, 355)
+rotation = -1.5708
+
+[node name="MovingPlatform2" parent="platform" instance=ExtResource("5_m8385")]
+position = Vector2(4352, 332)
+
+[node name="Lever3" parent="platform" instance=ExtResource("5_vfg7c")]
+position = Vector2(4351, 319)
+
+[node name="fast" type="AnimationPlayer" parent="platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_fki3c")
+}
+script = ExtResource("10_vfg7c")
 
 [node name="DeathOrb" type="Node2D" parent="."]
 
@@ -478,3 +529,4 @@ position = Vector2(3200, 95)
 [connection signal="activate" from="gates/Lever1" to="gates/Gate1" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate2" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate3" method="change_state"]
+[connection signal="activate" from="platform/Lever3" to="platform/fast" method="_on_lever_3_activate"]
