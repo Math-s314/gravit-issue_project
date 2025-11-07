@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< Updated upstream
 uid="uid://hrwl6lrfclh4"
+=======
+uid="uid://u3ngws1gp6nr"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3-71c13ae8b8744ecc8f0f7ebac0aadcbc.mp3str"
 
 [deps]
