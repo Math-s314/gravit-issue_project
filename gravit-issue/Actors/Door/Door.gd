@@ -7,11 +7,12 @@ var active := true
 
 func spawn_player(player : Player) -> void:
 	active = true
-	player.position = to_global(Vector2(-50, 20))
+	player.global_position = to_global(Vector2(-50, 0))
 	player.freeze = false
 	
 func _on_body_entered(body:Node2D) -> void:
-	if active and body is Player : GameInstance.switch_scene(connected_level, connected_door)
+	if active and body is Player and (body.global_position-global_position).length() < 20: 
+		GameInstance.switch_scene(connected_level, connected_door)
 
 func _on_body_exited(body:Node2D) -> void:
 	if body is Player : active = true # Replace with function body.
