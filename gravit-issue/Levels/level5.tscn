@@ -109,34 +109,39 @@ position = Vector2(-331, -1046.25)
 scale = Vector2(6.80398, 3.1321)
 
 [node name="PointLight2D22" type="PointLight2D" parent="PointLights"]
-position = Vector2(81.7674, 586.268)
-scale = Vector2(1.58346, 0.915351)
+position = Vector2(83.5002, 587.637)
+scale = Vector2(1.53424, 0.740364)
+energy = 2.14
 texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D21" type="PointLight2D" parent="PointLights"]
-position = Vector2(95.2384, 440.998)
+position = Vector2(91.7216, 467.498)
 rotation = -3.14159
-scale = Vector2(0.84021, 1.20195)
+scale = Vector2(0.782032, 2.31992)
+energy = 1.96
 texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D20" type="PointLight2D" parent="PointLights"]
-position = Vector2(54.5269, 457.281)
+position = Vector2(54.5269, 473.919)
 rotation = 1.5708
-scale = Vector2(4.60738, 0.335147)
+scale = Vector2(5.61237, 0.335147)
+energy = 2.31
 texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D19" type="PointLight2D" parent="PointLights"]
 position = Vector2(78.7774, 345.256)
 scale = Vector2(1.41545, 0.690476)
+energy = 2.75
 texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D23" type="PointLight2D" parent="PointLights"]
-position = Vector2(91.6518, 499.479)
+position = Vector2(94.7975, 510.281)
 scale = Vector2(0.82158, 1.54203)
+energy = 1.96
 texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
