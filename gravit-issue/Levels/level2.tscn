@@ -1,18 +1,14 @@
 [gd_scene load_steps=6 format=4 uid="uid://bff14qymfiw12"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_ojro4"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_m135w"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_pcft3"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_xv7eh"]
+[ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_p0prn"]
 
-[node name="level" type="Node2D"]
+[node name="level2" type="Node2D"]
 script = ExtResource("1_pcft3")
-
-[node name="Player" parent="." instance=ExtResource("2_ojro4")]
-position = Vector2(-146, 32)
-move_strength = 0.0
-air_control = 0.8
+level_number = 2
 
 [node name="Laser" parent="." instance=ExtResource("3_m135w")]
 tile_map_data = PackedByteArray("AAD+/wAAAAAAAAIAAAD+/wEAAAAAAAEAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAFAAAAAAAAAAEAAAAFAP//AAAAAAIAAAAGAAEAAAAAAAEAAAAGAAAAAAAAAAEAAAAGAP//AAAAAAUAAAAAAP3/AAAAAAQAAAD///3/AAAAAAAAAAD+//3/AAAAAAMAAAD+//z/AAAAAAEAAAAAAPz/AAAAAAEAAAAEAPz/AAAAAAMAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAKAPz/AAAAAAAAAAALAPz/AAAAAAAAAAAKAPX/AAAAAAUAAAAJAPX/AAAAAAAAAAAIAPX/AAAAAAAAAAAHAPX/AAAAAAAAAAADAPX/AAAAAAIAAAAEAPX/AAAAAAAAAAAFAPX/AAAAAAAAAAAGAPX/AAAAAAAAAAAAAPL/AAAAAAQAAAD///L/AAAAAAAAAAD+//L/AAAAAAAAAAD9//L/AAAAAAAAAAD8//L/AAAAAAAAAAD7//L/AAAAAAAAAAD6//L/AAAAAAAAAAD5//L/AAAAAAAAAAD4//L/AAAAAAAAAAA=")
@@ -24,13 +20,13 @@ tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAA
 [node name="doors" type="Node2D" parent="."]
 
 [node name="Door1" parent="doors" instance=ExtResource("3_pcft3")]
-position = Vector2(-331, -608)
+position = Vector2(-321, -608)
 rotation = 3.14159
 scale = Vector2(1, -1)
 connected_level = 1
 
 [node name="Door2" parent="doors" instance=ExtResource("3_pcft3")]
-position = Vector2(522, 32)
+position = Vector2(515, 33)
 connected_level = 3
 
 [node name="Door3" parent="doors" instance=ExtResource("3_pcft3")]
@@ -43,3 +39,6 @@ connected_door = NodePath("doors/Door5")
 position = Vector2(522, 224)
 connected_level = 3
 connected_door = NodePath("doors/Door8")
+
+[node name="CommandCenter" parent="doors" instance=ExtResource("5_p0prn")]
+position = Vector2(416, -339)

@@ -1,53 +1,15 @@
-[gd_scene load_steps=11 format=4 uid="uid://cs6l5g0xcrhcl"]
+[gd_scene load_steps=7 format=4 uid="uid://cs6l5g0xcrhcl"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_aunfx"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_j32wv"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_nq5j5"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_utqd4"]
-[ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_u55on"]
-[ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="6_pdma0"]
+[ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_302sc"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_1jijn"]
 
-[sub_resource type="Animation" id="Animation_vr4rd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("platform/MovingPlatform1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-102, 76)]
-}
-
-[sub_resource type="Animation" id="Animation_eh6o7"]
-resource_name = "move2"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("platform/MovingPlatform1:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-102, 76), Vector2(165, 76)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_eex2w"]
-_data = {
-&"RESET": SubResource("Animation_vr4rd"),
-&"move2": SubResource("Animation_eh6o7")
-}
-
-[node name="level" type="Node2D"]
+[node name="level1" type="Node2D"]
 script = ExtResource("1_aunfx")
+level_number = 1
 
 [node name="Player" parent="." instance=ExtResource("2_j32wv")]
 position = Vector2(-0.999969, 26)
@@ -60,22 +22,11 @@ air_control = 0.8
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD/////AAABAAIAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD+////AAABAAIAAAD9////AAABAAIAAAD8////AAABAAIAAAD7////AAABAAIAAAD6/wAAAAACAAEAAAD6/wEAAAABAAMAAAD6////AAAAAAQAAAA=")
 
-[node name="platform" type="Node2D" parent="."]
-
-[node name="MovingPlatform1" parent="platform" instance=ExtResource("5_u55on")]
-position = Vector2(-102, 76)
-
-[node name="Animation_2s" type="AnimationPlayer" parent="platform"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_eex2w")
-}
-
-[node name="magnet" type="Node2D" parent="."]
-
-[node name="Magnet1" parent="magnet" instance=ExtResource("6_pdma0")]
+[node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
+position = Vector2(47, 44)
 
 [node name="doors" type="Node2D" parent="."]
+position = Vector2(-1, 12)
 
 [node name="Door1" parent="doors" instance=ExtResource("7_1jijn")]
 position = Vector2(522, 31)
