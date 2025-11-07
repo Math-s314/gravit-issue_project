@@ -4,9 +4,8 @@ class_name Player
 @export_group("Gravity")
 @export var gravity_strength : float
 @export var transition_duration : float
-@export var still_duration : float
-
-@export var respawn_point: Node2D   # glisse le Marker2D dans l’inspecteur
+@export_range(1.0, 5.0, 0.01, "or_greater") var switch_divider : float
+@export_range(1.0, 10.0, 0.01, "or_greater") var strong_switch : float
 
 @export_group("Controls")
 @export var move_speed : float
@@ -49,10 +48,7 @@ var last_checkpoint_spa : NodePath = ^""
 func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
 
-func _ready() -> void:
-	if respawn_point: global_position = respawn_point.global_position
-	
-	gravity_timer.start(still_duration)
+func _ready() -> void:	
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
 	sprite.play(&"Idle") # To avoid blocking animations...
@@ -83,8 +79,8 @@ func get_gravity_coef() -> float:
 		if(!gravity_transition):
 			return gravity_dir
 		else:
-			var progress : float = gravity_timer.time_left/transition_duration;
-			return gravity_dir * cos(PI * progress)
+			var progress : float = 5 * gravity_timer.time_left/transition_duration;
+			return gravity_dir * (1 + (strong_switch -1) * exp(-progress))
 			
 func get_speed_floor() -> float:
 	print(floor_control)
@@ -108,7 +104,7 @@ func handle_input():
 	else : 
 		input_velocity = Vector2(0.04 * move_speed * input_axis * air_control + 0.96 * velocity.x, input_velocity.y)
 	
-	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
+	if Input.is_action_just_pressed("Gravité") : switch_gravity()
 	
 func handle_animation(ended := &"") -> void:
 	# Blocking animations
@@ -173,21 +169,20 @@ func respawn():
 		
 		GameInstance.switch_scene(last_checkpoint_lvl, last_checkpoint_spa, true)
 		
+func switch_gravity():
+	gravity_transition = true
+	gravity_timer.wait_time = transition_duration
+	gravity_dir = -gravity_dir
+	velocity.y  = velocity.y / switch_divider
+	sprite.play(&"Renversement")
+	gravity_timer.start();
+		
 func _on_hazard_entered(_body : Node2D):
 	sprite.play(&"Mort")
 	freeze = true
 		
 func _on_gravity_switch():
-	if(gravity_transition): # Ending transition period
-		gravity_transition = false
-		gravity_timer.wait_time = still_duration
-	else: # Starting transition period
-		gravity_transition = true
-		gravity_timer.wait_time = transition_duration
-		gravity_dir = -gravity_dir
-		velocity.y  = velocity.y /2 #TODO : Why ??
-		sprite.play(&"Renversement")
-	gravity_timer.start();
+	gravity_transition = false
 	
 func _on_animation_finished() -> void:
 	print("Finished")
