@@ -22,11 +22,11 @@ position = Vector2(0, -1343)
 [node name="level6" parent="." instance=ExtResource("4_8xwhe")]
 position = Vector2(3584, -639)
 
-[node name="level" parent="." instance=ExtResource("5_3dv6e")]
-position = Vector2(64, 896)
-
 [node name="level2" parent="." instance=ExtResource("6_smx1m")]
 position = Vector2(-1024, 1)
 
 [node name="level7" parent="." instance=ExtResource("7_l0jxp")]
 position = Vector2(-1856, -639)
+
+[node name="level8" parent="." instance=ExtResource("5_3dv6e")]
+position = Vector2(64, 897)
