@@ -3,6 +3,7 @@ class_name CommandCenter
 
 @onready var sprite := $AnimatedSprite2D
 var respawning_player : Player = null
+var unlocked = false 
 
 func register_checkpoint(player : Player) -> void:
 	player.last_checkpoint_lvl = GameInstance.getLevelManager().level_number
@@ -23,7 +24,11 @@ func spawn_player(player : Player) -> void:
 	sprite.play(&"open")	
 
 func _on_body_entered(body:Node2D) -> void:
-	if body is Player: register_checkpoint(body as Player)
+	if body is Player: 
+		register_checkpoint(body as Player)
+		if unlocked == false : 
+			unlocked = true
+			sprite.play("close")
 
 func _on_animation_finished() -> void:
 	if sprite.animation == &"open":
@@ -32,6 +37,3 @@ func _on_animation_finished() -> void:
 		respawning_player.sprite.play(&"Idle")
 		respawning_player.visible = true
 		sprite.play(&"close")
-		
-	elif sprite.animation == &"close" :
-		sprite.play(&"default")
