@@ -13,6 +13,7 @@ class_name Player
 @export var move_strength : float
 @export var jump_force : float
 @export var air_control : float
+@export_range(0.0, 10.0, 0.01, "or_greater") var floor_control : float
 
 ## Gravity switching
 var gravity_dir := 1.0; # UP is 1, DOWN is -1
@@ -38,6 +39,7 @@ var kill_mvt_input := false
 
 var input_axis     := 0.0
 var input_velocity := Vector2(0.0, 0.0)
+var last_press	   := 0.0
 
 ## Respawn informations
 
@@ -56,6 +58,8 @@ func _ready() -> void:
 	sprite.play(&"Idle") # To avoid blocking animations...
 
 func _process(delta: float) -> void:
+	last_press += delta
+	
 	if !freeze : handle_input()
 	handle_animation()
 	handle_particle()
@@ -81,6 +85,10 @@ func get_gravity_coef() -> float:
 		else:
 			var progress : float = gravity_timer.time_left/transition_duration;
 			return gravity_dir * cos(PI * progress)
+			
+func get_speed_floor() -> float:
+	print(floor_control)
+	return input_axis * move_speed * (1-exp(-floor_control*last_press))
 
 func handle_input():
 	input_velocity = Vector2.ZERO
@@ -90,13 +98,16 @@ func handle_input():
 		input_velocity.y = -gravity_dir * jump_force
 		explose_particles(true)
 		jump_timer.start()
+		
+	if Input.is_action_just_pressed("Left") || Input.is_action_just_pressed("Right") :
+		last_press = 0.0
+		print("Yo")
 	
 	if is_on_floor():
-		input_velocity = Vector2(input_axis * move_speed , input_velocity.y)
+		input_velocity = Vector2(get_speed_floor() , input_velocity.y)
 	else : 
 		input_velocity = Vector2(0.04 * move_speed * input_axis * air_control + 0.96 * velocity.x, input_velocity.y)
 	
-
 	if Input.is_action_just_released("Gravité") : _on_gravity_switch()
 	
 func handle_animation(ended := &"") -> void:
