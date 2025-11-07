@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://m5qf51b24mwv"]
+[gd_scene load_steps=17 format=4 uid="uid://m5qf51b24mwv"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_vr4rd"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_2cw1i"]
@@ -262,7 +262,6 @@ libraries = {
 autoplay = "move2"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0705298, 0.0828365, 0.12501, 1)
 
 [node name="PointLight2D20" type="PointLight2D" parent="CanvasModulate"]
