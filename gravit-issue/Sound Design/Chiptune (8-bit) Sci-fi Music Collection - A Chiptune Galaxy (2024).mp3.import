@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hrwl6lrfclh4"
+path="res://.godot/imported/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3-71c13ae8b8744ecc8f0f7ebac0aadcbc.mp3str"
+
+[deps]
+
+source_file="res://Sound Design/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3"
+dest_files=["res://.godot/imported/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3-71c13ae8b8744ecc8f0f7ebac0aadcbc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
