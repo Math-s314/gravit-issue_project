@@ -35,6 +35,7 @@ var max_particle_speed : float
 ## Input information
 var freeze         := false
 var kill_mvt_input := false
+var gravity_blocked := false
 
 var input_axis     := 0.0
 var input_velocity := Vector2(0.0, 0.0)
@@ -100,11 +101,12 @@ func handle_input():
 		print("Yo")
 	
 	if is_on_floor():
+		gravity_blocked = false
 		input_velocity = Vector2(get_speed_floor() , input_velocity.y)
 	else : 
 		input_velocity = Vector2(0.04 * move_speed * input_axis * air_control + 0.96 * velocity.x, input_velocity.y)
 	
-	if Input.is_action_just_pressed("Gravité") : switch_gravity()
+	if !gravity_blocked && Input.is_action_just_pressed("Gravité") : switch_gravity()
 	
 func handle_animation(ended := &"") -> void:
 	# Blocking animations
@@ -171,9 +173,11 @@ func respawn():
 		
 func switch_gravity():
 	gravity_transition = true
+	gravity_blocked = true
 	gravity_timer.wait_time = transition_duration
 	gravity_dir = -gravity_dir
 	velocity.y  = velocity.y / switch_divider
+	up_direction.y = -gravity_dir
 	sprite.play(&"Renversement")
 	gravity_timer.start();
 		
@@ -195,8 +199,6 @@ func _on_animation_finished() -> void:
 		
 	if sprite.animation == &"Renversement"  :
 		scale.y = gravity_dir * abs(scale.y)
-		up_direction.y = -gravity_dir
-
 		handle_animation(&"Renversement")
 		handle_particle()
 	
