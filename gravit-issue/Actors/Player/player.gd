@@ -42,9 +42,11 @@ var input_velocity := Vector2(0.0, 0.0)
 var last_press	   := 0.0
 
 ## Respawn informations
-
 var last_checkpoint_lvl : int = -1
 var last_checkpoint_spa : NodePath = ^""
+
+## Inventory data
+var gears_collected := 0
 
 func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
@@ -84,7 +86,6 @@ func get_gravity_coef() -> float:
 			return gravity_dir * (1 + (strong_switch -1) * exp(-progress))
 			
 func get_speed_floor() -> float:
-	print(floor_control)
 	return input_axis * move_speed * (1-exp(-floor_control*last_press))
 
 func handle_input():
@@ -98,7 +99,6 @@ func handle_input():
 		
 	if Input.is_action_just_pressed("Left") || Input.is_action_just_pressed("Right") :
 		last_press = 0.0
-		print("Yo")
 	
 	if is_on_floor():
 		gravity_blocked = false

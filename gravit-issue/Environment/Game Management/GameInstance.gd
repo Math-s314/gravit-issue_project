@@ -14,6 +14,15 @@ var spawn_path : NodePath
 var in_transition := TransitionState.NO_TRANSITION
 var timer := 0.0
 
+## Nodes memory
+var nodes : Array[Dictionary] = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
+
+func get_node_data(node : Node) -> Variant:
+	return nodes[getLevelManager().level_number].get(node.get_path())
+	
+func set_node_data(node : Node, data : Variant):
+	nodes[getLevelManager().level_number].set(node.get_path(), data)
+
 func getLevelManager() -> LevelManager :
 	return get_tree().get_root().get_child(1)
 

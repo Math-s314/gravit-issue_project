@@ -71,7 +71,6 @@ tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAA
 [node name="Player" parent="." instance=ExtResource("5_fj68v")]
 position = Vector2(463, 33)
 transition_duration = 0.5
-still_duration = 10000.0
 move_strength = 0.0
 
 [node name="MovingPlatform" parent="." instance=ExtResource("5_4omtb")]
