@@ -28,6 +28,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Magnet") && detection_length > (position - GameInstance.getLevelManager().player.position).length():
 		if active : _on_stop_attraction()
 		else : _on_start_attraction()
+	
+	var direction = GameInstance.getLevelManager().player.global_position - global_position
+	rotation = direction.angle() + PI/2 
 		
 	if active:
 		var player : Player = GameInstance.getLevelManager().player
@@ -36,3 +39,4 @@ func _process(delta: float) -> void:
 		
 		if check_player_release():
 			_on_stop_attraction()
+		

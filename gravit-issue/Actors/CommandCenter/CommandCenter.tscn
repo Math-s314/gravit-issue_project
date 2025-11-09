@@ -137,6 +137,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bw0fj")
+}],
+"loop": true,
+"name": &"initial",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sh6wu")
 }, {
 "duration": 1.0,
@@ -168,11 +176,10 @@ scale = Vector2(3, 3)
 script = ExtResource("1_s3bqx")
 
 [node name="PointLight2D18" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(-298, -741)
-scale = Vector2(6.80398, 8.4233)
-color = Color(0.584928, 0.661743, 0.800655, 1)
-energy = 1.09
+position = Vector2(-0.0708609, -0.333333)
+scale = Vector2(0.129037, 0.146256)
+color = Color(0, 0.909238, 0.779339, 1)
+energy = 2.31
 texture = SubResource("GradientTexture2D_fqhp1")
 texture_scale = 4.78
 
@@ -183,8 +190,8 @@ shape = SubResource("RectangleShape2D_0ove4")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.189453, 0.184814)
 sprite_frames = SubResource("SpriteFrames_fqhp1")
-animation = &"open"
-autoplay = "default"
+animation = &"initial"
+autoplay = "initial"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

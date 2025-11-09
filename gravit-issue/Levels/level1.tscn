@@ -40,18 +40,18 @@ tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAA
 [node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
 position = Vector2(47, 44)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0705298, 0.0828365, 0.12501, 1)
+
 [node name="doors" type="Node2D" parent="."]
 position = Vector2(-1, 12)
 
 [node name="Door1" parent="doors" instance=ExtResource("7_1jijn")]
-position = Vector2(522, 31)
+position = Vector2(514.835, 21.835)
 connected_level = 2
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0705298, 0.0828365, 0.12501, 1)
-
 [node name="PointLight2D23" type="PointLight2D" parent="."]
-position = Vector2(415.5, 19.9727)
+position = Vector2(416, 13)
 scale = Vector2(4.0483, 2.1015)
 energy = 1.17
 texture = SubResource("GradientTexture2D_utqd4")

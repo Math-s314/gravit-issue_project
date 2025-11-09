@@ -262,7 +262,6 @@ libraries = {
 autoplay = "move2"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0705298, 0.0828365, 0.12501, 1)
 
 [node name="PointLight2D20" type="PointLight2D" parent="CanvasModulate"]

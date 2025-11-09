@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi5ctooh5yi32"]
+[gd_scene load_steps=5 format=3 uid="uid://bi5ctooh5yi32"]
 
 [ext_resource type="Script" uid="uid://nf5e1g6p07ds" path="res://Actors/Magnet/Magnet.gd" id="1_3abb8"]
+[ext_resource type="Texture2D" uid="uid://dqs46t56y484x" path="res://Actors/Red Light/TXT-Light.png" id="2_4rihx"]
+[ext_resource type="Texture2D" uid="uid://deiwj1yxfcfjr" path="res://Actors/Aimant/Aimant.png" id="3_4rihx"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3abb8"]
 size = Vector2(6, 6)
@@ -13,6 +15,26 @@ detection_length = 300.0
 release_length = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("PlaceholderTexture2D_3abb8")
+
+[node name="Directional" type="PointLight2D" parent="."]
+scale = Vector2(0.2, 1)
+color = Color(0.512191, 0.699044, 0.913437, 1)
+energy = 2.05
+texture = ExtResource("2_4rihx")
+texture_scale = 0.3
+
+[node name="Ambient" type="PointLight2D" parent="."]
+position = Vector2(-4, -5)
+color = Color(0.376762, 0.536211, 0.795413, 1)
+energy = 1.52
+texture = ExtResource("2_4rihx")
+texture_scale = 0.3
+
+[node name="RedLight" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4rihx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
