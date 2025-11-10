@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cajhgrw28yl67"]
+[gd_scene load_steps=10 format=3 uid="uid://cajhgrw28yl67"]
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
 [ext_resource type="PackedScene" uid="uid://7ltbw35bwoft" path="res://Levels/MainTest.tscn" id="2_q5qeu"]
@@ -9,14 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="6_bwc7g"]
 [ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="7_gf0xu"]
 [ext_resource type="PackedScene" uid="uid://cyqt24nr2nsgt" path="res://Levels/level8.tscn" id="9_ag1o7"]
-[ext_resource type="AudioStream" uid="uid://dfmmmjmcslq4u" path="res://Sound Design/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3" id="10_faa51"]
 
 [node name="GameInstance" type="Node"]
 script = ExtResource("1_s8j48")
 transition_duration = 0.5
 levels = Array[PackedScene]([ExtResource("2_q5qeu"), ExtResource("3_ag1o7"), ExtResource("4_faa51"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu"), ExtResource("9_ag1o7"), ExtResource("9_ag1o7")])
 metadata/_custom_type_script = "uid://csfn1aml2p131"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_faa51")
-autoplay = true

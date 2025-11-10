@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2f430g2kungo"]
 
-[ext_resource type="AudioStream" uid="uid://u3ngws1gp6nr" path="res://Sound Design/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3" id="1_5mso1"]
+[ext_resource type="AudioStream" uid="uid://dxn1f38igm58x" path="res://Sound Design/Chiptune (8-bit) Sci-fi Music Collection - A Chiptune Galaxy (2024).mp3" id="1_5mso1"]
 
 [node name="Musique" type="Node2D"]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://scsc28hygp57"]
 
 [ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="1_18qad"]
-[ext_resource type="Texture2D" uid="uid://mmuqnj3jgqgo" path="res://UI/Fond spatial.png" id="1_r1q1u"]
-[ext_resource type="Texture2D" uid="uid://qsy6ws3i2wps" path="res://UI/Titre.png" id="2_sbixa"]
-[ext_resource type="Texture2D" uid="uid://cly5hf8hmxu8y" path="res://UI/Lune.png" id="3_xarby"]
+[ext_resource type="Texture2D" uid="uid://hycltvjesilo" path="res://UI/Fond spatial.png" id="1_r1q1u"]
+[ext_resource type="Texture2D" uid="uid://dvpycvpxnxdbt" path="res://UI/Titre.png" id="2_sbixa"]
+[ext_resource type="Texture2D" uid="uid://q6aban06jmku" path="res://UI/Lune.png" id="3_xarby"]
 [ext_resource type="Script" uid="uid://14eihnr7csql" path="res://UI/planet_movement.gd" id="4_18qad"]
-[ext_resource type="Texture2D" uid="uid://2dgfbeu1vbrn" path="res://UI/Terre.png" id="4_k63d0"]
-[ext_resource type="Texture2D" uid="uid://dj35y8nwcrkih" path="res://UI/Mars.png" id="5_18qad"]
+[ext_resource type="Texture2D" uid="uid://bhxpr70opf8qa" path="res://UI/Terre.png" id="4_k63d0"]
+[ext_resource type="Texture2D" uid="uid://d5n2o810kpxs" path="res://UI/Mars.png" id="5_18qad"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

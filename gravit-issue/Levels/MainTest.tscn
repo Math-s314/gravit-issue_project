@@ -2,10 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="1_bum52"]
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_fxk6y"]
-[ext_resource type="Texture2D" uid="uid://dotyyxurhj8r4" path="res://icon.svg" id="2_p0vmq"]
+[ext_resource type="Texture2D" uid="uid://kskk4eistb4c" path="res://icon.svg" id="2_p0vmq"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="4_fxk6y"]
 [ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="6_5iydn"]
-
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wjexi"]
 

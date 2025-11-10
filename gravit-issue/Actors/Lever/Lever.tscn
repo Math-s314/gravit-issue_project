@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt288a6uipyly"]
 
 [ext_resource type="Script" uid="uid://dgpu4fqsipl63" path="res://Actors/Lever/Lever.gd" id="1_ol8sc"]
-[ext_resource type="Texture2D" uid="uid://1u558bkmouf3" path="res://Actors/Lever/Lever.png" id="2_m4o0b"]
+[ext_resource type="Texture2D" uid="uid://cpx2ya0f3b2dh" path="res://Actors/Lever/Lever.png" id="2_m4o0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4o0b"]
 size = Vector2(375, 10)

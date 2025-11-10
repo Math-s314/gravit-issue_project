@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cyrb6k84emf1u"]
 
 [ext_resource type="Script" uid="uid://c1o66poxr42j0" path="res://Actors/Door/Door.gd" id="1_41oc4"]
-[ext_resource type="Texture2D" uid="uid://culi6oqpu4wx" path="res://Actors/Door/Porte_fond.png" id="2_lb016"]
-[ext_resource type="Texture2D" uid="uid://0b5s1iy06ais" path="res://Actors/Door/Porte_avant.png" id="3_ciidx"]
+[ext_resource type="Texture2D" uid="uid://dmlbrbiyqar1b" path="res://Actors/Door/Porte_fond.png" id="2_lb016"]
+[ext_resource type="Texture2D" uid="uid://c238nbrb5kgxr" path="res://Actors/Door/Porte_avant.png" id="3_ciidx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41oc4"]
 size = Vector2(20, 64)

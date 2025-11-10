@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://blx3201fubvhi"]
 
-[ext_resource type="Texture2D" uid="uid://byyla6oydgkxq" path="res://Environment/Tilemaps/Walls/TM-Metal.png" id="1_hcjvi"]
+[ext_resource type="Texture2D" uid="uid://1uihvtptgmn8" path="res://Environment/Tilemaps/Walls/TM-Metal.png" id="1_hcjvi"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f5cj5"]
 polygon = PackedVector2Array(0, 0, 256, 0, 256, 256, 0, 256)

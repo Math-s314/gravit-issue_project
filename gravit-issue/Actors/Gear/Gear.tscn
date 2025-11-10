@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8xa3dvou0rvb" path="res://Actors/Collectible/Collectible.tscn" id="1_gughf"]
 [ext_resource type="Script" uid="uid://5o4h62yi81bb" path="res://Actors/Gear/gear.gd" id="2_obhih"]
-[ext_resource type="Texture2D" uid="uid://banilljqkcl1" path="res://Actors/Gear/gear.png" id="2_socc2"]
+[ext_resource type="Texture2D" uid="uid://cx5b8y11686oo" path="res://Actors/Gear/gear.png" id="2_socc2"]
 
 [node name="Gear" instance=ExtResource("1_gughf")]
 script = ExtResource("2_obhih")

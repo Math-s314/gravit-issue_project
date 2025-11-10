@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="5_pht4a"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="6_fygpt"]
 [ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="7_btbpw"]
-[ext_resource type="Texture2D" uid="uid://bbjkx5fidqkn4" path="res://Environment/Objects/Generateur laser.png" id="8_cipbp"]
+[ext_resource type="Texture2D" uid="uid://bcht6bjedv3pl" path="res://Environment/Objects/Generateur laser.png" id="8_cipbp"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="10_g4w76"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="11_f4ugn"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=37 format=3 uid="uid://co77yloob4v0x"]
 
 [ext_resource type="Script" uid="uid://df1qqk66h4j77" path="res://Actors/CommandCenter/CommandCenter.gd" id="1_s3bqx"]
-[ext_resource type="Texture2D" uid="uid://cnfofmcvokme1" path="res://Actors/CommandCenter/TM-Respawn.png" id="3_c0wfm"]
-[ext_resource type="Texture2D" uid="uid://cd5ih0583svg8" path="res://Actors/CommandCenter/TM-Close.png" id="3_fqhp1"]
+[ext_resource type="Texture2D" uid="uid://dnxo6cvm52jdi" path="res://Actors/CommandCenter/TM-Respawn.png" id="3_c0wfm"]
+[ext_resource type="Texture2D" uid="uid://dwuvcv70nosj5" path="res://Actors/CommandCenter/TM-Close.png" id="3_fqhp1"]
 
 [sub_resource type="Gradient" id="Gradient_f5cj5"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -311,7 +311,6 @@ shape = SubResource("RectangleShape2D_0ove4")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.189453, 0.184814)
 sprite_frames = SubResource("SpriteFrames_fqhp1")
-animation = &"reset"
 autoplay = "initial"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

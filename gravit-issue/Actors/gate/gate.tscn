@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3fgjirqwt8hs"]
 
 [ext_resource type="Script" uid="uid://bhr8d2pge2eox" path="res://Actors/Gate/gate.gd" id="1_gum74"]
-[ext_resource type="Texture2D" uid="uid://vcqh0off4svh" path="res://Actors/Gate/gate.png" id="1_kosmi"]
+[ext_resource type="Texture2D" uid="uid://bnpuruwgikurj" path="res://Actors/Gate/gate.png" id="1_kosmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kosmi"]
 size = Vector2(192, 392)

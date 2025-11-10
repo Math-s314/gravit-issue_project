@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
 [ext_resource type="SpriteFrames" uid="uid://lfhvyob3ommm" path="res://Actors/Player/Animations/SpriteFrames.tres" id="2_4x03u"]
 [ext_resource type="Gradient" uid="uid://d4ghvv4ah3poc" path="res://Actors/Player/Animations/BlueColorGrad.tres" id="3_urha2"]
-[ext_resource type="Texture2D" uid="uid://cskw56xmqgyhk" path="res://Actors/Player/Animations/ParticlesTexture.png" id="3_yqfyh"]
+[ext_resource type="Texture2D" uid="uid://brhcolk0dgqtr" path="res://Actors/Player/Animations/ParticlesTexture.png" id="3_yqfyh"]
 [ext_resource type="Script" uid="uid://narkb22wwdx1" path="res://Actors/Player/camera_2d.gd" id="4_l6vkj"]
-[ext_resource type="Texture2D" uid="uid://dqs46t56y484x" path="res://Actors/Red Light/TXT-Light.png" id="7_rsi04"]
+[ext_resource type="Texture2D" uid="uid://dawkn5x8ubcq" path="res://Actors/Red Light/TXT-Light.png" id="7_rsi04"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsi04"]
 radius = 15.0

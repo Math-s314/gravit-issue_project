@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cb4oqmsfpfedi"]
 
-[ext_resource type="Texture2D" uid="uid://dqs46t56y484x" path="res://Actors/Red Light/TXT-Light.png" id="1_80qju"]
-[ext_resource type="Texture2D" uid="uid://6bt4e601k0qt" path="res://Actors/Red Light/RedLight.png" id="2_cs37v"]
+[ext_resource type="Texture2D" uid="uid://dawkn5x8ubcq" path="res://Actors/Red Light/TXT-Light.png" id="1_80qju"]
+[ext_resource type="Texture2D" uid="uid://kpgjnfx6mw42" path="res://Actors/Red Light/RedLight.png" id="2_cs37v"]
 
 [sub_resource type="Animation" id="Animation_d4vg0"]
 length = 0.001
