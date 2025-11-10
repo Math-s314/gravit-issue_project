@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_dj5hn"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_m135w"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_pcft3"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_xv7eh"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_p0prn"]
@@ -57,8 +57,7 @@ connected_door = NodePath("doors/Door8")
 position = Vector2(416, -339)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0705298, 0.0828365, 0.12501, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="PointLigths" type="Node2D" parent="."]
 

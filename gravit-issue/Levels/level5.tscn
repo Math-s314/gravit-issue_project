@@ -1,12 +1,26 @@
-[gd_scene load_steps=13 format=4 uid="uid://c2me0iiitxuxj"]
+[gd_scene load_steps=12 format=4 uid="uid://c2me0iiitxuxj"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_b3501"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_fj68v"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_fj68v"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_ggu74"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="5_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_4omtb"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="5_fj68v"]
+
+[sub_resource type="Animation" id="Animation_fj68v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-353, 204)]
+}
 
 [sub_resource type="Animation" id="Animation_eh6o7"]
 resource_name = "move2"
@@ -23,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-353, 204), Vector2(-161, 204), Vector2(-161, 42), Vector2(-353, 42), Vector2(-353, 13)]
-}
-
-[sub_resource type="Animation" id="Animation_fj68v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MovingPlatform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-353, 204)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eex2w"]
@@ -68,11 +67,6 @@ tile_map_data = PackedByteArray("AAD0/wcAAAAAAAAAAAD1/wcAAAAAAAAAAAD2/wcAAAAAAAA
 [node name="Walls-white" parent="." instance=ExtResource("4_ggu74")]
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAABAAkAAAAAAAEAAAABAAoAAAAAAAEAAAABAAsAAAAAAAIAAAD//wwAAAACAAEAAAD//wsAAAACAAEAAAD//woAAAACAAEAAAD//wkAAAACAAEAAAABAAgAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAABAAEAAAAAAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAD//wcAAAACAAAAAAD//wgAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAAHAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAAsAAAABAAIAAAAGAAsAAAABAAIAAAABAA0AAAAAAAAAAAD//w0AAAACAAEAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD//wAAAAACAAEAAAD/////AAAAAAQAAAAFAA0AAAABAAAAAAAEAA0AAAABAAAAAAADAA0AAAABAAAAAAACAA0AAAABAAAAAAACAAsAAAABAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAHAAQAAAABAAIAAAAHAAYAAAABAAAAAAAGAAYAAAABAAAAAAAGAAQAAAAAAAIAAAAHAAkAAAAAAAEAAAAHAAgAAAAAAAEAAAAGAAoAAAABAAAAAAAFAAoAAAABAAAAAAAEAAoAAAABAAAAAAACAAgAAAACAAEAAAACAAcAAAACAAEAAAACAAYAAAACAAEAAAAGAAcAAAABAAIAAAAFAAcAAAABAAIAAAAEAAcAAAAAAAIAAAADAAkAAAACAAAAAAACAAkAAAABAAMAAAADAAoAAAABAAMAAAAHAAcAAAACAAMAAAAHAAoAAAAAAAMAAAAFAAYAAAABAAAAAAAEAAYAAAAAAAAAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAGAAMAAAACAAMAAAAFAAMAAAABAAIAAAACAAUAAAACAAEAAAACAAQAAAACAAEAAAACAAMAAAAAAAQAAAAHAAIAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAAHAAMAAAABAAEAAAACAAoAAAABAAEAAAD+/w0AAAAAAAEAAAD+/wwAAAAAAAEAAAD+/wsAAAAAAAEAAAD+/woAAAAAAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAAAAAD4/wcAAAABAAAAAAD5/wcAAAACAAAAAAD4/wUAAAABAAIAAAD5/wUAAAABAAIAAAD8/w0AAAACAAEAAAD6/w0AAAAAAAEAAAD4/w0AAAACAAEAAAD8/wwAAAACAAEAAAD8/wsAAAACAAEAAAD8/woAAAACAAEAAAD8/wkAAAACAAEAAAD8/wgAAAACAAEAAAD8/wcAAAACAAEAAAD//wUAAAACAAIAAAD+/wUAAAABAAIAAAD9/wUAAAABAAIAAAD8/wUAAAAAAAQAAAD8/wYAAAACAAEAAAD6/wwAAAAAAAEAAAD6/wsAAAAAAAEAAAD6/woAAAAAAAAAAAD5/wgAAAACAAIAAAD7/woAAAAAAAMAAAD7/wkAAAAAAAEAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD7/wYAAAAAAAEAAAD6/wUAAAABAAIAAAD7/wUAAAACAAMAAAD4/wgAAAAAAAQAAAD4/wwAAAACAAEAAAD4/wsAAAACAAEAAAD4/woAAAACAAEAAAD4/wkAAAACAAEAAAD7/w0AAAABAAEAAAD7/wwAAAABAAEAAAD7/wsAAAABAAEAAAAHAP7/AAABAAEAAAAGAP7/AAABAAEAAAAFAP7/AAABAAEAAAAEAP7/AAABAAEAAAADAP7/AAABAAEAAAACAP7/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAD4/wMAAAABAAAAAAD5/wMAAAACAAAAAAD5/wQAAAABAAMAAAD4/wQAAAABAAEAAAD6/wQAAAABAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD9/wQAAAABAAAAAAD+/wQAAAAAAAMAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD9//7/AAABAAIAAAD8//7/AAABAAIAAAD7//7/AAABAAIAAAD6//7/AAABAAIAAAD+//7/AAACAAMAAAD4/wEAAAABAAIAAAD5/wEAAAACAAIAAAD5/wAAAAACAAAAAAD4/wAAAAABAAMAAAD5//7/AAABAAIAAAD4////AAACAAEAAAD4//7/AAAAAAQAAAA=")
-
-[node name="Player" parent="." instance=ExtResource("5_fj68v")]
-position = Vector2(463, 33)
-transition_duration = 0.5
-move_strength = 0.0
 
 [node name="MovingPlatform" parent="." instance=ExtResource("5_4omtb")]
 position = Vector2(-353, 204)
@@ -126,7 +120,6 @@ texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D20" type="PointLight2D" parent="PointLights"]
-visible = false
 position = Vector2(54.5269, 473.919)
 rotation = 1.5708
 scale = Vector2(5.61237, 0.335147)
@@ -135,7 +128,6 @@ texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="PointLight2D19" type="PointLight2D" parent="PointLights"]
-visible = false
 position = Vector2(78.7774, 345.256)
 scale = Vector2(1.41545, 0.690476)
 energy = 2.75
@@ -150,5 +142,4 @@ texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0705298, 0.0828365, 0.12501, 1)
+color = Color(0, 0, 0, 1)

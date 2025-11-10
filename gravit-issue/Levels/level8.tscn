@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=4 uid="uid://cyqt24nr2nsgt"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_87c1g"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_17tg2"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="4_ptlqi"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_17tg2"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="4_ptlqi"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_vnjtb"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_m8385"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="5_vfg7c"]
@@ -408,7 +408,6 @@ libraries = {
 autoplay = "move6"
 
 [node name="MovingPlatform" parent="platform" instance=ExtResource("5_m8385")]
-visible = false
 position = Vector2(4394, 355)
 rotation = -1.5708
 
@@ -416,7 +415,7 @@ rotation = -1.5708
 position = Vector2(4352, 332)
 
 [node name="Lever3" parent="platform" instance=ExtResource("5_vfg7c")]
-position = Vector2(4351, 319)
+position = Vector2(4339, 323)
 
 [node name="fast" type="AnimationPlayer" parent="platform"]
 libraries = {
@@ -507,13 +506,13 @@ autoplay = "4s"
 [node name="respawn" type="Node2D" parent="."]
 
 [node name="respawn1" parent="respawn" instance=ExtResource("6_soxnf")]
-position = Vector2(704, 31)
+position = Vector2(711, 44)
 
 [node name="respawn2" parent="respawn" instance=ExtResource("6_soxnf")]
-position = Vector2(2207, 32)
+position = Vector2(2207, 45)
 
 [node name="respawn3" parent="respawn" instance=ExtResource("6_soxnf")]
-position = Vector2(3200, 95)
+position = Vector2(3200, 107)
 
 [connection signal="activate" from="gates/Lever1" to="gates/Gate1" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate2" method="change_state"]
