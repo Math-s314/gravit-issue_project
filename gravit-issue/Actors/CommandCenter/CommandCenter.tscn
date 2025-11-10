@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://co77yloob4v0x"]
+[gd_scene load_steps=37 format=3 uid="uid://co77yloob4v0x"]
 
 [ext_resource type="Script" uid="uid://df1qqk66h4j77" path="res://Actors/CommandCenter/CommandCenter.gd" id="1_s3bqx"]
 [ext_resource type="Texture2D" uid="uid://cnfofmcvokme1" path="res://Actors/CommandCenter/TM-Respawn.png" id="3_c0wfm"]
@@ -58,6 +58,50 @@ region = Rect2(128, 256, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5l7j"]
 atlas = ExtResource("3_fqhp1")
 region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqhp1"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0wfm"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffjtm"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nyr6"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cool"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x0pw"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmonp"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tqdy"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqixu"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6r0b"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pam5e"]
+atlas = ExtResource("3_fqhp1")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sh6wu"]
 atlas = ExtResource("3_c0wfm")
@@ -145,6 +189,82 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fqhp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0wfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffjtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nyr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cool")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x0pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmonp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tqdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqixu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6r0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pam5e")
+}],
+"loop": false,
+"name": &"open",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqhp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0wfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffjtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nyr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cool")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x0pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmonp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tqdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqixu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6r0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pam5e")
+}],
+"loop": false,
+"name": &"reset",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sh6wu")
 }, {
 "duration": 1.0,
@@ -166,7 +286,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_q4cq4")
 }],
 "loop": false,
-"name": &"open",
+"name": &"respawn",
 "speed": 10.0
 }]
 
@@ -175,7 +295,8 @@ z_index = -1
 scale = Vector2(3, 3)
 script = ExtResource("1_s3bqx")
 
-[node name="PointLight2D18" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-0.0708609, -0.333333)
 scale = Vector2(0.129037, 0.146256)
 color = Color(0, 0.909238, 0.779339, 1)
@@ -190,7 +311,7 @@ shape = SubResource("RectangleShape2D_0ove4")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.189453, 0.184814)
 sprite_frames = SubResource("SpriteFrames_fqhp1")
-animation = &"initial"
+animation = &"reset"
 autoplay = "initial"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

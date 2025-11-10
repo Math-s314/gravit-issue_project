@@ -17,7 +17,7 @@ fill_from = Vector2(0, 0.525641)
 fill_to = Vector2(1, 0.559829)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lb016"]
-polygon = PackedVector2Array(3, 39, 0, 20, 0, -19, 8, -39, -9, -38, -16, -20, -16, 19, -9, 39)
+polygon = PackedVector2Array(9, -38, 9, -48, 55, -48, 55, 48, 9, 48, 9, 38, 38, 38, 44, 20, 44, -20, 38, -38)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_41oc4")
@@ -72,8 +72,11 @@ texture = ExtResource("3_ciidx")
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
+modulate = Color(0, 0, 0, 1)
+light_mask = 1048575
+visibility_layer = 1048575
 occluder = SubResource("OccluderPolygon2D_lb016")
+occluder_light_mask = 1048575
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

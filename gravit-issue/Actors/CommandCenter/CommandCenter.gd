@@ -2,18 +2,39 @@ extends Spawner
 class_name CommandCenter
 
 @onready var sprite := $AnimatedSprite2D
+@onready var light := $PointLight2D
 var respawning_player : Player = null
-var unlocked = false 
+
+func _ready():
+	if GameInstance.get_node_data(self) != true :
+		sprite.play(&"initial")
+		light.visible = false
+	else:
+		sprite.play(&"default")
+		light.visible = true
+		
+	
 
 func register_checkpoint(player : Player) -> void:
-	player.last_checkpoint_lvl = GameInstance.getLevelManager().level_number
-	player.last_checkpoint_spa = GameInstance.getLevelManager().get_path_to(self)
-
-func pre_enable() -> void:
-	pass
+	var lvl : int = GameInstance.getLevelManager().level_number
 	
-func enable() -> void:
-	pass
+	# Check if this checkpoint is the last unlocked
+	if GameInstance.get_node_data(self) != true :
+		# Lock previous one if it exists
+		if player.last_checkpoint_lvl > 0:
+			GameInstance._set_node_data(player.last_checkpoint_lvl, player.last_checkpoint_spa, false)
+				
+		if player.last_checkpoint_lvl == lvl :
+			var old : CommandCenter = get_node(player.last_checkpoint_spa)
+			old.sprite.play(&"reset")
+			
+		# Lock this one
+		GameInstance.set_node_data(self, true)
+		light.visible = true
+		sprite.play(&"close")
+	
+	player.last_checkpoint_lvl = lvl
+	player.last_checkpoint_spa = get_path()
 	
 func spawn_player(player : Player) -> void:
 	player.freeze = true
@@ -24,16 +45,22 @@ func spawn_player(player : Player) -> void:
 	sprite.play(&"open")	
 
 func _on_body_entered(body:Node2D) -> void:
-	if body is Player: 
-		register_checkpoint(body as Player)
-		if unlocked == false : 
-			unlocked = true
-			sprite.play("close")
+	if body is Player: register_checkpoint(body as Player)
 
 func _on_animation_finished() -> void:
 	if sprite.animation == &"open":
+		sprite.play(&"respawn")
+		
+	elif sprite.animation == &"respawn":
 		respawning_player.freeze = false
 		respawning_player.velocity = Vector2.ZERO
 		respawning_player.sprite.play(&"Idle")
 		respawning_player.visible = true
 		sprite.play(&"close")
+	
+	elif sprite.animation == &"close":
+		sprite.play(&"default")
+		
+	elif sprite.animation == &"reset":
+		light.visible = false
+		sprite.play(&"initial")

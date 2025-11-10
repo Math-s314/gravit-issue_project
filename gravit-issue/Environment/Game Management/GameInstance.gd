@@ -18,10 +18,16 @@ var timer := 0.0
 var nodes : Array[Dictionary] = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 func get_node_data(node : Node) -> Variant:
-	return nodes[getLevelManager().level_number].get(node.get_path())
+	return _get_node_data(getLevelManager().level_number, node.get_path())
 	
-func set_node_data(node : Node, data : Variant):
-	nodes[getLevelManager().level_number].set(node.get_path(), data)
+func _get_node_data(lvl : int, path : NodePath) -> Variant:
+	return nodes[lvl].get(path)
+	
+func set_node_data(node : Node, data : Variant) -> void:
+	_set_node_data(getLevelManager().level_number, node.get_path(), data)
+
+func _set_node_data(lvl : int, path : NodePath, data : Variant) -> void:
+	nodes[lvl].set(path, data)
 
 func getLevelManager() -> LevelManager :
 	return get_tree().get_root().get_child(1)
