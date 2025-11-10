@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n0yqhevsfonv"
-path="res://.godot/imported/splash-screen.png-88cceac72e6e3b352e807a7af67540d3.ctex"
+uid="uid://dmo8eu8bow8a7"
+path="res://.godot/imported/Soleil.png-76bed5713a825c2dc36f1658d96b19d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Play Screen/splash-screen.png"
-dest_files=["res://.godot/imported/splash-screen.png-88cceac72e6e3b352e807a7af67540d3.ctex"]
+source_file="res://UI/Soleil.png"
+dest_files=["res://.godot/imported/Soleil.png-76bed5713a825c2dc36f1658d96b19d8.ctex"]
 
 [params]
 

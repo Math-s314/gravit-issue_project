@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2dgfbeu1vbrn"
-path="res://.godot/imported/Terre.png-53aa45a9f981433722189541dbb71071.ctex"
+uid="uid://n0yqhevsfonv"
+path="res://.godot/imported/splash-screen.png-19945049deb9d24b1361fb3d3800d229.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Play Screen/Terre.png"
-dest_files=["res://.godot/imported/Terre.png-53aa45a9f981433722189541dbb71071.ctex"]
+source_file="res://UI/splash-screen.png"
+dest_files=["res://.godot/imported/splash-screen.png-19945049deb9d24b1361fb3d3800d229.ctex"]
 
 [params]
 

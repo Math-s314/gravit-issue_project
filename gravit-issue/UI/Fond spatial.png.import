@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmo8eu8bow8a7"
-path="res://.godot/imported/Soleil.png-8416e30e56200024176c3f0bc0d13449.ctex"
+uid="uid://mmuqnj3jgqgo"
+path="res://.godot/imported/Fond spatial.png-82b27045419fdd5830250d4d8dfb2fd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Play Screen/Soleil.png"
-dest_files=["res://.godot/imported/Soleil.png-8416e30e56200024176c3f0bc0d13449.ctex"]
+source_file="res://UI/Fond spatial.png"
+dest_files=["res://.godot/imported/Fond spatial.png-82b27045419fdd5830250d4d8dfb2fd3.ctex"]
 
 [params]
 

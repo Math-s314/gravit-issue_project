@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cly5hf8hmxu8y"
-path="res://.godot/imported/Lune.png-1643f09361a79ba8dcf546a494dd4606.ctex"
+path="res://.godot/imported/Lune.png-4baa7f8b50b88ae732cd61ee4b5dd3f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Play Screen/Lune.png"
-dest_files=["res://.godot/imported/Lune.png-1643f09361a79ba8dcf546a494dd4606.ctex"]
+source_file="res://UI/Lune.png"
+dest_files=["res://.godot/imported/Lune.png-4baa7f8b50b88ae732cd61ee4b5dd3f0.ctex"]
 
 [params]
 

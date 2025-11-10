@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mmuqnj3jgqgo"
-path="res://.godot/imported/Fond spatial.png-7552bb100ac5111758043f5b21adf1bf.ctex"
+uid="uid://dj35y8nwcrkih"
+path="res://.godot/imported/Mars.png-40c2b385310ee26f2fbddf40fd1687f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Play Screen/Fond spatial.png"
-dest_files=["res://.godot/imported/Fond spatial.png-7552bb100ac5111758043f5b21adf1bf.ctex"]
+source_file="res://UI/Mars.png"
+dest_files=["res://.godot/imported/Mars.png-40c2b385310ee26f2fbddf40fd1687f8.ctex"]
 
 [params]
 

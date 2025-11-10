@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://scsc28hygp57"]
+
+[ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="1_18qad"]
+[ext_resource type="Texture2D" uid="uid://mmuqnj3jgqgo" path="res://UI/Fond spatial.png" id="1_r1q1u"]
+[ext_resource type="Texture2D" uid="uid://qsy6ws3i2wps" path="res://UI/Titre.png" id="2_sbixa"]
+[ext_resource type="Texture2D" uid="uid://cly5hf8hmxu8y" path="res://UI/Lune.png" id="3_xarby"]
+[ext_resource type="Script" uid="uid://14eihnr7csql" path="res://UI/planet_movement.gd" id="4_18qad"]
+[ext_resource type="Texture2D" uid="uid://2dgfbeu1vbrn" path="res://UI/Terre.png" id="4_k63d0"]
+[ext_resource type="Texture2D" uid="uid://dj35y8nwcrkih" path="res://UI/Mars.png" id="5_18qad"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_18qad")
+
+[node name="Back" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r1q1u")
+expand_mode = 3
+
+[node name="Mars" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44
+anchor_top = 0.7
+anchor_right = 0.56
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_18qad")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("4_18qad")
+center = Vector2(0.5, 1)
+radius_x = 1.1
+radius_y = 0.5
+speed = 0.7
+
+[node name="Earth" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.3
+anchor_right = 0.59
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_k63d0")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("4_18qad")
+center = Vector2(0.5, 1)
+radius_x = 1.0
+radius_y = 0.5
+speed = 0.5
+
+[node name="Moon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xarby")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("4_18qad")
+center = Vector2(0.5, 0.9)
+radius_x = 0.83
+radius_y = 0.5
+speed = 0.6
+
+[node name="Title" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_left = -0.224014
+offset_top = -0.400009
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sbixa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.65
+anchor_right = 0.85
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Play" type="Button" parent="HBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="Continue" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Continue" type="Button" parent="HBoxContainer/Continue"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="Credit" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Credit" type="Button" parent="HBoxContainer/Credit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credit"
+
+[node name="Quit" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Quit" type="Button" parent="HBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
