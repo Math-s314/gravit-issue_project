@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://nhcw2sc4mebl"]
+[gd_scene load_steps=3 format=3 uid="uid://nhcw2sc4mebl"]
 
 [ext_resource type="Texture2D" uid="uid://bginx7cct7uyu" path="res://Environment/Objects/Platform.png" id="1_qxom5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbhva"]
+size = Vector2(63, 13)
+
 [node name="MovingPlatform" type="AnimatableBody2D"]
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_qxom5")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-29, -10, 29, -10, 23, 3, -23, 3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_nbhva")

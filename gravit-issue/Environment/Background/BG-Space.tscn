@@ -14,3 +14,4 @@ sources/0 = SubResource("TileSetAtlasSource_ko1ev")
 
 [node name="BG-Space" type="TileMapLayer"]
 tile_set = SubResource("TileSet_wtijl")
+collision_enabled = false
