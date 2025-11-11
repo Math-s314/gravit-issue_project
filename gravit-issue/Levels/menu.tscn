@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="1_18qad"]
 [ext_resource type="Texture2D" uid="uid://hycltvjesilo" path="res://UI/Fond spatial.png" id="1_r1q1u"]
-[ext_resource type="Script" uid="uid://cnlajopftpyo1" path="res://Levels/menu.gd" id="2_3s77f"]
+[ext_resource type="Script" uid="uid://cnlajopftpyo1" path="res://UI/menu.gd" id="2_3s77f"]
 [ext_resource type="Texture2D" uid="uid://dvpycvpxnxdbt" path="res://UI/Titre.png" id="2_sbixa"]
 [ext_resource type="Texture2D" uid="uid://q6aban06jmku" path="res://UI/Lune.png" id="3_xarby"]
 [ext_resource type="Script" uid="uid://14eihnr7csql" path="res://UI/planet_movement.gd" id="4_18qad"]

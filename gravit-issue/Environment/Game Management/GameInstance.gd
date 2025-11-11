@@ -64,8 +64,12 @@ func _switch() -> void:
 	current.queue_free()
 	
 	# Spawn Player
-	_spawn_player()
-	if next.level_number > 0 : next.add_child(next.player)
+	if next.level_number > 0 :
+		_spawn_player()
+		next.add_child(next.player)
+	else:
+		next.player.queue_free()
+		next.player = null
 	
 func _spawn_player():
 	var spawner : Spawner = getLevelManager().get_node(spawn_path)

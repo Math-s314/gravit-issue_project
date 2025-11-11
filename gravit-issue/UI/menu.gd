@@ -19,6 +19,7 @@ func _on_play_pressed() -> void:
 	player.last_checkpoint_spa = ^"/root/level1/CommandCenter"
 	player.last_checkpoint_lvl = 1
 	
+	GameInstance.nodes = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as Array[Dictionary]
 	GameInstance._set_node_data(1, "/root/level1/CommandCenter", true)
 	GameInstance.switch_scene(1, ^"/root/level1/CommandCenter") 
 
@@ -31,6 +32,7 @@ func _on_continue_pressed() -> void:
 	
 	player.last_checkpoint_spa = json.data.player.last_checkpoint_spa
 	player.last_checkpoint_lvl = json.data.player.last_checkpoint_lvl
+	player.gears_collected = json.data.player.gears_collected
 	
 	for i in range(json.data.game_instance.size()):
 		GameInstance.nodes[i] = json.data.game_instance[i]
