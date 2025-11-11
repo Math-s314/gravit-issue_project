@@ -40,7 +40,8 @@ func register_checkpoint(player : Player) -> void:
 		"game_instance" : GameInstance.nodes,
 		"player" : {
 			"last_checkpoint_spa" : player.last_checkpoint_spa,
-			"last_checkpoint_lvl" : player.last_checkpoint_lvl
+			"last_checkpoint_lvl" : player.last_checkpoint_lvl,
+			"gears_collected" : player.gears_collected
 		}
 	}
 	save_file.store_line(JSON.stringify(save_dict))

@@ -21,6 +21,7 @@ var gravity_transition := false
 @onready var jump_timer := $JumpTimer
 @onready var sprite := $AnimatedSprite2D
 @onready var particles := $CPUParticles2D
+@onready var HUD : Hud = $CanvasLayer/HUD
 
 ## Display informations
 const EPSILON := 1e-2
@@ -51,7 +52,8 @@ var gears_collected := 0
 func _enter_tree() -> void:
 	GameInstance.getLevelManager().player = self
 
-func _ready() -> void:	
+func _ready() -> void:
+	HUD.set_gears(gears_collected)
 	min_particle_speed = particles.initial_velocity_min
 	max_particle_speed = particles.initial_velocity_max
 	sprite.play(&"Idle") # To avoid blocking animations...

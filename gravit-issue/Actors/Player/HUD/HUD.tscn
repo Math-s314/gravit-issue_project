@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlw7ff15t3r0p"]
+
+[ext_resource type="Script" uid="uid://cgr6b0wvc5e67" path="res://Actors/Player/HUD/hud.gd" id="1_b7s20"]
+[ext_resource type="Texture2D" uid="uid://cx5b8y11686oo" path="res://Actors/Gear/gear.png" id="2_6cnmb"]
+[ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="3_n2kh0"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_n2kh0")
+script = ExtResource("1_b7s20")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.12
+anchor_bottom = 0.15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="ControlTexture" type="Control" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/ControlTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6cnmb")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ControlLabel" type="Control" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/ControlLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PanelContainer" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to Menu ?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Yes" type="Control" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Yes" type="Button" parent="PanelContainer/HBoxContainer/Yes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yes"
+
+[node name="No" type="Control" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="No" type="Button" parent="PanelContainer/HBoxContainer/No"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "No"
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Yes/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/No/No" to="." method="_on_no_pressed"]
