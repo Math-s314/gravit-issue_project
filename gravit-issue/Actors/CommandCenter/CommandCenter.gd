@@ -12,17 +12,14 @@ func _ready():
 	else:
 		sprite.play(&"default")
 		light.visible = true
-		
-	
 
 func register_checkpoint(player : Player) -> void:
 	var lvl : int = GameInstance.getLevelManager().level_number
-	
 	# Check if this checkpoint is the last unlocked
 	if GameInstance.get_node_data(self) != true :
 		# Lock previous one if it exists
 		if player.last_checkpoint_lvl > 0:
-			GameInstance._set_node_data(player.last_checkpoint_lvl, player.last_checkpoint_spa, false)
+			GameInstance._set_node_data(player.last_checkpoint_lvl, String(player.last_checkpoint_spa), false)
 				
 		if player.last_checkpoint_lvl == lvl :
 			var old : CommandCenter = get_node(player.last_checkpoint_spa)
@@ -32,9 +29,21 @@ func register_checkpoint(player : Player) -> void:
 		GameInstance.set_node_data(self, true)
 		light.visible = true
 		sprite.play(&"close")
-	
+		
+	# Save state (even if the CommandCenter was already unlocked)
+	# TODO : Add feedback to this effect !!
 	player.last_checkpoint_lvl = lvl
 	player.last_checkpoint_spa = get_path()
+	
+	var save_file := FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_dict := {
+		"game_instance" : GameInstance.nodes,
+		"player" : {
+			"last_checkpoint_spa" : player.last_checkpoint_spa,
+			"last_checkpoint_lvl" : player.last_checkpoint_lvl
+		}
+	}
+	save_file.store_line(JSON.stringify(save_dict))
 	
 func spawn_player(player : Player) -> void:
 	player.freeze = true

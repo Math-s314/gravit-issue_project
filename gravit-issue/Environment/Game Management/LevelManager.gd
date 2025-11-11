@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasItem
 class_name LevelManager
 
 signal player_death()

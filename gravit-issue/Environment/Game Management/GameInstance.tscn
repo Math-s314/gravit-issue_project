@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cajhgrw28yl67"]
+[gd_scene load_steps=11 format=3 uid="uid://cajhgrw28yl67"]
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
-[ext_resource type="PackedScene" uid="uid://7ltbw35bwoft" path="res://Levels/MainTest.tscn" id="2_q5qeu"]
+[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_u2pno"]
 [ext_resource type="PackedScene" uid="uid://cs6l5g0xcrhcl" path="res://Levels/level1.tscn" id="3_ag1o7"]
+[ext_resource type="PackedScene" uid="uid://scsc28hygp57" path="res://Levels/menu.tscn" id="3_bwc7g"]
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="4_ag1o7"]
 [ext_resource type="PackedScene" uid="uid://bff14qymfiw12" path="res://Levels/level2.tscn" id="4_faa51"]
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="5_faa51"]
@@ -13,5 +14,6 @@
 [node name="GameInstance" type="Node"]
 script = ExtResource("1_s8j48")
 transition_duration = 0.5
-levels = Array[PackedScene]([ExtResource("2_q5qeu"), ExtResource("3_ag1o7"), ExtResource("4_faa51"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu"), ExtResource("9_ag1o7"), ExtResource("9_ag1o7")])
+player_scene = ExtResource("2_u2pno")
+levels_scenes = Array[PackedScene]([ExtResource("3_bwc7g"), ExtResource("3_ag1o7"), ExtResource("4_faa51"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu"), null, ExtResource("9_ag1o7")])
 metadata/_custom_type_script = "uid://csfn1aml2p131"

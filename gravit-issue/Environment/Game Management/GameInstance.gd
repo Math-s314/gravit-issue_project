@@ -4,7 +4,8 @@ class_name _GameInstance
 enum TransitionState {NO_TRANSITION, DISAPPEAR, APPEAR}
 
 @export var transition_duration : float
-@export var levels : Array[PackedScene]
+@export var player_scene : PackedScene
+@export var levels_scenes : Array[PackedScene]
 
 ## Transition memory
 var current_lvl := 0
@@ -18,15 +19,18 @@ var timer := 0.0
 var nodes : Array[Dictionary] = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 func get_node_data(node : Node) -> Variant:
-	return _get_node_data(getLevelManager().level_number, node.get_path())
+	return _get_node_data(getLevelManager().level_number, String(node.get_path()))
 	
-func _get_node_data(lvl : int, path : NodePath) -> Variant:
+func _get_node_data(lvl : int, path : String) -> Variant:
 	return nodes[lvl].get(path)
 	
+# Be carefull `data` must be serializable (this data is savezd as JSON)
 func set_node_data(node : Node, data : Variant) -> void:
-	_set_node_data(getLevelManager().level_number, node.get_path(), data)
+	_set_node_data(getLevelManager().level_number, String(node.get_path()), data)
 
-func _set_node_data(lvl : int, path : NodePath, data : Variant) -> void:
+# Be carefull `data` must be serializable (this data is savezd as JSON)
+# This is why the path is required as `String` (and not `NodePath`)
+func _set_node_data(lvl : int, path : String, data : Variant) -> void:
 	nodes[lvl].set(path, data)
 
 func getLevelManager() -> LevelManager :
@@ -46,11 +50,11 @@ func _switch() -> void:
 	in_transition = TransitionState.APPEAR
 
 	var current : LevelManager = getLevelManager()
-	var next : LevelManager    = levels[next_lvl].instantiate()
+	var next : LevelManager    = levels_scenes[next_lvl].instantiate()
 	
 	# Dispawn Player
 	next.player = current.player
-	current.remove_child(next.player)
+	if current.level_number > 0 : current.remove_child(next.player)
 	
 	# Scene switch
 	get_tree().get_root().remove_child(current)
@@ -61,7 +65,7 @@ func _switch() -> void:
 	
 	# Spawn Player
 	_spawn_player()
-	next.add_child(next.player)
+	if next.level_number > 0 : next.add_child(next.player)
 	
 func _spawn_player():
 	var spawner : Spawner = getLevelManager().get_node(spawn_path)

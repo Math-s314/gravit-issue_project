@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://cs6l5g0xcrhcl"]
+[gd_scene load_steps=11 format=4 uid="uid://cs6l5g0xcrhcl"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_aunfx"]
-[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_j32wv"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_utqd4"]
@@ -33,7 +32,7 @@ position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD/////AAABAAIAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD+////AAABAAIAAAD9////AAABAAIAAAD8////AAABAAIAAAD7////AAABAAIAAAD6/wAAAAACAAEAAAD6/wEAAAABAAMAAAD6////AAAAAAQAAAA=")
 
 [node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
-position = Vector2(47, 44)
+position = Vector2(-292, 45)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -85,9 +84,3 @@ position = Vector2(79, 8)
 
 [node name="Gear" parent="." instance=ExtResource("9_utqd4")]
 position = Vector2(185, 41)
-
-[node name="CommandCenter2" parent="." instance=ExtResource("5_302sc")]
-position = Vector2(177, 42)
-
-[node name="Player" parent="." instance=ExtResource("2_j32wv")]
-position = Vector2(-224, 38)
