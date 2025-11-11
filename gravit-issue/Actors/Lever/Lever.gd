@@ -14,10 +14,18 @@ signal deactivate
 var activated : bool = false
 var num_inside : int = 0
 
+func _ready() -> void:
+	activated = (GameInstance.get_node_data(self) == true)
+	if activated :
+		sprite.frame = 1
+		area.position.y = -20.0
+		block.position.y = 35.0
+
 func check_body(body: Node2D) -> bool:
 	return body is Player
 	
 func activate_scene() -> void:
+	GameInstance.set_node_data(self, true)
 	activated = true
 	sprite.frame = 1
 	area.position.y = -20.0
@@ -25,6 +33,7 @@ func activate_scene() -> void:
 	activate.emit()
 	
 func deactivate_scene() -> void:
+	GameInstance.set_node_data(self, false)
 	activated = false
 	sprite.frame = 0
 	area.position.y = -40.0

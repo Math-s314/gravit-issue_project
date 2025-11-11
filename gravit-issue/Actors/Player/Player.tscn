@@ -23,6 +23,7 @@ height = 40.0
 z_index = 1
 scale = Vector2(0.8, 0.8)
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ech6m")
 gravity_strength = 500.0
 transition_duration = 0.3
