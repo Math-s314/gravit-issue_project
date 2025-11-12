@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_nft2l"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_1civ8"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="3_bc7qw"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_g804b"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="3_bc7qw"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_g804b"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="4_1civ8"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_ftf2w"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="6_5sfgv"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="6_5sfgv"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="6_g804b"]
 [ext_resource type="PackedScene" uid="uid://bi5ctooh5yi32" path="res://Actors/Magnet/Magnet.tscn" id="6_wiukq"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="9_bc7qw"]
@@ -208,6 +208,6 @@ rotation = -3.14159
 [node name="respawn" type="Node2D" parent="."]
 
 [node name="CommandCenter" parent="respawn" instance=ExtResource("10_1civ8")]
-position = Vector2(-160, 1313)
+position = Vector2(-128, 1324)
 
 [connection signal="activate" from="Lever" to="Gate" method="change_state"]

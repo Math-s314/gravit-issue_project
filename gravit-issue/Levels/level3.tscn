@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_vr4rd"]
 [ext_resource type="Texture2D" uid="uid://cxrnq3by37c3q" path="res://UI/Planete_random.png" id="2_k0lmg"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="3_0ywmm"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_25qem"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_25qem"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="3_c5oim"]
 [ext_resource type="PackedScene" uid="uid://p5rr3lij5t4f" path="res://Environment/Background/Bg-space-v2.tscn" id="3_k0lmg"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_eh6o7"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="5_ls4d1"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="6_31k36"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="6_31k36"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="6_eex2w"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="6_qqkb1"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="6_qqkb1"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="9_0ywmm"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="12_ls4d1"]
 
@@ -67,7 +67,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_eh6o7"]
 resource_name = "move2"
-length = 6.0
+length = 5.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -76,10 +76,10 @@ tracks/0/path = NodePath("platforms/MovingPlatform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-95, 76), Vector2(-95, 76), Vector2(-95, 76), Vector2(160, 76), Vector2(160, 76), Vector2(160, 76)]
+"values": [Vector2(160, 76), Vector2(160, 76), Vector2(-95, 76), Vector2(-95, 76)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -88,10 +88,10 @@ tracks/1/path = NodePath("platforms/MovingPlatform2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-95, -12), Vector2(-95, -12), Vector2(-95, -12), Vector2(160, -12), Vector2(160, -12), Vector2(160, -12)]
+"values": [Vector2(160, -12), Vector2(160, -12), Vector2(-95, -12), Vector2(-95, -12)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -100,10 +100,10 @@ tracks/2/path = NodePath("platforms/MovingPlatform3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.5, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-50, 32), Vector2(-50, 32), Vector2(-50, 32), Vector2(204, 33), Vector2(204, 103), Vector2(204, 103)]
+"values": [Vector2(204, 103), Vector2(204, 103), Vector2(204, 33), Vector2(-50, 32), Vector2(-50, 32)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -112,10 +112,10 @@ tracks/3/path = NodePath("platforms/MovingPlatform4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-140, 103), Vector2(-140, 103), Vector2(-140, 31), Vector2(116, 32), Vector2(116, 32), Vector2(116, 32)]
+"values": [Vector2(116, 32), Vector2(116, 32), Vector2(-140, 31), Vector2(-140, 103), Vector2(-140, 103)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eex2w"]
@@ -224,7 +224,7 @@ connected_level = 8
 [node name="Door5" parent="doors" instance=ExtResource("6_eex2w")]
 position = Vector2(519, -161)
 connected_level = 4
-connected_door = NodePath("doors/Door11")
+connected_door = NodePath("doors/Door6")
 
 [node name="Door6" parent="doors" instance=ExtResource("6_eex2w")]
 position = Vector2(351, 586)
@@ -263,7 +263,7 @@ connected_level = 5
 connected_door = NodePath("doors/Door6")
 
 [node name="CommandCenter" parent="." instance=ExtResource("9_0ywmm")]
-position = Vector2(-373, 44)
+position = Vector2(-385, 42)
 
 [node name="platforms" type="Node2D" parent="."]
 

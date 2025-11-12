@@ -1,9 +1,9 @@
 [gd_scene load_steps=31 format=4 uid="uid://cyqt24nr2nsgt"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_87c1g"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_17tg2"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="3_vfg7c"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="4_ptlqi"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_17tg2"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="3_vfg7c"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="4_ptlqi"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_vnjtb"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_m8385"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="5_vfg7c"]
@@ -406,7 +406,7 @@ connected_door = NodePath("doors/Door4")
 position = Vector2(-1404, 33)
 rotation = 3.14159
 scale = Vector2(1, -1)
-connected_level = 9
+connected_level = 7
 
 [node name="gates" type="Node2D" parent="."]
 
@@ -551,6 +551,9 @@ position = Vector2(3200, 107)
 
 [node name="CommandCenter" parent="respawn" instance=ExtResource("6_soxnf")]
 position = Vector2(19, 43)
+
+[node name="CommandCenter2" parent="respawn" instance=ExtResource("6_soxnf")]
+position = Vector2(4286, 43)
 
 [node name="gears" type="Node2D" parent="."]
 
@@ -743,6 +746,11 @@ scale = Vector2(20.4545, 2.42635)
 energy = 2.05
 texture = SubResource("GradientTexture2D_6rfkw")
 texture_scale = 1.1
+
+[node name="PointLight2D11" type="PointLight2D" parent="Node2D"]
+position = Vector2(-1057, 29)
+scale = Vector2(3.48438, 2.69094)
+texture = SubResource("GradientTexture2D_fki3c")
 
 [connection signal="activate" from="gates/Lever1" to="gates/Gate1" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate2" method="change_state"]
