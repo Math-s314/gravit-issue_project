@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_dj5hn"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_m135w"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_pcft3"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="4_ijnin"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="4_ijnin"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_xv7eh"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_p0prn"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="7_ojro4"]
@@ -110,6 +110,9 @@ connected_door = NodePath("doors/Door8")
 [node name="CommandCenter" parent="." instance=ExtResource("5_p0prn")]
 position = Vector2(416, -339)
 
+[node name="CommandCenter2" parent="." instance=ExtResource("5_p0prn")]
+position = Vector2(-129, 43)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
@@ -170,6 +173,13 @@ scale = Vector2(7.45739, 5.57883)
 energy = 1.57
 texture = SubResource("GradientTexture2D_ojro4")
 texture_scale = 1.1
+
+[node name="PointLight2D26" type="PointLight2D" parent="PointLigths"]
+position = Vector2(-15.5, -1168.5)
+scale = Vector2(6.15451, 6.15451)
+energy = 1.87
+texture = SubResource("GradientTexture2D_ojro4")
+texture_scale = 1.8
 
 [node name="gears" type="Node2D" parent="."]
 
