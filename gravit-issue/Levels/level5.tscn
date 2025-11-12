@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=4 uid="uid://c2me0iiitxuxj"]
+[gd_scene load_steps=15 format=4 uid="uid://c2me0iiitxuxj"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_b3501"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_fj68v"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_fj68v"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="4_4omtb"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_ggu74"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="5_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_4omtb"]
+[ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="7_fj68v"]
+[ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="8_ggu74"]
 
 [sub_resource type="Animation" id="Animation_fj68v"]
 length = 0.001
@@ -64,7 +67,11 @@ tile_map_data = PackedByteArray("AAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAAPAA8AAAAAAAA
 [node name="Laser" parent="." instance=ExtResource("3_fj68v")]
 tile_map_data = PackedByteArray("AAD0/wcAAAAAAAAAAAD1/wcAAAAAAAAAAAD2/wcAAAAAAAAAAAD3/wcAAAAAAAAAAAD4/wcAAAAAAAAAAAD5/wcAAAAAAAAAAAD6/wcAAAAAAAAAAAD7/wcAAAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAD5//7/AAAAAAAAAAD4//7/AAAAAAAAAAD3//7/AAAAAAAAAAD2//7/AAAAAAMAAAD0/wEAAAAAAAAAAAD1/wEAAAAAAAAAAAD2/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD5/wEAAAAAAAUAAAD5/wIAAAAAAAEAAAD0/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAD2/wMAAAAAAAAAAAD3/wMAAAAAAAAAAAD4/wMAAAAAAAAAAAD5/wMAAAAAAAQAAAA=")
 
+[node name="LaserGenerator" parent="." instance=ExtResource("4_4omtb")]
+tile_map_data = PackedByteArray("AAD2//3/AQAAAAAAAAD2//7/AQAAAAEAAAD7/wcAAQABAAAAAAD8/wcAAQABAAEAAADz/wcAAQABAAAAAAD0/wcAAQABAAEAAADz/wMAAQABAAAAAAD0/wMAAQABAAEAAADz/wEAAQABAAAAAAD0/wEAAQABAAEAAAD7//7/AQABAAAAAAD8//7/AQABAAEAAAA=")
+
 [node name="Walls-white" parent="." instance=ExtResource("4_ggu74")]
+z_index = 1
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAABAAkAAAAAAAEAAAABAAoAAAAAAAEAAAABAAsAAAAAAAIAAAD//wwAAAACAAEAAAD//wsAAAACAAEAAAD//woAAAACAAEAAAD//wkAAAACAAEAAAABAAgAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAABAAEAAAAAAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAD//wcAAAACAAAAAAD//wgAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAAHAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAAsAAAABAAIAAAAGAAsAAAABAAIAAAABAA0AAAAAAAAAAAD//w0AAAACAAEAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD//wAAAAACAAEAAAD/////AAAAAAQAAAAFAA0AAAABAAAAAAAEAA0AAAABAAAAAAADAA0AAAABAAAAAAACAA0AAAABAAAAAAACAAsAAAABAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAHAAQAAAABAAIAAAAHAAYAAAABAAAAAAAGAAYAAAABAAAAAAAGAAQAAAAAAAIAAAAHAAkAAAAAAAEAAAAHAAgAAAAAAAEAAAAGAAoAAAABAAAAAAAFAAoAAAABAAAAAAAEAAoAAAABAAAAAAACAAgAAAACAAEAAAACAAcAAAACAAEAAAACAAYAAAACAAEAAAAGAAcAAAABAAIAAAAFAAcAAAABAAIAAAAEAAcAAAAAAAIAAAADAAkAAAACAAAAAAACAAkAAAABAAMAAAADAAoAAAABAAMAAAAHAAcAAAACAAMAAAAHAAoAAAAAAAMAAAAFAAYAAAABAAAAAAAEAAYAAAAAAAAAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAGAAMAAAACAAMAAAAFAAMAAAABAAIAAAACAAUAAAACAAEAAAACAAQAAAACAAEAAAACAAMAAAAAAAQAAAAHAAIAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAAHAAMAAAABAAEAAAACAAoAAAABAAEAAAD+/w0AAAAAAAEAAAD+/wwAAAAAAAEAAAD+/wsAAAAAAAEAAAD+/woAAAAAAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAAAAAD4/wcAAAABAAAAAAD5/wcAAAACAAAAAAD4/wUAAAABAAIAAAD5/wUAAAABAAIAAAD8/w0AAAACAAEAAAD6/w0AAAAAAAEAAAD4/w0AAAACAAEAAAD8/wwAAAACAAEAAAD8/wsAAAACAAEAAAD8/woAAAACAAEAAAD8/wkAAAACAAEAAAD8/wgAAAACAAEAAAD8/wcAAAACAAEAAAD//wUAAAACAAIAAAD+/wUAAAABAAIAAAD9/wUAAAABAAIAAAD8/wUAAAAAAAQAAAD8/wYAAAACAAEAAAD6/wwAAAAAAAEAAAD6/wsAAAAAAAEAAAD6/woAAAAAAAAAAAD5/wgAAAACAAIAAAD7/woAAAAAAAMAAAD7/wkAAAAAAAEAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD7/wYAAAAAAAEAAAD6/wUAAAABAAIAAAD7/wUAAAACAAMAAAD4/wgAAAAAAAQAAAD4/wwAAAACAAEAAAD4/wsAAAACAAEAAAD4/woAAAACAAEAAAD4/wkAAAACAAEAAAD7/w0AAAABAAEAAAD7/wwAAAABAAEAAAD7/wsAAAABAAEAAAAHAP7/AAABAAEAAAAGAP7/AAABAAEAAAAFAP7/AAABAAEAAAAEAP7/AAABAAEAAAADAP7/AAABAAEAAAACAP7/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAD4/wMAAAABAAAAAAD5/wMAAAACAAAAAAD5/wQAAAABAAMAAAD4/wQAAAABAAEAAAD6/wQAAAABAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD9/wQAAAABAAAAAAD+/wQAAAAAAAMAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD9//7/AAABAAIAAAD8//7/AAABAAIAAAD7//7/AAABAAIAAAD6//7/AAABAAIAAAD+//7/AAACAAMAAAD4/wEAAAABAAIAAAD5/wEAAAACAAIAAAD5/wAAAAACAAAAAAD4/wAAAAABAAMAAAD5//7/AAABAAIAAAD4////AAACAAEAAAD4//7/AAAAAAQAAAA=")
 
@@ -99,6 +106,30 @@ connected_door = NodePath("doors/Door5")
 position = Vector2(523, 351)
 connected_level = 4
 connected_door = NodePath("doors/Door8")
+
+[node name="Door5" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(-159, 907)
+rotation = 1.5708
+connected_level = 3
+connected_door = NodePath("doors/Door10")
+
+[node name="Door6" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(-416, 907)
+rotation = 1.5708
+connected_level = 3
+connected_door = NodePath("doors/Door11")
+
+[node name="Door7" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(-523, 416)
+scale = Vector2(-1, 1)
+connected_level = 2
+connected_door = NodePath("doors/Door5")
+
+[node name="Door8" parent="doors" instance=ExtResource("5_0n3a6")]
+position = Vector2(-523, 160)
+scale = Vector2(-1, 1)
+connected_level = 2
+connected_door = NodePath("doors/Door6")
 
 [node name="PointLights" type="Node2D" parent="."]
 position = Vector2(-331, -1046.25)
@@ -142,4 +173,18 @@ texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="gears" type="Node2D" parent="."]
+position = Vector2(-416, -32)
+
+[node name="Gear1" parent="gears" instance=ExtResource("7_fj68v")]
+position = Vector2(830, 641)
+
+[node name="Gear2" parent="gears" instance=ExtResource("7_fj68v")]
+
+[node name="respawn" type="Node2D" parent="."]
+
+[node name="CommandCenter" parent="respawn" instance=ExtResource("8_ggu74")]
+position = Vector2(256, 35)

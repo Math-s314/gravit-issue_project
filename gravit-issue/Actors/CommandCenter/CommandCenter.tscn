@@ -313,7 +313,6 @@ shape = SubResource("RectangleShape2D_0ove4")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.189453, 0.184814)
 sprite_frames = SubResource("SpriteFrames_fqhp1")
-animation = &"close"
 autoplay = "initial"
 
 [node name="RespawnAudio" type="AudioStreamPlayer2D" parent="."]

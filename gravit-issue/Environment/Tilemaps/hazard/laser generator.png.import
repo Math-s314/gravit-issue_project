@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcht6bjedv3pl"
-path="res://.godot/imported/Generateur laser.png-c8de2ee90e35b6ca6ed6a928726dd5b0.ctex"
+uid="uid://ba5o32ad7ek5a"
+path="res://.godot/imported/laser generator.png-aa9909496ef2cd27f75f9ca1acc8390a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Objects/Generateur laser.png"
-dest_files=["res://.godot/imported/Generateur laser.png-c8de2ee90e35b6ca6ed6a928726dd5b0.ctex"]
+source_file="res://Environment/Tilemaps/Hazard/laser generator.png"
+dest_files=["res://.godot/imported/laser generator.png-aa9909496ef2cd27f75f9ca1acc8390a.ctex"]
 
 [params]
 

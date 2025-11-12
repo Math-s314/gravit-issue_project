@@ -16,3 +16,7 @@ func change_state() -> void:
 	else:
 		animation.play_backwards("animation")
 	music.play()
+		
+func change_state_delayed() -> void:
+	await get_tree().create_timer(3).timeout
+	change_state()
