@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi5ctooh5yi32"]
+[gd_scene load_steps=4 format=3 uid="uid://bi5ctooh5yi32"]
 
 [ext_resource type="Script" uid="uid://nf5e1g6p07ds" path="res://Actors/Magnet/Magnet.gd" id="1_3abb8"]
 [ext_resource type="Texture2D" uid="uid://dawkn5x8ubcq" path="res://Actors/Red Light/TXT-Light.png" id="2_4rihx"]
 [ext_resource type="Texture2D" uid="uid://clm4hpih62m0y" path="res://Actors/Aimant/Aimant.png" id="3_4rihx"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3abb8"]
-size = Vector2(6, 6)
 
 [node name="Magnet" type="Area2D"]
 position = Vector2(0, -3.57628e-07)
@@ -13,10 +10,6 @@ script = ExtResource("1_3abb8")
 strength = 15.0
 detection_length = 300.0
 release_length = 50.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = SubResource("PlaceholderTexture2D_3abb8")
 
 [node name="Directional" type="PointLight2D" parent="."]
 scale = Vector2(0.2, 1)

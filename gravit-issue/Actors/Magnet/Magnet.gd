@@ -5,6 +5,7 @@ class_name Magnet
 @export var detection_length : float
 @export var release_length : float
 
+@onready var rotable := $RedLight
 var active := false
 
 func _on_start_attraction() -> void:
@@ -29,8 +30,8 @@ func _process(delta: float) -> void:
 		if active : _on_stop_attraction()
 		else : _on_start_attraction()
 	
-	var direction = GameInstance.getLevelManager().player.global_position - global_position
-	rotation = direction.angle() + PI/2 
+	var direction : Vector2 = GameInstance.getLevelManager().player.global_position - global_position
+	rotable.rotation = direction.angle() + PI/2 
 		
 	if active:
 		var player : Player = GameInstance.getLevelManager().player
@@ -39,4 +40,3 @@ func _process(delta: float) -> void:
 		
 		if check_player_release():
 			_on_stop_attraction()
-		
