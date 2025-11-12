@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://bff14qymfiw12"]
+[gd_scene load_steps=15 format=4 uid="uid://bff14qymfiw12"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_pcft3"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_dj5hn"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_m135w"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_m135w"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="3_pcft3"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="4_ijnin"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="4_ijnin"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_xv7eh"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_p0prn"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="7_ojro4"]
+[ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="9_ijnin"]
 
 [sub_resource type="Gradient" id="Gradient_dj5hn"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -113,6 +114,52 @@ position = Vector2(416, -339)
 [node name="CommandCenter2" parent="." instance=ExtResource("5_p0prn")]
 position = Vector2(-129, 43)
 
+[node name="Label" type="Label" parent="."]
+offset_left = -279.0
+offset_top = -618.0
+offset_right = -32.0
+offset_bottom = -594.0
+theme = ExtResource("9_ijnin")
+theme_override_font_sizes/font_size = 18
+text = "That's quite an obstacle!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -167.0
+offset_top = -738.0
+offset_right = 122.0
+offset_bottom = -714.0
+theme = ExtResource("9_ijnin")
+theme_override_font_sizes/font_size = 18
+text = "Left-click to switch gravity..."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 164.0
+offset_top = -635.0
+offset_right = 453.0
+offset_bottom = -584.0
+theme = ExtResource("9_ijnin")
+theme_override_font_sizes/font_size = 18
+text = "Oh ! A gear. Take it,
+ it could be usefull"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 166.0
+offset_top = -373.0
+offset_right = 522.0
+offset_bottom = -349.0
+theme = ExtResource("9_ijnin")
+theme_override_font_sizes/font_size = 18
+text = "Be careful!"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -189.0
+offset_top = -44.0
+offset_right = 167.0
+offset_bottom = -20.0
+theme = ExtResource("9_ijnin")
+theme_override_font_sizes/font_size = 18
+text = "You know, you can jump with Space"
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
@@ -188,6 +235,9 @@ position = Vector2(420, 418)
 
 [node name="Gear" parent="gears" instance=ExtResource("7_ojro4")]
 position = Vector2(192, -1150)
+
+[node name="Gear2" parent="gears" instance=ExtResource("7_ojro4")]
+position = Vector2(419, -603)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gears"]
 libraries = {

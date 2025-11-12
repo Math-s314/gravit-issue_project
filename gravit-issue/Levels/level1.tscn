@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_aunfx"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_nq5j5"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_nq5j5"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_utqd4"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_302sc"]
+[ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="5_u55on"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_1jijn"]
 [ext_resource type="PackedScene" uid="uid://cb4oqmsfpfedi" path="res://Actors/Red Light/RedLight.tscn" id="9_nq5j5"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="9_u55on"]
-[ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="9_utqd4"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="9_u55on"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="10_pdma0"]
 
 [sub_resource type="Gradient" id="Gradient_pht4a"]
@@ -31,6 +31,16 @@ tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAAEAA0AAAABAAAAAAAFAA0AAAACAAA
 
 [node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
 position = Vector2(-292, 45)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -190.0
+offset_top = 4.0
+offset_right = 249.0
+offset_bottom = 55.0
+theme = ExtResource("5_u55on")
+theme_override_font_sizes/font_size = 18
+text = "Wake-up, you have to escape the starship !!
+Press A/Q and D to move..."
 
 [node name="Walls-white" parent="." instance=ExtResource("4_utqd4")]
 position = Vector2(1.45519e-11, 1.45519e-11)
@@ -95,9 +105,6 @@ texture_scale = 1.1
 
 [node name="RedLight" parent="." instance=ExtResource("9_nq5j5")]
 position = Vector2(95, -95)
-
-[node name="Gear" parent="." instance=ExtResource("9_utqd4")]
-position = Vector2(225, 40)
 
 [node name="Gate" parent="." instance=ExtResource("9_u55on")]
 position = Vector2(-226, -160)

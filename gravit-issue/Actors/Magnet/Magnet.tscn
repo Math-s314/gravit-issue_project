@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi5ctooh5yi32"]
+[gd_scene load_steps=6 format=3 uid="uid://bi5ctooh5yi32"]
 
 [ext_resource type="Script" uid="uid://nf5e1g6p07ds" path="res://Actors/Magnet/Magnet.gd" id="1_3abb8"]
 [ext_resource type="Texture2D" uid="uid://dawkn5x8ubcq" path="res://Actors/Red Light/TXT-Light.png" id="2_4rihx"]
 [ext_resource type="Texture2D" uid="uid://clm4hpih62m0y" path="res://Actors/Aimant/Aimant.png" id="3_4rihx"]
+[ext_resource type="Texture2D" uid="uid://kq5j0kfsjhby" path="res://UI/right-click.png" id="4_o241p"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o241p"]
+light_mode = 1
 
 [node name="Magnet" type="Area2D"]
 position = Vector2(0, -3.57628e-07)
@@ -29,5 +33,11 @@ texture_scale = 0.3
 position = Vector2(-4.76837e-07, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_4rihx")
+
+[node name="Right-click" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_o241p")
+position = Vector2(26, -13)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_o241p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

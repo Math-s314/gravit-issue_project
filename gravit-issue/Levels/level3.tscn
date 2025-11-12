@@ -1,18 +1,19 @@
-[gd_scene load_steps=19 format=4 uid="uid://m5qf51b24mwv"]
+[gd_scene load_steps=20 format=4 uid="uid://m5qf51b24mwv"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_vr4rd"]
 [ext_resource type="Texture2D" uid="uid://cxrnq3by37c3q" path="res://UI/Planete_random.png" id="2_k0lmg"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="3_0ywmm"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_25qem"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_25qem"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="3_c5oim"]
 [ext_resource type="PackedScene" uid="uid://p5rr3lij5t4f" path="res://Environment/Background/Bg-space-v2.tscn" id="3_k0lmg"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="4_eh6o7"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="5_ls4d1"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="6_31k36"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="6_31k36"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="6_eex2w"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="6_qqkb1"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="6_qqkb1"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="9_0ywmm"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="12_ls4d1"]
+[ext_resource type="Theme" uid="uid://kdjquqrftg4i" path="res://UI/theme_ui.tres" id="12_qqkb1"]
 
 [sub_resource type="Animation" id="Animation_vr4rd"]
 length = 0.001
@@ -264,6 +265,15 @@ connected_door = NodePath("doors/Door6")
 
 [node name="CommandCenter" parent="." instance=ExtResource("9_0ywmm")]
 position = Vector2(-385, 42)
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -490.0
+offset_top = 21.0
+offset_right = -134.0
+offset_bottom = 45.0
+theme = ExtResource("12_qqkb1")
+theme_override_font_sizes/font_size = 18
+text = "Good luck, I can't go further..."
 
 [node name="platforms" type="Node2D" parent="."]
 

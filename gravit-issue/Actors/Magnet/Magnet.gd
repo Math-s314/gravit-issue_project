@@ -26,9 +26,13 @@ func check_player_release() -> bool:
 		|| player.freeze
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Magnet") && detection_length > (position - GameInstance.getLevelManager().player.position).length():
-		if active : _on_stop_attraction()
-		else : _on_start_attraction()
+	if detection_length > (position - GameInstance.getLevelManager().player.position).length():
+		$"Right-click".visible = true
+		if Input.is_action_just_pressed("Magnet"):
+			if active : _on_stop_attraction()
+			else : _on_start_attraction()
+	else:
+		$"Right-click".visible = false
 	
 	var direction : Vector2 = GameInstance.getLevelManager().player.global_position - global_position
 	rotable.rotation = direction.angle() + PI/2 
