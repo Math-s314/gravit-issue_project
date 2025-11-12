@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnpuruwgikurj"
-path="res://.godot/imported/gate.png-840669becb8caef266c99fdce1b186eb.ctex"
+uid="uid://cxrnq3by37c3q"
+path="res://.godot/imported/Planete_random.png-fce6645cf2c4a49ac4a2fe65419262a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/gate/gate.png"
-dest_files=["res://.godot/imported/gate.png-840669becb8caef266c99fdce1b186eb.ctex"]
+source_file="res://UI/Planete_random.png"
+dest_files=["res://.godot/imported/Planete_random.png-fce6645cf2c4a49ac4a2fe65419262a4.ctex"]
 
 [params]
 
