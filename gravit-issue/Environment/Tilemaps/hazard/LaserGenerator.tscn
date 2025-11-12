@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c412yfnyfwnk6"]
 
-[ext_resource type="Texture2D" uid="uid://ba5o32ad7ek5a" path="res://Environment/Tilemaps/hazard/laser generator.png" id="1_ec83r"]
+[ext_resource type="Texture2D" uid="uid://ba5o32ad7ek5a" path="res://Environment/Tilemaps/Hazard/laser generator.png" id="1_ec83r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70tby"]
 texture = ExtResource("1_ec83r")
