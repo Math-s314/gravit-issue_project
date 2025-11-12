@@ -543,7 +543,7 @@ texture = SubResource("GradientTexture2D_ukveq")
 [node name="PointLight2D19" type="PointLight2D" parent="Lumières rectangulaires"]
 position = Vector2(796, 502)
 scale = Vector2(13.5085, 8.05398)
-energy = 2.05
+energy = 1.09
 texture = SubResource("GradientTexture2D_ukveq")
 texture_scale = 1.1
 
@@ -665,6 +665,11 @@ texture = SubResource("GradientTexture2D_ukveq")
 [node name="PointLight2D4" type="PointLight2D" parent="Lumières rectangulaires"]
 position = Vector2(1372.5, -939)
 scale = Vector2(10.2344, 11.0625)
+texture = SubResource("GradientTexture2D_ukveq")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lumières rectangulaires"]
+position = Vector2(1815, -1249)
+scale = Vector2(5.53907, 5.49999)
 texture = SubResource("GradientTexture2D_ukveq")
 
 [node name="gear" type="Node2D" parent="."]

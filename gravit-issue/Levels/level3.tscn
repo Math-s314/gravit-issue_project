@@ -331,6 +331,12 @@ skew = -0.0108278
 texture = SubResource("GradientTexture2D_2cw1i")
 texture_scale = 1.1
 
+[node name="PointLight2D24" type="PointLight2D" parent="CanvasModulate"]
+position = Vector2(-308, -260.188)
+scale = Vector2(6.07955, 4.57919)
+texture = SubResource("GradientTexture2D_2cw1i")
+texture_scale = 1.1
+
 [node name="gears" type="Node2D" parent="."]
 
 [node name="Gear1" parent="gears" instance=ExtResource("12_ls4d1")]

@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwe6y24tuo485"]
+[gd_scene load_steps=6 format=3 uid="uid://cwe6y24tuo485"]
 
 [ext_resource type="PackedScene" uid="uid://c8xa3dvou0rvb" path="res://Actors/Collectible/Collectible.tscn" id="1_gughf"]
 [ext_resource type="Script" uid="uid://5o4h62yi81bb" path="res://Actors/Gear/gear.gd" id="2_obhih"]
 [ext_resource type="Texture2D" uid="uid://cx5b8y11686oo" path="res://Actors/Gear/gear.png" id="2_socc2"]
+
+[sub_resource type="Gradient" id="Gradient_obhih"]
+offsets = PackedFloat32Array(0, 0.794212)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o35cp"]
+gradient = SubResource("Gradient_obhih")
+fill = 1
+fill_from = Vector2(0.487179, 0.482906)
 
 [node name="Gear" instance=ExtResource("1_gughf")]
 script = ExtResource("2_obhih")
@@ -10,3 +19,7 @@ script = ExtResource("2_obhih")
 [node name="Sprite2D" parent="Node2D" index="0"]
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("2_socc2")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+color = Color(0.996125, 0.916588, 0.550539, 1)
+texture = SubResource("GradientTexture2D_o35cp")

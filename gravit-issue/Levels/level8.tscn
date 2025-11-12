@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="6_soxnf"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_h4egd"]
 [ext_resource type="PackedScene" uid="uid://dy2it1crgkq6r" path="res://Environment/Objects/Orb.tscn" id="8_nq3mb"]
-[ext_resource type="Script" uid="uid://n7hvmjwgqutn" path="res://Levels/fast.gd" id="10_vfg7c"]
+[ext_resource type="Script" path="res://Levels/fast.gd" id="10_vfg7c"]
 [ext_resource type="Texture2D" uid="uid://d5n2o810kpxs" path="res://UI/Mars.png" id="11_3rh1d"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="11_ptlqi"]
 [ext_resource type="PackedScene" uid="uid://p5rr3lij5t4f" path="res://Environment/Background/Bg-space-v2.tscn" id="12_3rh1d"]
@@ -330,21 +330,21 @@ _data = {
 &"4s": SubResource("Animation_j81mp")
 }
 
-[sub_resource type="Gradient" id="Gradient_pht4a"]
+[sub_resource type="Gradient" id="Gradient_tlxhw"]
 offsets = PackedFloat32Array(0, 0.993569, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0353698, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fki3c"]
-gradient = SubResource("Gradient_pht4a")
+gradient = SubResource("Gradient_tlxhw")
 fill = 2
 fill_from = Vector2(0.529915, 0.525641)
 fill_to = Vector2(0.504274, 0.115385)
 
-[sub_resource type="Gradient" id="Gradient_cipbp"]
+[sub_resource type="Gradient" id="Gradient_io5oi"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6rfkw"]
-gradient = SubResource("Gradient_cipbp")
+gradient = SubResource("Gradient_io5oi")
 fill = 1
 fill_from = Vector2(0.529915, 0.525641)
 fill_to = Vector2(0.504274, 0.115385)
