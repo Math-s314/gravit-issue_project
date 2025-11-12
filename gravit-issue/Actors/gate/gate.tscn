@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3fgjirqwt8hs"]
+[gd_scene load_steps=9 format=3 uid="uid://c3fgjirqwt8hs"]
 
 [ext_resource type="Script" uid="uid://bhr8d2pge2eox" path="res://Actors/Gate/gate.gd" id="1_gum74"]
 [ext_resource type="Texture2D" uid="uid://bnpuruwgikurj" path="res://Actors/Gate/gate.png" id="1_kosmi"]
+[ext_resource type="AudioStream" uid="uid://dkxpo1s32rbsm" path="res://Sound Design/Gate.mp3" id="3_3nnnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kosmi"]
 size = Vector2(192, 400)
@@ -46,46 +47,6 @@ tracks/2/keys = {
 "values": [Vector2(0, 200), Vector2(0, 500)]
 }
 
-[sub_resource type="Animation" id="Animation_qnqwe"]
-resource_name = "open"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [16]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("up:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -500)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("down:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 500)]
-}
-
 [sub_resource type="Animation" id="Animation_3nnnu"]
 resource_name = "close"
 loop_mode = 1
@@ -126,6 +87,46 @@ tracks/2/keys = {
 "values": [Vector2(0, 200)]
 }
 
+[sub_resource type="Animation" id="Animation_qnqwe"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("up:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -500)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("down:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 500)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_knjtu"]
 _data = {
 &"animation": SubResource("Animation_nvq6t"),
@@ -142,17 +143,19 @@ script = ExtResource("1_gum74")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kosmi")
 hframes = 17
-frame = 16
 
 [node name="up" type="CollisionShape2D" parent="."]
-position = Vector2(0, -500)
+position = Vector2(0, -200)
 shape = SubResource("RectangleShape2D_kosmi")
 
 [node name="down" type="CollisionShape2D" parent="."]
-position = Vector2(0, 500)
+position = Vector2(0, 200)
 shape = SubResource("RectangleShape2D_kosmi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_knjtu")
 }
+
+[node name="Gate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3nnnu")

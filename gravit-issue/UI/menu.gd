@@ -6,6 +6,7 @@ class_name Menu
 @onready var but_cred := $HBoxContainer/Credit
 @onready var but_quit := $HBoxContainer/Quit
 @onready var but_back := $HBoxContainer/Back
+@onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var title := $Title
 
 var save_exists := false
@@ -22,6 +23,8 @@ func _on_play_pressed() -> void:
 	GameInstance.nodes = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as Array[Dictionary]
 	GameInstance._set_node_data(1, "/root/level1/CommandCenter", true)
 	GameInstance.switch_scene(1, ^"/root/level1/CommandCenter") 
+	anim.play(&"fade_out")
+	
 
 func _on_continue_pressed() -> void:
 	player = GameInstance.player_scene.instantiate()

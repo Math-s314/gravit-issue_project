@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://74wocrxi6qah"]
+[gd_scene load_steps=12 format=3 uid="uid://74wocrxi6qah"]
 
 [ext_resource type="Script" uid="uid://kjjdalfrg540" path="res://Actors/Player/player.gd" id="1_ech6m"]
 [ext_resource type="SpriteFrames" uid="uid://lfhvyob3ommm" path="res://Actors/Player/Animations/SpriteFrames.tres" id="2_4x03u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://narkb22wwdx1" path="res://Actors/Player/camera_2d.gd" id="4_l6vkj"]
 [ext_resource type="PackedScene" uid="uid://dlw7ff15t3r0p" path="res://Actors/Player/HUD/HUD.tscn" id="7_kkbrm"]
 [ext_resource type="Texture2D" uid="uid://dawkn5x8ubcq" path="res://Actors/Red Light/TXT-Light.png" id="7_rsi04"]
+[ext_resource type="AudioStream" uid="uid://o76fhshmsbow" path="res://Sound Design/Boom.mp3" id="8_kkbrm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsi04"]
 radius = 15.0
@@ -43,7 +44,7 @@ shape = SubResource("CapsuleShape2D_rsi04")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.028, 0.031)
 sprite_frames = ExtResource("2_4x03u")
-animation = &"Idle"
+animation = &"Mort"
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(1.47, 1.47)
@@ -102,6 +103,11 @@ texture_scale = 0.5
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kkbrm")]
+
+[node name="BoomAudio" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.028, 0.031)
+stream = ExtResource("8_kkbrm")
+volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="GravityTimer" to="." method="_on_gravity_switch"]

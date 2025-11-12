@@ -12,6 +12,7 @@ func collected(_player : Player):
 	GameInstance.set_node_data(self, true)
 	print("Collected !!")
 	anim_player.play(&"HOP")	
+	$Coin.play()
 
 func _on_body_entered(body:Node2D) -> void:
 	if body is Player: collected(body as Player)

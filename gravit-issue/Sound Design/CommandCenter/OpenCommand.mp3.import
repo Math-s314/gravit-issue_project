@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b27rrrd2p56v5"
+path="res://.godot/imported/OpenCommand.mp3-f8e47adf52f044ac9b2aaf51f1509858.mp3str"
+
+[deps]
+
+source_file="res://Sound Design/CommandCenter/OpenCommand.mp3"
+dest_files=["res://.godot/imported/OpenCommand.mp3-f8e47adf52f044ac9b2aaf51f1509858.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

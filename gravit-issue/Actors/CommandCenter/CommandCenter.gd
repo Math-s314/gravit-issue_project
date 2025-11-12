@@ -3,6 +3,8 @@ class_name CommandCenter
 
 @onready var sprite := $AnimatedSprite2D
 @onready var light := $PointLight2D
+@onready var respawn_sound := $RespawnAudio
+@onready var close_sound :=$CloseAudio
 var respawning_player : Player = null
 
 func _ready():
@@ -29,6 +31,7 @@ func register_checkpoint(player : Player) -> void:
 		GameInstance.set_node_data(self, true)
 		light.visible = true
 		sprite.play(&"close")
+		close_sound.play()
 		
 	# Save state (even if the CommandCenter was already unlocked)
 	# TODO : Add feedback to this effect !!
@@ -52,7 +55,8 @@ func spawn_player(player : Player) -> void:
 	player.visible = false
 	
 	respawning_player = player
-	sprite.play(&"open")	
+	sprite.play(&"open")
+	respawn_sound.play()
 
 func _on_body_entered(body:Node2D) -> void:
 	if body is Player: register_checkpoint(body as Player)

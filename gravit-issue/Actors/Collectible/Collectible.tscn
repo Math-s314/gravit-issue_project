@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8xa3dvou0rvb"]
+[gd_scene load_steps=9 format=3 uid="uid://c8xa3dvou0rvb"]
 
 [ext_resource type="Script" uid="uid://gb4idvcimsq3" path="res://Actors/Collectible/collectible.gd" id="1_3u7ae"]
 [ext_resource type="Texture2D" uid="uid://kskk4eistb4c" path="res://icon.svg" id="2_iar5s"]
+[ext_resource type="AudioStream" uid="uid://4g5a81qknl86" path="res://Sound Design/Coin.mp3" id="2_pc5fm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iar5s"]
 size = Vector2(15, 15)
@@ -147,6 +148,10 @@ _data = {
 
 [node name="Collectible" type="Area2D"]
 script = ExtResource("1_3u7ae")
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pc5fm")
+volume_db = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iar5s")

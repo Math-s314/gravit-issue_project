@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cajhgrw28yl67"]
+[gd_scene load_steps=12 format=3 uid="uid://cajhgrw28yl67"]
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_u2pno"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2me0iiitxuxj" path="res://Levels/level5.tscn" id="6_bwc7g"]
 [ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="7_gf0xu"]
 [ext_resource type="PackedScene" uid="uid://cyqt24nr2nsgt" path="res://Levels/level8.tscn" id="9_ag1o7"]
+[ext_resource type="AudioStream" uid="uid://db6ishqd8e0b1" path="res://Sound Design/Back.mp3" id="11_bwc7g"]
 
 [node name="GameInstance" type="Node"]
 script = ExtResource("1_s8j48")
@@ -17,3 +18,8 @@ transition_duration = 0.5
 player_scene = ExtResource("2_u2pno")
 levels_scenes = Array[PackedScene]([ExtResource("3_bwc7g"), ExtResource("3_ag1o7"), ExtResource("4_faa51"), ExtResource("4_ag1o7"), ExtResource("5_faa51"), ExtResource("6_bwc7g"), ExtResource("7_gf0xu"), null, ExtResource("9_ag1o7")])
 metadata/_custom_type_script = "uid://csfn1aml2p131"
+
+[node name="Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_bwc7g")
+autoplay = true
+parameters/looping = true

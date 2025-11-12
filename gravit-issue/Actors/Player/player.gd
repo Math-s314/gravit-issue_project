@@ -22,6 +22,7 @@ var gravity_transition := false
 @onready var sprite := $AnimatedSprite2D
 @onready var particles := $CPUParticles2D
 @onready var HUD : Hud = $CanvasLayer/HUD
+@onready var sound_boom := $BoomAudio
 
 ## Display informations
 const EPSILON := 1e-2
@@ -185,6 +186,7 @@ func switch_gravity():
 		
 func _on_hazard_entered(_body : Node2D):
 	sprite.play(&"Mort")
+	sound_boom.play()
 	freeze = true
 		
 func _on_gravity_switch():

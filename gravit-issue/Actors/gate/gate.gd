@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var music : AudioStreamPlayer2D = $Gate
 var is_open: bool                       = false
 
 func _ready() -> void:
@@ -14,3 +15,4 @@ func change_state() -> void:
 		animation.play("animation")
 	else:
 		animation.play_backwards("animation")
+	music.play()
