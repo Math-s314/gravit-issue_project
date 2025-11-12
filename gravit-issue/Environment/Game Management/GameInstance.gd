@@ -7,6 +7,9 @@ enum TransitionState {NO_TRANSITION, DISAPPEAR, APPEAR}
 @export var player_scene : PackedScene
 @export var levels_scenes : Array[PackedScene]
 
+@onready var anim_back := $AnimationBack
+@onready var anim_music := $AnimationMusic
+
 ## Transition memory
 var current_lvl := 0
 var next_lvl    := 0
@@ -17,6 +20,7 @@ var timer := 0.0
 
 ## Nodes memory
 var nodes : Array[Dictionary] = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
+var music := false
 
 func get_node_data(node : Node) -> Variant:
 	return _get_node_data(getLevelManager().level_number, String(node.get_path()))
@@ -89,3 +93,21 @@ func switch_scene(future_lvl : int, spawner : NodePath, ff_possible := false) ->
 		in_transition = TransitionState.DISAPPEAR
 	else:
 		_spawn_player()
+		
+	## Scripted behavior (Music)
+	if current_lvl == 0 :
+		if music :
+			anim_music.play(&"rise_music")
+		else:
+			anim_back.play(&"rise_back")
+	elif future_lvl == 3 && !music:
+		music = true
+		anim_music.play(&"rise_music")
+		anim_back.play(&"cut_back")
+		
+	if future_lvl == 0:
+		if music : anim_music.play(&"cut_music")
+		else: anim_back.play(&"cut_back")
+
+func play_teleport():
+	$Teleport.play()

@@ -41,6 +41,7 @@ func register_checkpoint(player : Player) -> void:
 	var save_file := FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_dict := {
 		"game_instance" : GameInstance.nodes,
+		"music" : GameInstance.music,
 		"player" : {
 			"last_checkpoint_spa" : player.last_checkpoint_spa,
 			"last_checkpoint_lvl" : player.last_checkpoint_lvl,

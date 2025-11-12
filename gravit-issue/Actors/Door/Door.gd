@@ -12,6 +12,7 @@ func spawn_player(player : Player) -> void:
 	
 func _on_body_entered(body:Node2D) -> void:
 	if active and body is Player and (body.global_position-global_position).length() < 100: 
+		GameInstance.play_teleport()
 		GameInstance.switch_scene(connected_level, connected_door)
 
 func _on_body_exited(body:Node2D) -> void:

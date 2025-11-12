@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cajhgrw28yl67"]
+[gd_scene load_steps=22 format=3 uid="uid://cajhgrw28yl67"]
 
 [ext_resource type="Script" uid="uid://csfn1aml2p131" path="res://Environment/Game Management/GameInstance.gd" id="1_s8j48"]
 [ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="2_u2pno"]
@@ -11,6 +11,185 @@
 [ext_resource type="PackedScene" uid="uid://w4jka18cgau2" path="res://Levels/level6.tscn" id="7_gf0xu"]
 [ext_resource type="PackedScene" uid="uid://cyqt24nr2nsgt" path="res://Levels/level8.tscn" id="9_ag1o7"]
 [ext_resource type="AudioStream" uid="uid://db6ishqd8e0b1" path="res://Sound Design/Back.mp3" id="11_bwc7g"]
+[ext_resource type="AudioStream" uid="uid://crfqliq62hxx6" path="res://Sound Design/Teleport.mp3" id="12_gf0xu"]
+[ext_resource type="AudioStream" uid="uid://cv6kp37ng1kvd" path="res://Sound Design/Music.mp3" id="13_5cj37"]
+
+[sub_resource type="Animation" id="Animation_5cj37"]
+resource_name = "rise_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-50.0, 4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hhgky"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lhpgj"]
+resource_name = "cut_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.0, -50.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imops"]
+_data = {
+&"RESET": SubResource("Animation_hhgky"),
+&"cut_back": SubResource("Animation_lhpgj"),
+&"rise_back": SubResource("Animation_5cj37")
+}
+
+[sub_resource type="Animation" id="Animation_imops"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.0]
+}
+
+[sub_resource type="Animation" id="Animation_v4nfd"]
+resource_name = "rise_music"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-50.0, -5.0]
+}
+
+[sub_resource type="Animation" id="Animation_86xcq"]
+resource_name = "cut_music"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-5.0, -50.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bywh"]
+_data = {
+&"RESET": SubResource("Animation_imops"),
+&"cut_music": SubResource("Animation_86xcq"),
+&"rise_music": SubResource("Animation_v4nfd")
+}
 
 [node name="GameInstance" type="Node"]
 script = ExtResource("1_s8j48")
@@ -21,5 +200,27 @@ metadata/_custom_type_script = "uid://csfn1aml2p131"
 
 [node name="Back" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_bwc7g")
-autoplay = true
+volume_db = 4.0
 parameters/looping = true
+
+[node name="Teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_gf0xu")
+volume_db = -2.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_5cj37")
+volume_db = -5.0
+playback_type = 1
+parameters/looping = true
+
+[node name="AnimationBack" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_imops")
+}
+autoplay = "RESET"
+
+[node name="AnimationMusic" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3bywh")
+}
+autoplay = "RESET"

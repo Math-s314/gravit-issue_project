@@ -37,6 +37,7 @@ func _on_continue_pressed() -> void:
 	player.last_checkpoint_lvl = json.data.player.last_checkpoint_lvl
 	player.gears_collected = json.data.player.gears_collected
 	
+	GameInstance.music = json.data.music
 	for i in range(json.data.game_instance.size()):
 		GameInstance.nodes[i] = json.data.game_instance[i]
 	GameInstance.switch_scene(player.last_checkpoint_lvl, player.last_checkpoint_spa)
