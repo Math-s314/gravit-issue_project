@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckdqhmhhrhama"]
+[gd_scene load_steps=9 format=3 uid="uid://ckdqhmhhrhama"]
 
 [ext_resource type="PackedScene" uid="uid://bq5jsyr36p27b" path="res://Levels/level4.tscn" id="1_uol8u"]
 [ext_resource type="PackedScene" uid="uid://m5qf51b24mwv" path="res://Levels/level3.tscn" id="2_svy6q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqt24nr2nsgt" path="res://Levels/level8.tscn" id="5_3dv6e"]
 [ext_resource type="PackedScene" uid="uid://bff14qymfiw12" path="res://Levels/level2.tscn" id="6_smx1m"]
 [ext_resource type="PackedScene" uid="uid://cs6l5g0xcrhcl" path="res://Levels/level1.tscn" id="7_l0jxp"]
+[ext_resource type="PackedScene" uid="uid://ucdvewxwu85g" path="res://Levels/level9.tscn" id="8_2h7mj"]
 
 [node name="Global" type="Node2D"]
 
@@ -30,3 +31,6 @@ position = Vector2(-1856, -639)
 
 [node name="level8" parent="." instance=ExtResource("5_3dv6e")]
 position = Vector2(64, 897)
+
+[node name="level" parent="." instance=ExtResource("8_2h7mj")]
+position = Vector2(-2176, 897)

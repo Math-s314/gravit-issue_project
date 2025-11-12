@@ -383,7 +383,7 @@ connected_door = NodePath("doors/Door4")
 position = Vector2(-1420, 31)
 rotation = 3.14159
 scale = Vector2(1, -1)
-connected_level = 1
+connected_level = 9
 
 [node name="gates" type="Node2D" parent="."]
 
