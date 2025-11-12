@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://c2me0iiitxuxj"]
+[gd_scene load_steps=16 format=4 uid="uid://c2me0iiitxuxj"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_b3501"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_fj68v"]
-[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/hazard/LaserGenerator.tscn" id="4_4omtb"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_fj68v"]
+[ext_resource type="PackedScene" uid="uid://c412yfnyfwnk6" path="res://Environment/Tilemaps/Hazard/LaserGenerator.tscn" id="4_4omtb"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_ggu74"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="5_0n3a6"]
 [ext_resource type="PackedScene" uid="uid://nhcw2sc4mebl" path="res://Environment/Objects/Platform.tscn" id="5_4omtb"]
+[ext_resource type="PackedScene" uid="uid://cb4oqmsfpfedi" path="res://Actors/Red Light/RedLight.tscn" id="7_fj68b"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="7_fj68v"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="8_ggu74"]
 
@@ -173,7 +174,6 @@ texture = SubResource("GradientTexture2D_b3501")
 texture_scale = 1.1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="gears" type="Node2D" parent="."]
@@ -188,3 +188,6 @@ position = Vector2(830, 641)
 
 [node name="CommandCenter" parent="respawn" instance=ExtResource("8_ggu74")]
 position = Vector2(256, 35)
+
+[node name="RedLight" parent="." instance=ExtResource("7_fj68b")]
+position = Vector2(-214, 358)

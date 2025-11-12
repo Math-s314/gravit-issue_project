@@ -50,3 +50,4 @@ sources/0 = SubResource("TileSetAtlasSource_o1xl6")
 [node name="Walls-white" type="TileMapLayer"]
 scale = Vector2(0.125, 0.125)
 tile_set = SubResource("TileSet_4opmm")
+occlusion_enabled = false

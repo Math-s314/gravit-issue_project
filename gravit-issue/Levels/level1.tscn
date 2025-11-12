@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_aunfx"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="2_nq5j5"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_nq5j5"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_utqd4"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="5_302sc"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_1jijn"]
 [ext_resource type="PackedScene" uid="uid://cb4oqmsfpfedi" path="res://Actors/Red Light/RedLight.tscn" id="9_nq5j5"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="9_u55on"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="9_u55on"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="9_utqd4"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="10_pdma0"]
 
@@ -29,15 +29,14 @@ tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAAEAA0AAAABAAAAAAAFAA0AAAACAAA
 
 [node name="Laser" parent="." instance=ExtResource("3_nq5j5")]
 
+[node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
+position = Vector2(-292, 45)
+
 [node name="Walls-white" parent="." instance=ExtResource("4_utqd4")]
 position = Vector2(1.45519e-11, 1.45519e-11)
 tile_map_data = PackedByteArray("AAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAGAP//AAAAAAIAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAHAAEAAAABAAAAAAAHAP//AAABAAIAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD8////AAACAAIAAAD7////AAABAAIAAAD6/wAAAAACAAEAAAD6/wEAAAABAAMAAAD6////AAAAAAQAAAD///3/AAABAAIAAAAAAP3/AAABAAIAAAABAP3/AAABAAIAAAACAP3/AAABAAIAAAADAP3/AAABAAIAAAAEAP3/AAABAAIAAAAGAP7/AAAAAAEAAAAFAP3/AAABAAIAAAAGAP3/AAACAAMAAAD8//7/AAACAAAAAAD8//z/AAAAAAIAAAD9//z/AAABAAIAAAD+//z/AAACAAMAAAD+//3/AAAAAAIAAAD7//7/AAABAAAAAAD6//7/AAABAAMAAAD6//3/AAACAAEAAAD6//z/AAACAAEAAAD8//v/AAAAAAAAAAD9//v/AAABAAAAAAD9//n/AAABAAIAAAD8//n/AAABAAIAAAD7//n/AAABAAIAAAD6//v/AAACAAEAAAD6//r/AAACAAEAAAD6//n/AAAAAAQAAAA=")
 
-[node name="CommandCenter" parent="." instance=ExtResource("5_302sc")]
-position = Vector2(-292, 45)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="doors" type="Node2D" parent="."]
@@ -52,6 +51,13 @@ position = Vector2(-117, -365)
 connected_level = 9
 connected_door = NodePath("doors/Door2")
 
+[node name="PointLight2D24" type="PointLight2D" parent="."]
+position = Vector2(-246, 23)
+scale = Vector2(4.7532, 2.36506)
+energy = 1.17
+texture = SubResource("GradientTexture2D_utqd4")
+texture_scale = 1.1
+
 [node name="PointLight2D23" type="PointLight2D" parent="."]
 position = Vector2(416, 13)
 scale = Vector2(4.0483, 2.1015)
@@ -60,8 +66,8 @@ texture = SubResource("GradientTexture2D_utqd4")
 texture_scale = 1.1
 
 [node name="PointLight2D19" type="PointLight2D" parent="."]
-position = Vector2(-246, 23)
-scale = Vector2(4.7532, 2.36506)
+position = Vector2(76, 22.5)
+scale = Vector2(17.1875, 2.76989)
 energy = 1.17
 texture = SubResource("GradientTexture2D_utqd4")
 texture_scale = 1.1
@@ -69,26 +75,26 @@ texture_scale = 1.1
 [node name="PointLight2D22" type="PointLight2D" parent="."]
 position = Vector2(261, 25)
 scale = Vector2(3.95528, 2.17932)
-energy = 1.61
+energy = 0.91
 texture = SubResource("GradientTexture2D_utqd4")
 texture_scale = 1.1
 
 [node name="PointLight2D20" type="PointLight2D" parent="."]
 position = Vector2(86, 26)
 scale = Vector2(4.25071, 2.48224)
-energy = 2.22
+energy = 1.17
 texture = SubResource("GradientTexture2D_utqd4")
 texture_scale = 1.1
 
 [node name="PointLight2D21" type="PointLight2D" parent="."]
 position = Vector2(-75, 29)
 scale = Vector2(4.25071, 2.33665)
-energy = 2.22
+energy = 0.91
 texture = SubResource("GradientTexture2D_utqd4")
 texture_scale = 1.1
 
 [node name="RedLight" parent="." instance=ExtResource("9_nq5j5")]
-position = Vector2(96, -128)
+position = Vector2(95, -95)
 
 [node name="Gear" parent="." instance=ExtResource("9_utqd4")]
 position = Vector2(225, 40)

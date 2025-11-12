@@ -301,8 +301,8 @@ script = ExtResource("1_s3bqx")
 visible = false
 position = Vector2(-0.0708609, -0.333333)
 scale = Vector2(0.129037, 0.146256)
-color = Color(0, 0.909238, 0.779339, 1)
-energy = 2.31
+color = Color(0.532829, 1, 0.896107, 1)
+energy = 1.09
 texture = SubResource("GradientTexture2D_fqhp1")
 texture_scale = 4.78
 
