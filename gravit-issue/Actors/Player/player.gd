@@ -17,12 +17,15 @@ class_name Player
 ## Gravity switching
 var gravity_dir := 1.0; # UP is 1, DOWN is -1
 var gravity_transition := false
+var zero_gravity := false
+
 @onready var gravity_timer := $GravityTimer
 @onready var jump_timer := $JumpTimer
 @onready var sprite := $AnimatedSprite2D
 @onready var particles := $CPUParticles2D
 @onready var HUD : Hud = $CanvasLayer/HUD
 @onready var sound_boom := $BoomAudio
+
 
 ## Display informations
 const EPSILON := 1e-2
@@ -40,6 +43,7 @@ var kill_mvt_input := false
 var gravity_blocked := false
 
 var input_axis     := 0.0
+var input_axis_vert     := 0.0
 var input_velocity := Vector2(0.0, 0.0)
 var last_press	   := 0.0
 
@@ -94,6 +98,7 @@ func get_speed_floor() -> float:
 func handle_input():
 	input_velocity = Vector2.ZERO
 	input_axis =  Input.get_axis("Left", "Right") 
+	input_axis_vert =  Input.get_axis("Up", "Down")
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		input_velocity.y = -gravity_dir * jump_force
@@ -103,6 +108,10 @@ func handle_input():
 	if Input.is_action_just_pressed("Left") || Input.is_action_just_pressed("Right") :
 		last_press = 0.0
 	
+	if zero_gravity : 
+		velocity.y =  0.04 * move_speed * input_axis_vert * air_control + 0.96 * velocity.y
+		
+		
 	if is_on_floor():
 		gravity_blocked = false
 		input_velocity = Vector2(get_speed_floor() , input_velocity.y)
@@ -126,6 +135,9 @@ func handle_animation(ended := &"") -> void:
 	elif abs(input_axis) < EPSILON :
 		sprite.play(&"Idle")
 		particles.transform = BASE_EMITTER
+		
+	if zero_gravity && abs(input_axis_vert) > EPSILON :
+		if input_axis_vert * scale.y > 0  : switch_gravity()
 
 func handle_particle() -> void:
 	var kill := false

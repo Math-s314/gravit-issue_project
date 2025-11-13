@@ -1,20 +1,24 @@
-[gd_scene load_steps=20 format=4 uid="uid://ucdvewxwu85g"]
+[gd_scene load_steps=25 format=4 uid="uid://ucdvewxwu85g"]
 
 [ext_resource type="Script" uid="uid://cccuexfwvbk6s" path="res://Environment/Game Management/LevelManager.gd" id="1_qsjsh"]
 [ext_resource type="PackedScene" uid="uid://b5sykkseta4qj" path="res://Environment/Background/BG-Space.tscn" id="2_511st"]
 [ext_resource type="Texture2D" uid="uid://hycltvjesilo" path="res://UI/Fond spatial.png" id="3_esmos"]
-[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/Hazard/Laser.tscn" id="3_jbdvf"]
+[ext_resource type="PackedScene" uid="uid://d0gh37g0lksgk" path="res://Environment/Tilemaps/hazard/Laser.tscn" id="3_jbdvf"]
 [ext_resource type="Texture2D" uid="uid://bhxpr70opf8qa" path="res://UI/Terre.png" id="4_0gwep"]
+[ext_resource type="Texture2D" uid="uid://cxrnq3by37c3q" path="res://UI/Planete_random.png" id="4_dhbg5"]
 [ext_resource type="PackedScene" uid="uid://blx3201fubvhi" path="res://Environment/Tilemaps/Walls/Walls-Metal.tscn" id="4_xkrh6"]
 [ext_resource type="Texture2D" uid="uid://q6aban06jmku" path="res://UI/Lune.png" id="5_dhbg5"]
 [ext_resource type="PackedScene" uid="uid://kyk56gqqlk1p" path="res://Environment/Background/BG-Panel.tscn" id="6_7adui"]
+[ext_resource type="Texture2D" uid="uid://d5n2o810kpxs" path="res://UI/Mars.png" id="7_7adui"]
 [ext_resource type="PackedScene" uid="uid://c28roodir7263" path="res://Environment/Background/BG-Gris.tscn" id="7_44vuy"]
 [ext_resource type="PackedScene" uid="uid://co77yloob4v0x" path="res://Actors/CommandCenter/CommandCenter.tscn" id="7_87c1g"]
 [ext_resource type="PackedScene" uid="uid://cyrb6k84emf1u" path="res://Actors/Door/Door.tscn" id="7_kjdt7"]
-[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/Gate/gate.tscn" id="7_yvicu"]
+[ext_resource type="PackedScene" uid="uid://c3fgjirqwt8hs" path="res://Actors/gate/gate.tscn" id="7_yvicu"]
 [ext_resource type="PackedScene" uid="uid://dt288a6uipyly" path="res://Actors/Lever/Lever.tscn" id="8_jbdvf"]
 [ext_resource type="PackedScene" uid="uid://cb4oqmsfpfedi" path="res://Actors/Red Light/RedLight.tscn" id="8_o5ju2"]
 [ext_resource type="PackedScene" uid="uid://cwe6y24tuo485" path="res://Actors/Gear/Gear.tscn" id="9_17tg2"]
+[ext_resource type="Script" uid="uid://cmwbrmm34b21i" path="res://Levels/0_gravity_area.gd" id="16_511st"]
+[ext_resource type="PackedScene" uid="uid://74wocrxi6qah" path="res://Actors/Player/Player.tscn" id="17_esmos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgrks"]
 texture = ExtResource("3_esmos")
@@ -45,13 +49,16 @@ fill = 1
 fill_from = Vector2(0.529915, 0.525641)
 fill_to = Vector2(0.504274, 0.115385)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fjif"]
+size = Vector2(4743, 5443)
+
 [node name="level" type="Node2D"]
 script = ExtResource("1_qsjsh")
 level_number = 7
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 z_index = -1
-scroll_scale = Vector2(0.5, 0.5)
+scroll_scale = Vector2(0.3, 0.3)
 
 [node name="BG-Space" parent="Parallax2D2" instance=ExtResource("2_511st")]
 z_index = -2
@@ -63,16 +70,33 @@ tile_set = SubResource("TileSet_8qpbj")
 z_index = -1
 scroll_scale = Vector2(0.6, 0.6)
 
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3"]
+z_index = -2
+position = Vector2(-1800, -1243.5)
+scale = Vector2(0.6, 0.578)
+texture = ExtResource("4_dhbg5")
+
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
 z_index = -2
-position = Vector2(500, -100)
-scale = Vector2(0.58, 0.58)
+position = Vector2(-1042, -559)
+scale = Vector2(0.635, 0.635)
 texture = ExtResource("4_0gwep")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D3"]
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D3"]
 z_index = -2
-position = Vector2(200, -300)
-scale = Vector2(0.185, 0.185)
+position = Vector2(-2200, 300)
+scale = Vector2(0.6, 0.578)
+texture = ExtResource("7_7adui")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D4"]
+z_index = -2
+position = Vector2(-1600, -700)
+rotation = -0.698132
+scale = Vector2(0.475, 0.475)
 texture = ExtResource("5_dhbg5")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
@@ -221,6 +245,16 @@ texture_scale = 1.1
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("16_511st")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2464.44, -1075.5)
+shape = SubResource("RectangleShape2D_7fjif")
+
+[node name="Player" parent="." instance=ExtResource("17_esmos")]
+position = Vector2(187, 22)
+
 [connection signal="activate" from="gates/Lever" to="gates/Gate" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate2" method="change_state_delayed"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate3" method="change_state"]
@@ -228,3 +262,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="activate" from="gates/Lever4" to="gates/Gate4" method="change_state"]
 [connection signal="activate" from="gates/Lever5" to="gates/Gate4" method="change_state"]
 [connection signal="activate" from="gates/Lever5" to="gates/Gate5" method="change_state_delayed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
