@@ -8,12 +8,14 @@ class_name Menu
 @onready var but_back := $HBoxContainer/Back
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var title := $Title
+@onready var creditos := $VBoxContainer
 
 var save_exists := false
 
 func _ready() -> void:
 	save_exists = FileAccess.file_exists("user://savegame.save")
 	but_cont.visible = save_exists
+	creditos.visible = false
 
 func _on_play_pressed() -> void:
 	player = GameInstance.player_scene.instantiate()
@@ -49,14 +51,16 @@ func _on_credit_pressed() -> void:
 	but_cred.visible = false
 	but_quit.visible = false
 	but_back.visible = true
+	creditos.visible = true
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_back_pressed() -> void:
-	title.visible = false
+	title.visible = true
 	but_play.visible = true
 	but_cont.visible = save_exists
 	but_cred.visible = true
 	but_quit.visible = true
 	but_back.visible = false
+	creditos.visible = false

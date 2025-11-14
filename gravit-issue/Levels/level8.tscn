@@ -746,6 +746,9 @@ position = Vector2(-1057, 29)
 scale = Vector2(3.48438, 2.69094)
 texture = SubResource("GradientTexture2D_fki3c")
 
+[node name="CommandCenter" parent="." instance=ExtResource("6_soxnf")]
+position = Vector2(3198, 107)
+
 [connection signal="activate" from="gates/Lever1" to="gates/Gate1" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate2" method="change_state"]
 [connection signal="activate" from="gates/Lever2" to="gates/Gate3" method="change_state"]
